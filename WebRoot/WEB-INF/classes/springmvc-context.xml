@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+    <!-- 第一步  -->
+    <!--使用下面的mvc:annotation-driven可以代替上面的注解映射器和注解适配器-->
+    <mvc:resources mapping="/static/**" location="/static/" />
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="com"></context:component-scan>
+    <!-- 配置视图解析器 -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="contentType" value="text/html"></property> 
+		<property name="prefix" value="/WEB-INF/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean  id="dataSource2" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<!--可以写成配置文件 -->
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://119.28.87.130:3306/javaProject?characterEncoding=UTF-8" />
+		<property name="user" value="root" />
+		<property name="password" value="12345678" />
+		<property name="minPoolSize" value="1" />
+		<property name="maxPoolSize" value="2" />
+		
+	</bean>
+	
+	<bean id="sqlSession1" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource2" />
+		<property name="MapperLocations"
+			value="classpath:com/huadi/cedon/mapping/*.xml" />
+	</bean>
+	
+	<!-- 按指定包和注解标记扫描Mapper -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactory" ref="sqlSession1" />
+		<property name="basePackage" value="com.huadi.cedon.dao" />
+		<property name="annotationClass"
+			value="com.huadi.cedon.util.MyBatisRepository" />
+	</bean>
+	
+	<!-- 开启事务注释扫描 -->
+	<tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
+	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">error</prop>
+			</props>
+		</property>
+	</bean>
+	
+</beans>
