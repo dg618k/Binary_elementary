@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
 <script src="../static/js/jquery-3.2.1.min.js"></script>
 <script src="../static/bootstrap/js/bootstrap.min.js"></script>
 

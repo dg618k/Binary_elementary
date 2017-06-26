@@ -6,12 +6,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- 
 <link href="../static/FontAwesome-3.2.1/css/font-awesome.css" rel="stylesheet">
+ -->
 <script src="../static/js/jquery-3.2.1.js"></script>
 <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<!-- 
 <script src="../static/js/browser.js"></script>
 <script src="../static/js/jquery-ui.min.js"></script>
 <script src="../static/js/jquery.form.js"></script>
+ -->
 <title>注册</title>
 </head>
 <body>

@@ -1,0 +1,27 @@
+.cd_history_banner{
+	height:100px; 
+	border:1px dashed black; 
+	text-align:center;
+}
+.cd_history_main_container{
+	width:100%; 
+	border:5px dashed black;
+	float:left
+}
+li{
+	list-style-type:none;
+	width:90%;
+	height:200px;
+	border:1px dashed black;
+	margin:20px;
+}
+.cd_main_head{
+	height:30px; 
+	border:1px dashed black; 
+	margin-top:10px;
+}
+.cd_clear_history{
+	float:right; 
+	border:1px dashed red;
+	background-color:blue;
+}

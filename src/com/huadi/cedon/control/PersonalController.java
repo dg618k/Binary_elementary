@@ -17,5 +17,9 @@ public class PersonalController extends BaseController implements Serializable {
 	public String historyView(ModelMap map,HttpServletRequest request){
 		return "personal_center/view_history";
 	}
+	@RequestMapping("friendview")
+	public String friendView(ModelMap map, HttpServletRequest request){
+		return "personal_center/friend";
+	}
 	
 }
