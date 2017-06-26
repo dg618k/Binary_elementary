@@ -6,6 +6,13 @@ li{
 	border:1px dashed black;
 	margin:20px;
 }
+a{
+	color:#333;
+	text-decoration:none;
+}
+.title{
+	font-size:16px;
+}
 .cd_friend_banner{
 	height:100px; 
 	border:1px dashed black; 
@@ -21,16 +28,17 @@ li{
 }
 .cd_friend_head{
 	width:20%;
-	height:20px;
+	height:30px;
 	margin:auto;
 	border:1px dashed black;
 	text-align:center;
 }
 .cd_friend_head span{
-	margin-left:10px;
-	width:49%;
+	margin-left:20px;
+	width:60%;
 	height:100%;
 	border:1px dashed black;
+	font-size:20px;
 }
 .cd_friend_left{
 	margin-top:50px;
@@ -45,12 +53,31 @@ li{
 	border:1px dashed black;
 }
 .cd_item_left{
-	
+	width:20%;
+	height:90%;
+	float:left;
+}
+.cd_item_left img{
+	margin-top:15px;
 }
 .cd_item_mid{
-	
+	width:40%;
+	height:60%;
+	float:left;
+	margin-top:20px;
+}
+.cd_item_mid p{
+	margin-top:10px;
 }
 .cd_item_right{
-	
+	width:30%;
+	height:90%;
+	float:right;
+	color:#666;
+	font-size:20px;
+}
+.cd_item_right span{
+	float:right;
+	margin-top:40px;
 }
 

@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+a{
+	color:#333;
+	text-decoration:none;
+}
+body{
+	width:95.5%;
+	padding:10px;
+	margin:auto;
+}
+.cd_ownvideo_banner{
+	height:100px; 
+	border:1px dashed black; 
+	text-align:center;
+}
+.cd_view_method{
+	position:fixed;
+	margin-top:200px;
+	float:left;
+	margin-left:1290px;
+	font-size:18px;
+	width:3%;
+	height:50px;
+}
+.cd_video_main{
+	width:90%;
+	margin-left:50px;
+	border:1px dashed black;
+	margin-top:20px;
+	float:left;
+}
+.cd_video_head{
+	
+}
+.cd_video_type_filter{
+	
+}
+.cd_video_item{
+	
+}

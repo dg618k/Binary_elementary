@@ -16,6 +16,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="static/js/jquery-3.2.1.min.js"></script>
+	<script src="static/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="static/css/friend.css">
 
   </head>
@@ -36,23 +39,104 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<ul>
 				<li>
 					<div class="cd_item_left">
+						<img src="img/friend_pic1.png">
 					</div>
 					<div class="cd_item_mid">
+						<p class="title"> <a href="#">好友昵称（张三）</a></p><!-- 昵称（备注） -->
+						<p style="color:#6d757a;font-size:12px">这里是个性签名</p><!-- 个性签名 -->
 					</div>
 					<div class="cd_item_right">
+						<span class="glyphicon glyphicon-trash"></span>
 					</div>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li>
+					<div class="cd_item_left">
+						<img src="img/friend_pic1.png">
+					</div>
+					<div class="cd_item_mid">
+						<p class="title"> <a href="#">好友昵称（张三）</a></p><!-- 昵称（备注） -->
+						<p style="color:#6d757a;font-size:12px">这里是个性签名</p><!-- 个性签名 -->
+					</div>
+					<div class="cd_item_right">
+						<span class="glyphicon glyphicon-trash"></span>
+					</div>
+				</li>
+				<li>
+					<div class="cd_item_left">
+						<img src="img/friend_pic1.png">
+					</div>
+					<div class="cd_item_mid">
+						<p class="title"> <a href="#">好友昵称（张三）</a></p><!-- 昵称（备注） -->
+						<p style="color:#6d757a;font-size:12px">这里是个性签名</p><!-- 个性签名 -->
+					</div>
+					<div class="cd_item_right">
+						<span class="glyphicon glyphicon-trash"></span>
+					</div>
+				</li>
+				<li>
+					<div class="cd_item_left">
+						<img src="img/friend_pic1.png">
+					</div>
+					<div class="cd_item_mid">
+						<p class="title"> <a href="#">好友昵称（张三）</a></p><!-- 昵称（备注） -->
+						<p style="color:#6d757a;font-size:12px">这里是个性签名</p><!-- 个性签名 -->
+					</div>
+					<div class="cd_item_right">
+						<span class="glyphicon glyphicon-trash"></span>
+					</div>
+				</li>
 			</ul>
 		</div>
 		<div class="cd_friend_right">
 			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li>
+					<div class="cd_item_left">
+						<img src="img/friend_pic1.png">
+					</div>
+					<div class="cd_item_mid">
+						<p class="title"> <a href="#">好友昵称（张三）</a></p><!-- 昵称（备注） -->
+						<p style="color:#6d757a;font-size:12px">这里是个性签名</p><!-- 个性签名 -->
+					</div>
+					<div class="cd_item_right">
+						<span class="glyphicon glyphicon-trash"></span>
+					</div>
+				</li>
+				<li>
+					<div class="cd_item_left">
+						<img src="img/friend_pic1.png">
+					</div>
+					<div class="cd_item_mid">
+						<p class="title"> <a href="#">好友昵称（张三）</a></p><!-- 昵称（备注） -->
+						<p style="color:#6d757a;font-size:12px">这里是个性签名</p><!-- 个性签名 -->
+					</div>
+					<div class="cd_item_right">
+						<span class="glyphicon glyphicon-trash"></span>
+					</div>
+				</li>
+				<li>
+					<div class="cd_item_left">
+						<img src="img/friend_pic1.png">
+					</div>
+					<div class="cd_item_mid">
+						<p class="title"> <a href="#">好友昵称（张三）</a></p><!-- 昵称（备注） -->
+						<p style="color:#6d757a;font-size:12px">这里是个性签名</p><!-- 个性签名 -->
+					</div>
+					<div class="cd_item_right">
+						<span class="glyphicon glyphicon-trash"></span>
+					</div>
+				</li>
+				<li>
+					<div class="cd_item_left">
+						<img src="img/friend_pic1.png">
+					</div>
+					<div class="cd_item_mid">
+						<p class="title"> <a href="#">好友昵称（张三）</a></p><!-- 昵称（备注） -->
+						<p style="color:#6d757a;font-size:12px">这里是个性签名</p><!-- 个性签名 -->
+					</div>
+					<div class="cd_item_right">
+						<span class="glyphicon glyphicon-trash"></span>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
