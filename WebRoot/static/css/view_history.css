@@ -25,3 +25,15 @@ li{
 	border:1px dashed red;
 	background-color:blue;
 }
+.cd_history_item{
+	width:40%; 
+	height:80%; 
+	float:left
+}
+.cd_history_item p{
+	margin-top:40px;
+	margin-left:50px; 
+	padding:10px;
+	font-size:12px;
+	font-family:'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei';
+}

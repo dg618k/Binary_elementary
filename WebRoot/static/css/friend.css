@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+li{
+	list-style-type:none;
+	width:90%;
+	height:100px;
+	border:1px dashed black;
+	margin:20px;
+}
+.cd_friend_banner{
+	height:100px; 
+	border:1px dashed black; 
+	text-align:center;
+}
+.cd_friend_main{
+	width:95.5%;
+	padding-left:30px;
+	padding-right:30px;
+	border:1px dashed black;
+	margin-top:20px;
+	float:left;
+}
+.cd_friend_head{
+	width:20%;
+	height:20px;
+	margin:auto;
+	border:1px dashed black;
+	text-align:center;
+}
+.cd_friend_head span{
+	margin-left:10px;
+	width:49%;
+	height:100%;
+	border:1px dashed black;
+}
+.cd_friend_left{
+	margin-top:50px;
+	float:left;
+	width:48%;
+	border:1px dashed black;
+}
+.cd_friend_right{
+	margin-top:50px;
+	float:right;
+	width:48%;
+	border:1px dashed black;
+}
+.cd_item_left{
+	
+}
+.cd_item_mid{
+	
+}
+.cd_item_right{
+	
+}
+

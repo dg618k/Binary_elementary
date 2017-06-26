@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!-- 首部 -->
 		<div class="cd_main_head">
 			<div style="float:left">
-				<图标>
+				《图标》
 				播放历史
 			</div>
 			<div class="cd_clear_history">
@@ -62,10 +62,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
 							</a>
 						</div>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-								<p style="margin-top:40px;margin-left:50px; padding:10px;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei';">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别 </p>
-							</a>
+						<div class="cd_history_item">
+							<p>
+								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
+							</p>
 						</div>
 						<!-- 删除记录 -->
 						<div style="float:right;width:5%;padding-top:60px">
@@ -85,10 +85,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
 							</a>
 						</div>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-								<p style="margin-top:40px;margin-left:50px; padding:10px;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei';">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别 </p>
-							</a>
+						<div class="cd_history_item">
+							<p>
+								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
+							</p>
 						</div>
 						<!-- 删除记录 -->
 						<div style="float:right;width:5%;padding-top:60px">
@@ -108,10 +108,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
 							</a>
 						</div>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-								<p style="margin-top:40px;margin-left:50px; padding:10px;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei';">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别 </p>
-							</a>
+						<div class="cd_history_item">
+							<p>
+								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
+							</p>
 						</div>
 						<!-- 删除记录 -->
 						<div style="float:right;width:5%;padding-top:60px">
@@ -131,10 +131,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
 							</a>
 						</div>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-								<p style="margin-top:40px;margin-left:50px; padding:10px;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei';">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别 </p>
-							</a>
+						<div class="cd_history_item">
+							<p>
+								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
+							</p>
 						</div>
 						<!-- 删除记录 -->
 						<div style="float:right;width:5%;padding-top:60px">
@@ -162,10 +162,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
 							</a>
 						</div>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-								<p style="margin-top:40px;margin-left:50px; padding:10px;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei';">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别 </p>
-							</a>
+						<div class="cd_history_item">
+							<p>
+								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
+							</p>
 						</div>
 						<!-- 删除记录 -->
 						<div style="float:right;width:5%;padding-top:60px">
@@ -185,10 +185,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
 							</a>
 						</div>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-								<p style="margin-top:40px;margin-left:50px; padding:10px;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei';">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别 </p>
-							</a>
+						<div class="cd_history_item">
+							<p>
+								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
+							</p>
 						</div>
 						<!-- 删除记录 -->
 						<div style="float:right;width:5%;padding-top:60px">
@@ -208,10 +208,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
 							</a>
 						</div>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-								<p style="margin-top:40px;margin-left:50px; padding:10px;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei';">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别 </p>
-							</a>
+						<div class="cd_history_item">
+							<p>
+								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
+							</p>
 						</div>
 						<!-- 删除记录 -->
 						<div style="float:right;width:5%;padding-top:60px">
@@ -231,10 +231,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
 							</a>
 						</div>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-								<p style="margin-top:40px;margin-left:50px; padding:10px;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,'Microsoft Yahei','Hiragino Sans GB','Heiti SC','WenQuanYi Micro Hei';">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别 </p>
-							</a>
+						<div class="cd_history_item">
+							<p>
+								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
+							</p>
 						</div>
 						<!-- 删除记录 -->
 						<div style="float:right;width:5%;padding-top:60px">

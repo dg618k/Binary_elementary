@@ -16,22 +16,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-	<style>
-		.cd_friend_banner{
-			height:100px; 
-			border:1px dashed black; 
-			text-align:center;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="static/css/friend.css">
+
   </head>
   
   <body>
     <!-- 顶部内容 -->
 	<div class="cd_friend_banner">
 		<p>banner here</p>
+	</div>
+	
+	<!-- 中部内容 -->
+	<div class="cd_friend_main">
+		<div class="cd_friend_head">
+			<span>好友</span>
+			<span>黑名单</span>
+		</div>
+		<div class="cd_friend_left">
+			<ul>
+				<li>
+					<div class="cd_item_left">
+					</div>
+					<div class="cd_item_mid">
+					</div>
+					<div class="cd_item_right">
+					</div>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="cd_friend_right">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 	</div>
 	
 	<!-- 底部内容 -->
