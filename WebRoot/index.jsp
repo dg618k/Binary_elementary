@@ -21,9 +21,11 @@
 <header>
   	<nav>
         <ul>
-            <li><a href="">喵，欢迎来到史上最好的网站</a></li>
-            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">注册</a></li>
-            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">登陆</a></li>
+            <li><a>喵，欢迎来到史上最好的网站</a></li>
+             <li><a href="">登陆</a></li>
+              <li><a href="">注册</a></li>
+            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
+            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
             
         </ul>
 	</nav>
@@ -33,6 +35,7 @@
 	        <ul>
 	            <li><a href="">主页</a></li>
 	            <li><a href="" target="_blank">视频</a></li>
+	            <li><a href="" target="_blank">漫画</a></li>
 	            <li><a href="" target="_blank" rel="nofollow">游戏</a></li>
 	            <li><a href="" target="_blank" rel="nofollow">资讯</a></li>
 	            <li><a href="" target="_blank" rel="nofollow">周边</a></li>
@@ -291,6 +294,87 @@ slideLi();
             </div>
         </div>
 <!--视频 end -->
+ <!-- 漫画  start-->
+        <div class="container-row-1" id="guochan">
+            <div class="section-head">
+                <h2 class="color-orange">漫画</h2>
+                <h4 class="more"><a herf="" target="_blank">更多</a></h4>
+                <div class="cut-off-line"></div>
+            </div>
+
+            <div class="section-body">
+                <ul class="section-body-videolist">
+                    <li>
+                        <a href="">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/anime/swglxhdsj/">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/anime/duannao/">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+<!--漫画 end -->
 <!-- 游戏  start-->
         <div class="container-row-1" id="guochan">
             <div class="section-head">

@@ -36,6 +36,11 @@ public class LoginController extends BaseController implements Serializable {
 	@RequestMapping("registerview")
 	public String RegisterVeiw(ModelMap map,HttpServletRequest request){
 		return "login/register";
+	}
+	@RequestMapping("tradeview")
+	public String TradeVeiw(ModelMap map,HttpServletRequest request){
+		
+		return "trade/trade";
 	}	
 	@RequestMapping("registerlockview")
 	public String RegisterlockView(ModelMap map, HttpServletRequest request){
@@ -67,7 +72,7 @@ public class LoginController extends BaseController implements Serializable {
 		}
 		else{
 			info.put("success", false);
-			info.put("message", "已被注册");
+			info.put("message", "宸茶娉ㄥ唽");
 		}
 		System.out.println(info);
 		return info;
@@ -88,12 +93,12 @@ public class LoginController extends BaseController implements Serializable {
 				return "redirect:/login/registerlockview";
 			}
 			else{
-				map.put("message", "密码错误");
-				System.out.println("密码错误");
+				map.put("message", "瀵嗙爜閿欒");
+				System.out.println("瀵嗙爜閿欒");
 			}
 		}
 		else{
-			map.put("message", "账号不存在");
+			map.put("message", "璐﹀彿涓嶅瓨鍦�");
 		}
 		return "login/login";
 	}
