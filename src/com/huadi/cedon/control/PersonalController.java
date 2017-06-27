@@ -25,5 +25,9 @@ public class PersonalController extends BaseController implements Serializable {
 	public String ownVideoview(ModelMap map, HttpServletRequest request){
 		return "personal_center/ownVideo";
 	}
+	@RequestMapping("uploadview")
+	public String uploadView(ModelMap map, HttpServletRequest request){
+		return "personal_center/upload";
+	}
 	
 }

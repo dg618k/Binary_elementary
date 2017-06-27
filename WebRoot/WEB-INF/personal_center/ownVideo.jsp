@@ -86,28 +86,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="glyphicon glyphicon-calendar"></span>
 								<p><small>已过时间</small></p>
 							</div>	
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="cd_item_img">
-						<img src="img/history_pic1.png" class="img-rounded"> 
-					</div>
-					<div class="cd_item_container">
-						<div class="cd_item_title">资源名称</div>
-						<div class="cd_item_intro">简介</div>
-						<div class="cd_item_tab">
 							<div style="width:20%; float:left">
-								<span class="glyphicon glyphicon-play-circle"></span>
-								<p><small>播放量</small></p>
-							</div>
-							<div style="width:20%; float:left">
-								<span class="glyphicon glyphicon-list-alt"></span>
-								<p><small>收藏数</small></p>
-							</div>
-							<div style="width:20%; float:left">
-								<span class="glyphicon glyphicon-calendar"></span>
-								<p><small>已过时间</small></p>
+								<span class="glyphicon glyphicon-trash"></span>
+								<p><small>删除</small></p>
 							</div>	
 						</div>
 					</div>
@@ -132,6 +113,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="glyphicon glyphicon-calendar"></span>
 								<p><small>已过时间</small></p>
 							</div>	
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-trash"></span>
+								<p><small>删除</small></p>
+							</div>	
 						</div>
 					</div>
 				</li>
@@ -154,6 +139,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div style="width:20%; float:left">
 								<span class="glyphicon glyphicon-calendar"></span>
 								<p><small>已过时间</small></p>
+							</div>	
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-trash"></span>
+								<p><small>删除</small></p>
+							</div>	
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="cd_item_img">
+						<img src="img/history_pic1.png" class="img-rounded"> 
+					</div>
+					<div class="cd_item_container">
+						<div class="cd_item_title">资源名称</div>
+						<div class="cd_item_intro">简介</div>
+						<div class="cd_item_tab">
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-play-circle"></span>
+								<p><small>播放量</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-list-alt"></span>
+								<p><small>收藏数</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-calendar"></span>
+								<p><small>已过时间</small></p>
+							</div>	
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-trash"></span>
+								<p><small>删除</small></p>
 							</div>	
 						</div>
 					</div>
