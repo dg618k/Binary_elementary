@@ -76,6 +76,7 @@ public class LoginController extends BaseController implements Serializable {
 		String sql2 = "insert into user (name,password,email) values(?,?,?)";
 		BaseDao.updateSql(sql2, name, password, email);
 		
+
 		return info;
 	}
 
@@ -99,6 +100,7 @@ public class LoginController extends BaseController implements Serializable {
 		} else {
 			map.put("message", "’À∫≈≤ª¥Ê‘⁄");
 		}
+
 
 		return "login";
 	}

@@ -75,7 +75,7 @@
 }
 
 .middle{
-	height: 1900px;
+	height: 2200px;
 	background-color: #f6f9fa;
 }
 .container-row-1 {
@@ -125,6 +125,7 @@
     float: left;
     padding-right: 12px;
 }
+
 .section-body-videolist-cover {
     width: 147px;
     height: 213px;
@@ -136,6 +137,9 @@
 .section-body-videolist-cover img {
     width: 152px;
     height: 215px;
+}
+.section-body .section-body-videolist li:hover{
+    boder: 1px solid #000;
 }
 #guochan .section-body-videolist-title {
     height: 60px;
