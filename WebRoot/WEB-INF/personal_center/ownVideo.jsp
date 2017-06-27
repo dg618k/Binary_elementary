@@ -29,6 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<p>banner here</p>
 	</div>
 	
+	<!-- 右侧固定栏 -->
 	<div class="cd_view_method">
 		<p>
 			<a href="#"><span class="glyphicon glyphicon-th"></span></a>
@@ -37,14 +38,127 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<a href="#"><span class="glyphicon glyphicon-th-list"></span></a>
 		</p>
 	</div>
+	<div class="cd_video_type_filter">
+			<div>
+				<span class="glyphicon glyphicon-home"></span><a href="#">全部</a>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-phone"></span><a href="#">游戏</a>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-film"></span><a href="#">漫评</a>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-briefcase"></span><a href="#">资讯</a>
+			</div>
+			
+			<span></span>
+			<span></span>
+	</div>
 	<!-- 中部内容 -->
 	<div class="cd_video_main">
-		111
 		<div class="cd_video_head">
-		</div>
-		<div class="cd_video_type_filter">
+			<div class="cd_video_head_title">用户昵称</div>
+			<div class="cd_video_head_sort">
+				<a href="#">最多播放</a> 
+				<a href="#">最近时间</a>
+			</div>
 		</div>
 		<div class="cd_video_item">
+			<ul>
+				<li>
+					<div class="cd_item_img">
+						<img src="img/history_pic1.png" class="img-rounded"> 
+					</div>
+					<div class="cd_item_container">
+						<div class="cd_item_title">资源名称</div>
+						<div class="cd_item_intro">简介</div>
+						<div class="cd_item_tab">
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-play-circle"></span>
+								<p><small>播放量</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-list-alt"></span>
+								<p><small>收藏数</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-calendar"></span>
+								<p><small>已过时间</small></p>
+							</div>	
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="cd_item_img">
+						<img src="img/history_pic1.png" class="img-rounded"> 
+					</div>
+					<div class="cd_item_container">
+						<div class="cd_item_title">资源名称</div>
+						<div class="cd_item_intro">简介</div>
+						<div class="cd_item_tab">
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-play-circle"></span>
+								<p><small>播放量</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-list-alt"></span>
+								<p><small>收藏数</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-calendar"></span>
+								<p><small>已过时间</small></p>
+							</div>	
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="cd_item_img">
+						<img src="img/history_pic1.png" class="img-rounded"> 
+					</div>
+					<div class="cd_item_container">
+						<div class="cd_item_title">资源名称</div>
+						<div class="cd_item_intro">简介</div>
+						<div class="cd_item_tab">
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-play-circle"></span>
+								<p><small>播放量</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-list-alt"></span>
+								<p><small>收藏数</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-calendar"></span>
+								<p><small>已过时间</small></p>
+							</div>	
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="cd_item_img">
+						<img src="img/history_pic1.png" class="img-rounded"> 
+					</div>
+					<div class="cd_item_container">
+						<div class="cd_item_title">资源名称</div>
+						<div class="cd_item_intro">简介</div>
+						<div class="cd_item_tab">
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-play-circle"></span>
+								<p><small>播放量</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-list-alt"></span>
+								<p><small>收藏数</small></p>
+							</div>
+							<div style="width:20%; float:left">
+								<span class="glyphicon glyphicon-calendar"></span>
+								<p><small>已过时间</small></p>
+							</div>	
+						</div>
+					</div>
+				</li>
+			</ul>
 		</div>
 		
 	</div>
