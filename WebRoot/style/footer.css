@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+.footer{
+	height:130px;
+	width: 100%;
+    padding-top: 20px;
+    color: #99a2aa;
+    text-align: center;
+    font-size: 14px;
+    background-color:#eee;
+}
+.webinfo{
+	padding-top:10px;
+ 	padding-bottom:20px;
+ 	font-size:14px;
+ 	color:#aaa;
+ 	margin-top:20px;
+ 	text-align:center
+}
+.webinfo ul li{
+	display: inline;
+	padding: 25px;
+}
+.copy_right {
+ padding-top:10px;
+ padding-bottom:20px;
+ font-size:12px;
+ color:#aaa;
+ margin-top:10px;
+ text-align:center
+}

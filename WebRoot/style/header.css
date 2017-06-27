@@ -1,0 +1,161 @@
+@CHARSET "UTF-8";
+<!-- reset.css -->
+header,footer,main,section,aside,details,menu,article,section,nav,address,hgroup,figure,figcaption,legend{display:block;margin:0;padding:0}time{display:inline}
+body{line-height:1.6}
+html,body,h1,h2,h3,h4,h5,h6,hr,p,iframe,dl,dt,dd,ul,ol,li,pre,form,button,input,textarea,th,td,fieldset{margin:0;padding:0}
+ul,ol,dl{list-style-type:none}
+body,th,td,button,input,select,textarea{font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdana,sans-serif,"WenQuanYi Micro Hei","\5B8B\4F53";font-size:12px;color: #333;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing:grayscale}
+a{text-decoration:none;cursor: pointer}
+a,area{outline:none;blr:expression(this.onFocus=this.blur())}
+a{text-decoration:none;cursor: pointer}
+<!-- reset.css end -->
+
+*{box-sizing: border-box}
+*{word-wrap:break-word}
+:root{
+    --colorRed:#f7796b;
+    --colorBlue:#50b3c5;
+}
+a{
+    color: #000;
+}
+
+header .banner{
+    background: url("../img/main/banner1920.png") no-repeat center;
+    background-size: cover;
+    height: 180px;
+}
+
+header nav{
+    height: 30px;
+    width: 100%;
+    background-color:rgba(0,0,0,.2);
+    position: absolute;
+    top:0;
+    box-shadow: rgba(0,0,0,0.1) 0 1px 2px;
+    min-width: 1280px;
+    z-index: 999;
+}
+nav ul{
+    width: 1280px;
+    margin: 0 auto;
+}
+nav ul:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+nav ul li{
+    float: left;
+}
+
+nav ul li a{
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 30px;
+    padding: 0 10px;
+    background: transparent;
+    transition: background 0.15s;
+    display: block;
+}
+nav ul li a:hover{
+    background: rgba(255,255,255,0.24);
+    transition: background 0.15s;
+}
+.history{float: right; position: relative;}
+
+header .top2{
+	position: relative;
+	height: 50px;
+}
+header .top2 nav {
+    height: 50px;
+    width: 300px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+    min-width: 700px;
+    z-index: 999;
+    float: left;
+}
+
+header .top2 nav ul {
+    width: 640px;
+    margin: 0 auto;
+    margin-left: 200px;
+    margin-top: 6px;
+}
+
+header .top2 nav ul li a{
+    color: black;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 40px;
+    padding: 0 15px;
+    background: transparent;
+    transition: background 0.15s;
+    display: block;
+}
+header .top2 nav ul li{
+	margin-left:20px;
+    float: left;
+}
+.search {
+    position:relative;
+    float: right;
+    top:9px;
+    right:100px;
+    width: 268px;
+    height: 32px;
+    padding: 2px 2px 2px ;
+    background-color: #e5e9ef;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    font-size: 12px;
+    z-index: 10;
+}
+#searchform {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.88);
+    display: block;
+    height: 32px;
+    border-radius: 4px;
+    transition: .2s background-color;
+}
+.search-keyword {
+    float: left;
+    width:200px;
+    color: #222;
+    font-size: 12px;
+    overflow: hidden;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    border: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+input,button {
+    outline: none;
+    resize: none;
+}
+
+.search-submit {
+    display: block;
+    position: absolute;
+    right: 0px;
+    width: 48px;
+    min-width: 0px;
+    cursor: pointer;
+    height: 32px;
+    background: url(//s1.hdslb.com/bfs/static/base/img/icons.d895b84.png) -653px -720px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+
+
