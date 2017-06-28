@@ -34,7 +34,7 @@
 			<div class="h-inner" style="background-image: url(../img/personal_space/personal_spacebg.png)">
 				<div class="h-user"> 
 					<div class="h-avatar"> 
-						<img id="h-avatar" src="//static.hdslb.com/images/member/noface.gif" do-not-click-me-anymore=""> 
+						<img id="h-avatar" src="../img/login/login_logo.jpg" do-not-click-me-anymore=""> 
 						<span class="user-auth-subscript avatar-x"></span> 
 					</div> 
 					<div class="h-info"> 
