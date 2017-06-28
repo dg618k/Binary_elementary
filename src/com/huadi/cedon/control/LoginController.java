@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.imageio.spi.RegisterableService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -31,8 +32,12 @@ public class LoginController extends BaseController implements Serializable {
 	private userMapper userMapper;
 
 	@RequestMapping("register")
+	public String register(){
+		return "login/register";
+	}
+	@RequestMapping("registerInsert")
 	@Transactional(rollbackFor = Exception.class)
-	public String register(user user, HttpServletRequest request) {
+	public String registerInsert(user user, HttpServletRequest request) {
 		if (userMapper.insertSelective(user) > 0) {
 			return "redirect:/login";
 		} else {
