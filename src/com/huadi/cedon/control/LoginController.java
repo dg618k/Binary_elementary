@@ -7,7 +7,6 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
@@ -24,6 +23,7 @@ import com.huadi.cedon.model.user;
 import com.huadi.cedon.jdbc.dao.BaseDao;
 
 @Component
+@RequestMapping("login")
 public class LoginController extends BaseController implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -51,17 +51,17 @@ public class LoginController extends BaseController implements Serializable {
 		Map<String, Object> info = new HashMap<String, Object>();
 		
 		if(StringUtils.isEmpty(name)){
-            info.put("message", "ÓÃ»§Ãû²»ÄÜÎª¿Õ");
+            info.put("message", "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
             return info;
         }
 
         if(StringUtils.isEmpty(password)){
-        	info.put("message", "ÃÜÂë²»ÄÜÎª¿Õ");
+        	info.put("message", "ï¿½ï¿½ï¿½ë²»ï¿½ï¿½Îªï¿½ï¿½");
             return info;
         }
 		
         if(StringUtils.isEmpty(email)){
-            info.put("message", "ÓÊÏä²»ÄÜÎª¿Õ");
+            info.put("message", "ï¿½ï¿½ï¿½ä²»ï¿½ï¿½Îªï¿½ï¿½");
             return info;
         }
         
@@ -69,7 +69,7 @@ public class LoginController extends BaseController implements Serializable {
 
 		if (BaseDao.findOne(sql1, name) != null) {
 			info.put("success", false);
-			info.put("message", "ÒÑ±»×¢²á!");
+			info.put("message", "ï¿½Ñ±ï¿½×¢ï¿½ï¿½!");
 			return info;
 		} 
 		
@@ -95,14 +95,12 @@ public class LoginController extends BaseController implements Serializable {
 				
 				return "redirect:index";
 			} else {
-				map.put("message", "ÃÜÂë´íÎó");
+				map.put("message", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			}
 		} else {
-			map.put("message", "ÕËºÅ²»´æÔÚ");
+			map.put("message", "ï¿½ËºÅ²ï¿½ï¿½ï¿½ï¿½ï¿½");
 		}
-
-
-		return "login";
+		return "login/login";
 	}
 	
 	@RequestMapping(value = {"/logout/"}, method = {RequestMethod.GET, RequestMethod.POST})

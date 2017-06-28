@@ -1,7 +1,9 @@
 package com.huadi.cedon.dao;
 
 import com.huadi.cedon.model.entity;
+import com.huadi.cedon.util.MyBatisRepository;
 
+@MyBatisRepository
 public interface entityMapper {
     int deleteByPrimaryKey(Integer id);
 

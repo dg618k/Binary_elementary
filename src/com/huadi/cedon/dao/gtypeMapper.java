@@ -1,7 +1,9 @@
 package com.huadi.cedon.dao;
 
 import com.huadi.cedon.model.gtype;
+import com.huadi.cedon.util.MyBatisRepository;
 
+@MyBatisRepository
 public interface gtypeMapper {
     int deleteByPrimaryKey(Integer id);
 

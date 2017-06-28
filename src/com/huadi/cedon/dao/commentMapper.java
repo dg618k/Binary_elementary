@@ -1,7 +1,9 @@
 package com.huadi.cedon.dao;
 
 import com.huadi.cedon.model.comment;
+import com.huadi.cedon.util.MyBatisRepository;
 
+@MyBatisRepository
 public interface commentMapper {
     int deleteByPrimaryKey(Integer id);
 
