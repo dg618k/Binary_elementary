@@ -29,6 +29,10 @@
                 <div class="c_clear_both"></div>	
 			</li>
 			<li>
+				<label><input type="text" class="c_reg_input c_fr c_reg_ph" id="phone" name="phone" placeholder="请输入您的昵称"><span>昵称：</span></label>	
+                <div class="c_clear_both"></div>	
+			</li>
+			<li>
 				<label><input type="password" class="c_reg_input c_fr c_reg_lock" name="pwd" id="pwd" placeholder="请输入您的密码"><span>密码：</span></label>
                 <div class="c_clear_both"></div>	
 			</li>
