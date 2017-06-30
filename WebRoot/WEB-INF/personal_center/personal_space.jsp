@@ -23,10 +23,8 @@
         <ul>
              <li class="space_header"><a>喵，欢迎来到史上最好的网站</a></li>
              <li><a href="">主站</a></li>
-             <li><a href="">登陆</a></li>
-             <li><a href="">注册</a></li>
-            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
-            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
+            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">注册</a></li>
+            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">登陆</a></li>
         </ul>
 	</nav>
 	<div class="h">
@@ -54,8 +52,8 @@
              <li><a href="">收藏</a></li>
              <li><a href="">观看历史</a></li>
              <li><a href="">个人视频</a></li>
-            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
-            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
+            <li id="top_tag4" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
+            <li id="top_tag3" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
         </ul>
 	</nav>
 </header>

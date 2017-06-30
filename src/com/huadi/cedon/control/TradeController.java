@@ -29,6 +29,10 @@ public class TradeController extends BaseController implements Serializable {
 	@RequestMapping("tradeview")
 	public String TradeVeiw(ModelMap map,HttpServletRequest request){	
 		return "trade/trade";
+	}
+	@RequestMapping("cartview")
+	public String CartVeiw(ModelMap map,HttpServletRequest request){	
+		return "trade/cart";
 	}	
 
 }

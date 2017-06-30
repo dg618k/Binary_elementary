@@ -56,6 +56,9 @@ nav ul li a{
 #top_tag1{
 	margin-right:100px;
 }
+#top_tag4{
+	;
+}
 nav ul li a:hover{
     color: #00a1d6;
 }
@@ -70,7 +73,7 @@ nav ul li a:hover{
     position: relative;
 }
 .h .h-inner {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAIAAAACDbGyAAAAEElEQVR4AWP48vU7MqKUDwA7qkfh9iF73wAAAABJRU5ErkJggg==");
+    background-image: url("");
     background-position: 50%;
     background-size: cover;
     -webkit-transition: background-image .2s ease,background-size 1s ease;
