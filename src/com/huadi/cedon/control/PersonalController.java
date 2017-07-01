@@ -29,5 +29,52 @@ public class PersonalController extends BaseController implements Serializable {
 	public String uploadView(ModelMap map, HttpServletRequest request){
 		return "personal_center/upload";
 	}
+	@RequestMapping("gerenxiaoxiview")
+	public String Gerenxiaoxi(ModelMap map,HttpServletRequest request){
+		
+		return "personal_center/gerenxiaoxi/gerenxiaoxi";
+	}
 	
+	@RequestMapping("gerenshoucangview")
+	public String gerenshoucang(ModelMap map,HttpServletRequest request){
+		
+		return "personal_center/gerenshoucang";
+		}
+	@RequestMapping("gerenxinxixiugaiview")
+	public String gerenxinxixiugai(ModelMap map,HttpServletRequest request){
+		 
+		return "personal_center/gerenxinxi/gerenxinxixiugai";
+		}
+	
+
+	@RequestMapping("gerenxinxixiugai_qianmingview")
+	public String gerenxinxixiugai_qianming(ModelMap map,HttpServletRequest request){
+	
+	return "personal_center/gerenxinxi/gerenxinxixiugai_qianming";
+	}
+	@RequestMapping("gerenxinxixiugai_touxiangview")
+	public String gerenxinxixiugai_touxiang(ModelMap map,HttpServletRequest request){
+	 
+	return "personal_center/gerenxinxi/gerenxinxixiugai_touxiang";
+	}
+	@RequestMapping("mimaxiugaiview")
+	public String mimaxiugai(ModelMap map,HttpServletRequest request){
+	 
+	return "personal_center/gerenxinxi/mimaxiugai";
+	}
+	@RequestMapping("nichengxiugaiview")
+	public String nichengxiugai(ModelMap map,HttpServletRequest request){
+	 
+	return "personal_center/gerenxinxi/nichengxiugai";
+	}
+	@RequestMapping("qianmingxiugaiview")
+	public String qianmingxiugai(ModelMap map,HttpServletRequest request){
+	
+	return "personal_center/gerenxinxi/qianmingxiugai";
+	}
+	@RequestMapping("touxiangxiugaiview")
+	public String touxiangxiugai(ModelMap map,HttpServletRequest request){
+	
+	return "personal_center/gerenxinxi/touxiangxiugai";
+	}
 }
