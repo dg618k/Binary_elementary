@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBCutil {
-	private static final String PROPERTIES  = "JDBC.properties";
+//	private static final String PROPERTIES  = "JDBC.properties";
 	private static final String DRIVER  = "com.mysql.jdbc.Driver";
-	private static final String RUL 	= "jdbc:mysql://119.28.87.130:3306/javaProject?useUnicode=true&characterEncoding=UTF-8";
+	private static final String RUL 	= "jdbc:mysql://119.28.87.130:3306/ercif?useUnicode=true&characterEncoding=UTF-8";
 	private static final String ROOT  	= "root";
 	private static final String PASSWORD= "12345678";
 	

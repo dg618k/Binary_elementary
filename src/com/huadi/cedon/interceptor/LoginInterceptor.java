@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import oracle.net.aso.s;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,6 +27,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object obj) throws Exception {
+		
 			HttpSession session=request.getSession();
 			Object loginname=session.getAttribute("loginname");
 			String DQurl = request.getRequestURI();
@@ -45,10 +45,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			} else {
 				return true;
 			}
-			
 		
-		//	System.out.println("===============>���Ϲ���");
-		//	return true;
 	}
 
 }

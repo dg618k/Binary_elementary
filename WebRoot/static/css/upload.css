@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+.cd_upload_banner{
+	height:100px; 
+	border:1px dashed black; 
+	text-align:center;
+}
+.cd_upload_main{
+	width:75%;
+	margin:auto;
+	border:1px dashed black;
+}
+.cd_upload_head{
+	width:98%;
+	margin:auto;
+	margin-top:10px;
+	height:30px;
+	text-align:center;
+	border:1px dashed black;
+}
+.cd_upload_head span{
+	width:30%;
+	margin-left:10px;
+	margin-right:10px;
+}
+.cd_upload_container{
+	background-image:url(img/upload.png);
+	width:340px;
+	height:80px;
+	margin:200px;
+	margin-left:330px;
+}
+.cd_upload_tab{
+	text-align:center;
+	width:80%;
+	margin:auto;
+	border:1px dashed black;
+}
+.cd_upload_tab span{
+	margin-left:10px;
+	margin-right:10px;
+	width:20%;
+	text-align:center;
+	border:1px dashed black;
+}

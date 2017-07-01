@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+.cd_banner{
+	height:100px; 
+	border:1px dashed black; 
+	text-align:center;
+}
+.cd_bottom{
+	width: 100%; 
+	border:5px dashed black; 
+	float:left;
+	margin-top:30px; 
+	text-align:center;
+}

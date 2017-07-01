@@ -1,106 +1,121 @@
 package com.huadi.cedon.control;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.imageio.spi.RegisterableService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.huadi.cedon.dao.LoginMapper;
+import com.huadi.cedon.dao.userMapper;
+import com.huadi.cedon.model.user;
 import com.huadi.cedon.jdbc.dao.BaseDao;
-import com.huadi.cedon.model.Login;
 
 @Component
 @RequestMapping("login")
 public class LoginController extends BaseController implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Resource
-	private LoginMapper loginMapper;
-	
-	@RequestMapping("loginview.do")
-	public String LoginVeiw(ModelMap map,HttpServletRequest request){
-		 String name = request.getParameter("tttt");
-		 System.out.println("name==="+name);
-		map.put("name", "lisi");
-		return "login/login";
-	}	
-	@RequestMapping("registerview")
-	public String RegisterVeiw(ModelMap map,HttpServletRequest request){
+	private userMapper userMapper;
+
+	@RequestMapping("register")
+	public String register(){
 		return "login/register";
 	}
-	@RequestMapping("tradeview")
-	public String TradeVeiw(ModelMap map,HttpServletRequest request){
-		
-		return "trade/trade";
-	}	
-	@RequestMapping("registerlockview")
-	public String RegisterlockView(ModelMap map, HttpServletRequest request){
-		map.put("list", BaseDao.findList("select * from login limit 0,10"));
-		return "login/registerlook";
+	@RequestMapping("registerInsert")
+	@Transactional(rollbackFor = Exception.class)
+	public String registerInsert(user user, HttpServletRequest request) {
+		if (userMapper.insertSelective(user) > 0) {
+			return "redirect:/login";
+		} else {
+			return "redirect:/index";
+		}
 	}
-	@RequestMapping("registerInsert")//http://localhost:8080/scdx/login/registerveiw
-	public String registerInsert(Login login,ModelMap map,HttpServletRequest request){
-		System.out.println(map);
-		System.out.println("login="+login);
-		String userName = request.getParameter("userName");
-		//return "redirect:/namespace/toController";
-		
-		if(loginMapper.insertSelective(login)>0){
-			return "redirect:/login/registerlockview";
-		}else{
-			return "redirect:/login/registerview";
-		}
-	}	
-	@RequestMapping("loginAjax")
+
+	@RequestMapping(value = {"/regiaterAjax"}, method = {RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody
-	public Map<String, Object> updateStart(Login login){
+	public Map<String, Object> registerAjax(
+			@RequestParam("name") String name,
+            @RequestParam("password") String password,
+            @RequestParam("email") String email
+            ) throws SQLException {
+		
 		Map<String, Object> info = new HashMap<String, Object>();
-		String sql = "select * from login where user_name = ?";
-		System.out.println(login.getUserName());
-		if(BaseDao.findOne(sql, login.getUserName())==null){
-			info.put("success", true);
-			info.put("message", "");
-		}
-		else{
+		
+		if(StringUtils.isEmpty(name)){
+            info.put("message", "�û�����Ϊ��");
+            return info;
+        }
+
+        if(StringUtils.isEmpty(password)){
+        	info.put("message", "���벻��Ϊ��");
+            return info;
+        }
+		
+        if(StringUtils.isEmpty(email)){
+            info.put("message", "���䲻��Ϊ��");
+            return info;
+        }
+        
+		String sql1 = "select * from login where name = ?";
+
+		if (BaseDao.findOne(sql1, name) != null) {
 			info.put("success", false);
-			info.put("message", "宸茶娉ㄥ唽");
-		}
-		System.out.println(info);
+			info.put("message", "�ѱ�ע��!");
+			return info;
+		} 
+		
+		String sql2 = "insert into user (name,password,email) values(?,?,?)";
+		BaseDao.updateSql(sql2, name, password, email);
+		
+
 		return info;
 	}
-	
-	@RequestMapping("logindo")
-	public String logindo(Login login, ModelMap map, HttpServletRequest request){
-		String sql = "select * from login where user_name = ?";
-		Map<String, Object> map2 = BaseDao.findOne(sql, login.getUserName());
-		if(map2!=null){
-			String password = map2.get("user_password")+"";
-			if(password.equals(login.getUserPassword())){
+
+	@RequestMapping("login")
+	public String logindo(ModelMap map, @RequestParam("name") String name,
+            @RequestParam("password") String password,HttpServletRequest request) {
+		String sql = "select * from uesr where name = ?";
+		Map<String, Object> map2 = BaseDao.findOne(sql, name);
+		if (map2 != null) {
+			String pass = map2.get("loginpass") + "";
+			if (pass.equals(password)) {
 				HttpSession session = request.getSession();
-				session.setAttribute("user_id", map2.get("user_id"));
-				session.setAttribute("user_name", map2.get("user_name"));
-				session.setAttribute("real_name", map2.get("real_name"));
-				System.out.println(session);
-				return "redirect:/login/registerlockview";
+				session.setAttribute("id", map2.get("id"));
+				session.setAttribute("name", map2.get("name"));
+				session.setAttribute("email", map2.get("email"));
+				
+				return "redirect:index";
+			} else {
+				map.put("message", "�������");
 			}
-			else{
-				map.put("message", "瀵嗙爜閿欒");
-				System.out.println("瀵嗙爜閿欒");
-			}
-		}
-		else{
-			map.put("message", "璐﹀彿涓嶅瓨鍦�");
+		} else {
+			map.put("message", "�˺Ų�����");
 		}
 		return "login/login";
 	}
-
+	
+	@RequestMapping(value = {"/logout/"}, method = {RequestMethod.GET, RequestMethod.POST})
+    public String logout(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		session.setAttribute("id", null);
+		session.setAttribute("name", null);
+		session.setAttribute("email", null);
+		
+        return "redirect:/index";
+    }
+	
 }

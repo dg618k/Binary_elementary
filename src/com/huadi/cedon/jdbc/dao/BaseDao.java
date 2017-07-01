@@ -87,7 +87,7 @@ public class BaseDao {
 	public static boolean updateSql(String sql,String...strings) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+//		ResultSet rs = null;
 		conn = JDBCutil.getConnection();//获取链接
 			pstmt = conn.prepareStatement(sql);//
 			if (strings != null){//
