@@ -22,6 +22,7 @@
 </div>
 <!-- header end -->
 <div class="c_reg_wrap">
+<form action="registerInsert" method="get">
 	<div class="c_content">
 		<ul class="c_reg_box">
 			<li>
@@ -76,6 +77,7 @@
         	<div class="c_wechat_back">返回注册</div>
         </div>
 	</div>
+</form>
 </div>
 <!-- footer start -->
     	

@@ -27,11 +27,11 @@
 			            <ul id="comm_login">
 			                <li><p>用户登录</p></li>
 			                <li>
-			                    <label><span class="user_logo c_fl"></span><input type="text" class="login_input c_fl" name="" id="" placeholder="请输入邮箱" required></label>
+			                    <label><span class="user_logo c_fl"></span><input type="text" class="login_input c_fl" name="name" id="" placeholder="请输入用户名" required></label>
+			               		<div class="clear_both"></div>
 			                </li>
-			                <div class="clear_both"></div>
 			                <li>
-			                    <label><span class="pwd_logo c_fl"></span><input type="password" class="login_input c_fl" name="" id="" placeholder="密码" required></label>
+			                    <label><span class="pwd_logo c_fl"></span><input type="password" class="login_input c_fl" name="password" id="" placeholder="密码" required></label>
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li>

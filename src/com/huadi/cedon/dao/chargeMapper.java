@@ -1,7 +1,9 @@
 package com.huadi.cedon.dao;
 
 import com.huadi.cedon.model.charge;
+import com.huadi.cedon.util.MyBatisRepository;
 
+@MyBatisRepository
 public interface chargeMapper {
     int deleteByPrimaryKey(Integer id);
 

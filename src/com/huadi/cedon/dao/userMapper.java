@@ -1,7 +1,9 @@
 package com.huadi.cedon.dao;
 
 import com.huadi.cedon.model.user;
+import com.huadi.cedon.util.MyBatisRepository;
 
+@MyBatisRepository
 public interface userMapper {
     int deleteByPrimaryKey(Integer id);
 

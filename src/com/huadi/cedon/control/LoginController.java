@@ -4,16 +4,15 @@ import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,91 +20,89 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.huadi.cedon.dao.userMapper;
 import com.huadi.cedon.model.user;
+import com.huadi.cedon.util.MD5Util;
 import com.huadi.cedon.jdbc.dao.BaseDao;
 
 @Component
+@RequestMapping("login")
 public class LoginController extends BaseController implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Resource
 	private userMapper userMapper;
-
+	
 	@RequestMapping("register")
+	public String register(ModelMap map, HttpServletRequest request) {
+		return "login/register";
+	}
+	
+	@RequestMapping("registerInsert")
 	@Transactional(rollbackFor = Exception.class)
-	public String register(user user, HttpServletRequest request) {
+	public String registerInsert(user user, HttpServletRequest request) {
 		if (userMapper.insertSelective(user) > 0) {
-			return "redirect:/login";
+			return "redirect:/login/login";
 		} else {
 			return "redirect:/index";
 		}
+		
 	}
 
-	@RequestMapping(value = {"/regiaterAjax"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"regiaterAjax"}, method = {RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody
-	public Map<String, Object> registerAjax(
-			@RequestParam("name") String name,
-            @RequestParam("password") String password,
-            @RequestParam("email") String email
+	public Map<String, Object> registerAjax(user user,
+			@RequestParam(value="name", required = false) String name,
+            @RequestParam(value="password", required = false) String password,
+            @RequestParam(value="email", required = false) String email
             ) throws SQLException {
 		
 		Map<String, Object> info = new HashMap<String, Object>();
-		
-		if(StringUtils.isEmpty(name)){
-            info.put("message", "ÓÃ»§Ãû²»ÄÜÎª¿Õ");
-            return info;
-        }
-
-        if(StringUtils.isEmpty(password)){
-        	info.put("message", "ÃÜÂë²»ÄÜÎª¿Õ");
-            return info;
-        }
-		
-        if(StringUtils.isEmpty(email)){
-            info.put("message", "ÓÊÏä²»ÄÜÎª¿Õ");
-            return info;
-        }
         
 		String sql1 = "select * from login where name = ?";
 
-		if (BaseDao.findOne(sql1, name) != null) {
+		if (BaseDao.findOne(sql1, user.getName()) != null) {
 			info.put("success", false);
-			info.put("message", "ÒÑ±»×¢²á!");
-			return info;
-		} 
+			info.put("message", "è¯¥ç”¨æˆ·åå·²è¢«æ³¨å†Œ!");
+		} else {
+			info.put("success", true);
+			info.put("message", "è¯¥ç”¨æˆ·åå¯ä»¥ä½¿ç”¨");
+			
+			user newUser = new user();
+			newUser.setName(name);
+			newUser.setEmail(email);
+			newUser.setHeadUrl("");
+			newUser.setSalt(UUID.randomUUID().toString().substring(0, 5));
+			newUser.setPassword(MD5Util.MD5(password+user.getSalt()));
+			userMapper.insert(newUser);
+		}
 		
-		String sql2 = "insert into user (name,password,email) values(?,?,?)";
-		BaseDao.updateSql(sql2, name, password, email);
-		
-
 		return info;
 	}
 
 	@RequestMapping("login")
-	public String logindo(ModelMap map, @RequestParam("name") String name,
-            @RequestParam("password") String password,HttpServletRequest request) {
+	public String logindo(ModelMap map, @RequestParam(value="name", required = false) String name,
+            @RequestParam(value="password", required = false) String password,HttpServletRequest request) {
 		String sql = "select * from uesr where name = ?";
 		Map<String, Object> map2 = BaseDao.findOne(sql, name);
 		if (map2 != null) {
-			String pass = map2.get("loginpass") + "";
-			if (pass.equals(password)) {
+			String pass = map2.get("password") + "";
+			if (pass.equals(MD5Util.MD5(password+map2.get("salt")))) {
 				HttpSession session = request.getSession();
 				session.setAttribute("id", map2.get("id"));
 				session.setAttribute("name", map2.get("name"));
 				session.setAttribute("email", map2.get("email"));
 				
-				return "redirect:index";
+				return "redirect:/index";
 			} else {
-				map.put("message", "ÃÜÂë´íÎó");
+				map.put("message", "å¯†ç é”™è¯¯");
 			}
 		} else {
-			map.put("message", "ÕËºÅ²»´æÔÚ");
+			map.put("message", "è´¦å·ä¸å­˜åœ¨");
 		}
 
-
-		return "login";
+		return "login/login";
 	}
 	
-	@RequestMapping(value = {"/logout/"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"logout"}, method = {RequestMethod.GET, RequestMethod.POST})
     public String logout(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		session.setAttribute("id", null);

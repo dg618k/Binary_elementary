@@ -14,9 +14,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.huadi.cedon.dao.LoginMapper;
+import com.huadi.cedon.dao.recordMapper;
 import com.huadi.cedon.jdbc.dao.BaseDao;
-import com.huadi.cedon.model.Login;
 
 @Component
 @RequestMapping("trade")
@@ -24,7 +23,7 @@ public class TradeController extends BaseController implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Resource
-	private LoginMapper tradeMapper;
+	private recordMapper recordMapper;
 	
 	@RequestMapping("tradeview")
 	public String TradeVeiw(ModelMap map,HttpServletRequest request){	

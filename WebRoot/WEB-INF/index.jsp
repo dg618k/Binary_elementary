@@ -22,8 +22,8 @@
   	<nav>
         <ul>
             <li><a>喵，欢迎来到史上最好的网站</a></li>
-             <li><a href="">登陆</a></li>
-              <li><a href="">注册</a></li>
+             <li><a href="http://localhost:8080/Binary_elementary/login/login">登陆</a></li>
+              <li><a href="http://localhost:8080/Binary_elementary/login/register">注册</a></li>
             <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
             <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
             
@@ -33,7 +33,7 @@
 	<div class="top2">
 		<nav>
 	        <ul>
-	            <li><a href="">主页</a></li>
+	            <li><a href="http://localhost:8080/Binary_elementary/index">主页</a></li>
 	            <li><a href="" target="_blank">视频</a></li>
 	            <li><a href="" target="_blank">漫画</a></li>
 	            <li><a href="" target="_blank" rel="nofollow">游戏</a></li>
