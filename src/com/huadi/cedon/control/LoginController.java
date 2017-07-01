@@ -1,17 +1,18 @@
 package com.huadi.cedon.control;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.imageio.spi.RegisterableService;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,15 +36,35 @@ public class LoginController extends BaseController implements Serializable {
 	public String register(){
 		return "login/register";
 	}
-	@RequestMapping("registerInsert")
-	@Transactional(rollbackFor = Exception.class)
-	public String registerInsert(user user, HttpServletRequest request) {
-		if (userMapper.insertSelective(user) > 0) {
-			return "redirect:/login";
-		} else {
-			return "redirect:/index";
-		}
+	
+	@RequestMapping("/registerCheck")
+	@ResponseBody
+	public Boolean registerCheck(user user, HttpServletRequest request) {
+		String email = user.getEmail();
+		if(BaseDao.findOne("select * from user where email = ?", email)==null)
+			return false;
+		return true;
 	}
+	
+	@RequestMapping("/picCheck")
+	@ResponseBody
+	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException{
+		String userinput = request.getParameter("userCode");
+		System.out.println("userCode="+userinput);
+		String clientCheckcode = userinput;
+		generate_pic gen = new generate_pic();
+		gen.doPost(request, response);
+		String serverCheckcode = (String)request.getSession().getAttribute("checkcode");
+		System.out.println("serverCode="+serverCheckcode);
+		return clientCheckcode.equals(serverCheckcode);
+	}
+	
+	@RequestMapping("registerInsert")//http://localhost:8080/scdx/login/registerveiw
+	public String registerInsert(user user,ModelMap map,HttpServletRequest request){
+			return "redirect:../index.jsp";
+	}
+
 
 	@RequestMapping(value = {"/regiaterAjax"}, method = {RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody
@@ -114,7 +135,6 @@ public class LoginController extends BaseController implements Serializable {
 		session.setAttribute("id", null);
 		session.setAttribute("name", null);
 		session.setAttribute("email", null);
-		
         return "redirect:/index";
     }
 	
