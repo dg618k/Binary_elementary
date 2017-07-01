@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-<!-- reset.css -->
+
 header,footer,main,section,aside,details,menu,article,section,nav,address,hgroup,figure,figcaption,legend{display:block;margin:0;padding:0}time{display:inline}
 body{line-height:1.6}
 html,body,h1,h2,h3,h4,h5,h6,hr,p,iframe,dl,dt,dd,ul,ol,li,pre,form,button,input,textarea,th,td,fieldset{margin:0;padding:0}
@@ -8,7 +8,6 @@ body,th,td,button,input,select,textarea{font-family:"Microsoft Yahei","Hiragino 
 a{text-decoration:none;cursor: pointer}
 a,area{outline:none;blr:expression(this.onFocus=this.blur())}
 a{text-decoration:none;cursor: pointer}
-<!-- reset.css end -->
 
 *{box-sizing: border-box}
 *{word-wrap:break-word}

@@ -1,0 +1,261 @@
+@CHARSET "UTF-8";
+
+div, input {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html, body, li, ul, p, a, i {
+    font-family: "Microsoft YaHei";
+    font-style: normal;
+    font-size: 12px;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+img {
+    border: none;
+}
+
+div::before, div::after, ul::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+    visibility: hidden;
+}
+html, body {
+    min-width: 1035px;
+    color: #333;
+}
+html, body, li, ul, p, a, i {
+    font-family: "Microsoft YaHei";
+    font-style: normal;
+    font-size: 12px;
+}
+html, body {
+    min-width: 1035px;
+    color: #333;
+}
+li, ul, p, a, i {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6, input {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+.c_thead {
+	
+    border-radius: 6px;
+    border: 2px solid #eee4e4;
+    margin-top:50px;
+}
+.c_order_content {
+    width: 1035px;
+    margin: 0 auto;
+}
+
+.c_pl {
+    padding-left: 16px;
+    padding-right: 8px;
+}
+.c_th {
+    padding: 12px;
+}
+.c_th_7 {
+    width: 7%;
+}
+.c_th_7 {
+    width: 7%;
+}
+.left {
+    float: left;
+}
+.c_get_all {
+    float: left;
+}
+.c_checkbox_simulate {
+    display: block;
+    *display:inline: ;
+    *zoom:1: ;
+    position: relative;
+    height: 18px;
+    padding-left: 24px;
+}
+.c_checkbox_simulate i {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 5px;
+    border: 2px solid #c4bebe;
+    cursor: pointer;
+}
+.c_checkbox_simulate input {
+    display: block;
+    width: 12px;
+    height: 12px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: pointer;
+}
+.c_th_3 {
+    width: 3%;
+}
+.c_th_10 {
+    width: 10%;
+}
+.c_th_20 {
+    width: 20%;
+}
+.c_th_33 {
+    width: 33%;
+}
+.c_th_37 {
+    width: 37%;
+}
+.c_pl_60 {
+    padding-left: 60px;
+}
+.c_th {
+    padding: 12px;
+}
+
+.left {
+    float: left;
+}
+
+.c_text_c {
+    text-align: center;
+}
+.c_cart_wrap_th {
+    text-align: center;
+}
+.c_order_wrap {
+    overflow: hidden;
+    border: 1px solid #c4bebe;
+    margin-bottom: 6px;
+    margin-top:6px;
+}
+.c_order_wrap :first-child.c_tr {
+    border-top: none;
+}
+
+.c_td {
+    padding: 12px;
+    height: 104px;
+}
+.c_item_checkbox {
+    margin: 15px 0 0 16px;
+}
+
+.c_cart_product_img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+.c_cart_product_name {
+    display: block;
+    width: 230px;
+    float: left;
+    margin: 10px;
+}
+.c_data_text {
+    padding: 30px 12px;
+}
+.c_number_box {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+.number-box span {
+    line-height: 22px;
+    width: 24px;
+    height: 24px;
+}
+.number-box span {
+    width: 34px;
+    height: 28px;
+    background: #eee;
+    cursor: pointer;
+    vertical-align: middle;
+    line-height: 28px;
+    display: inline-block;
+    text-align: center;
+}
+.number-box-dec, .number-box .number-box-num, .number-box-inc {
+    box-sizing: border-box;
+    border: 1px solid #c4bebe;
+}
+.number-box .number-box-num {
+    border-left: none;
+    border-right: none;
+    line-height: 22px;
+    width: 40px;
+    height: 24px;
+}
+.number-box .number-box-num {
+    width: 50px;
+    height: 28px;
+    line-height: 28px;
+    padding: 5px 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    vertical-align: middle;
+    text-align: center;
+}
+.c_cart_subsum {
+    color: #ed3f3f;
+    font-weight: 700;
+}
+.c_cart_del {
+    cursor: pointer;
+}
+.c_go_chkout {
+    width: 100%;
+    background-color: #eee4e4;
+}
+.c_dtl_info, .c_go_chkout {
+    overflow: hidden;
+}
+.c_dtl_info_wrap {
+    overflow: hidden;
+    line-height: 36px;
+}
+.right {
+    float: right;
+}
+.c_need_pay {
+    color: #ed3f3f;
+    font-size: 12px;
+    font-weight: 700;
+}
+.c_dtl_info_wrap {
+    overflow: hidden;
+    line-height: 36px;
+}
+em, strong {
+    font-style: normal;
+}
+.c_sub_btn {
+    width: 140px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    background: #ed3f3f;
+    margin-left: 20px;
+}
+

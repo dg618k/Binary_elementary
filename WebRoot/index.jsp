@@ -22,7 +22,7 @@
   	<nav>
         <ul>
             <li><a>喵，欢迎来到史上最好的网站</a></li>
-             <li><a href="">登陆</a></li>
+             <li><a href="login/loginview.do">登陆</a></li>
               <li><a href="">注册</a></li>
             <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
             <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
