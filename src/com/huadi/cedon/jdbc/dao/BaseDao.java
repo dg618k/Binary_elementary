@@ -87,8 +87,8 @@ public class BaseDao {
 	public static boolean updateSql(String sql,String...strings) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		conn = JDBCutil.getConnection();//鑾峰彇閾炬帴
+//		ResultSet rs = null;
+		conn = JDBCutil.getConnection();//获取链接
 			pstmt = conn.prepareStatement(sql);//
 			if (strings != null){//
 				for (int i = 0; i < strings.length; i++) {
@@ -103,11 +103,11 @@ public class BaseDao {
 	}
 	
 	public static void main(String[] args) throws SQLException {
-		System.out.println("====>List"+findList("select *  from  login   limit 0,50"));
-		System.out.println("====>List"+findList("select *  from  login   where user_id = ? ","1"));
-		System.out.println(findOne("select *  from  login   where user_id = ? ","1"));
-		//UPDATE tbl_name SET col_name1=value1, col_name2=value2, 鈥� WHERE conditions
-		System.out.println("=====>update="+updateSql("update login  set  user_name = ?  where user_id = ? ", "鏉庡洓","2"));
-		System.out.println("=====>update="+updateSql(" insert into login (user_name,user_password,real_name) values(?,?,?)", "寮犱笁","123456","鐜嬮夯瀛�"));
+	//	System.out.println("====>List"+findList("select *  from  login   limit 0,50"));
+	//	System.out.println("====>List"+findList("select *  from  login   where user_id = ? ","1"));
+		System.out.println("result" + findOne("select *  from  user  where email = ? ","dg618k@gmail.com").get("id"));
+		//UPDATE tbl_name SET col_name1=value1, col_name2=value2, … WHERE conditions
+	//	System.out.println("=====>update="+updateSql("update login  set  user_name = ?  where user_id = ? ", "李四","2"));
+	//	System.out.println("=====>update="+updateSql(" insert into login (user_name,user_password,real_name) values(?,?,?)", "张三","123456","王麻子"));
 	}
 }
