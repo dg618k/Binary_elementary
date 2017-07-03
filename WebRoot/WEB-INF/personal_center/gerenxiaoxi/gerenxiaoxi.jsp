@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <ul id="message_pagination_lists">
      
         <li class="message_pagination_list active ">
-            <a href="#reply">
+            <a href="gerenxiaoxi">
                 
                 <span class="message-type">●&nbsp;&nbsp;回复我的</span>
                 
@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </li>
      
         <li class="message_pagination_list  ">
-            <a href="#at">
+            <a href="xiaoxi_aitewo">
                 
                 <span class="message-type">●&nbsp;&nbsp;@&nbsp;我的&nbsp;&nbsp;</span>
                 
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </li>
      
         <li class="message_pagination_list  ">
-            <a href="#love">
+            <a href="xiaoxi_dianzan">
                 
                 <span class="message-type">●&nbsp;&nbsp;收到的赞</span>
                 
@@ -54,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </li>
      
         <li class="message_pagination_list  ">
-            <a href="#system">
+            <a href="xiaoxi_xitong">
                 
                 <span class="message-type">●&nbsp;&nbsp;系统通知</span>
                 
@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </li>
      
         <li class="message_pagination_list  ">
-            <a href="#whisper">
+            <a href="xiaoxi_sixin">
                 
                 <span class="message-type">●&nbsp;&nbsp;我的私信</span>
                 
@@ -71,36 +71,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </a>
         </li>
      
-        <li class="message_pagination_list  config-me">
-            <a href="#config">
-                
-                <span class="message-type"><span class="new-flag"></span><i class="icon-config"></i>消息设置</span>
-                
-                
-            </a>
-        </li>
-    
     </ul>
 </div>
-<div id="message_right" style="min-height: 314px;">
+<div id="message_right" style="min-height: 814px;">
     <div class="message-main">
     <div class="message-title group-title-3">回复我的</div>
-    <ul class="message-main-lists"><li class="message-main-list"><div class="no-data"></div></li></ul>       
-</div></div></div>
-    <script src="//www.bilibili.com/plus/widget/ajaxGetCaptchaKey.php?js" type="text/javascript"></script>
-    <script src="//static.hdslb.com/message/index.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        seajs.use('main', function(app) {
-            app.run();
-        });
-    </script>
-    <script src="//static.hdslb.com/js/core-v5/base.core.js" type="text/javascript"></script>
-    <script src="//data.bilibili.com/rec.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        loadLoginStatus();
-    </script>
-
-<ul class="bilibili-suggest" style="left: 937px; top: 42px; display: none; min-width: 188px; max-width: 360px;"></ul></body></html>
+    <ul class="message-main-lists"><li class="message-main-list">
+    <div class="no-data">
+    </div>
+    </li>
+    </ul>       
+</div>
+</div>
+</div>
+   
   </body>
   </head>
   </html>

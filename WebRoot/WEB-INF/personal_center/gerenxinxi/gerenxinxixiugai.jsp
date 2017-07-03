@@ -34,29 +34,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      </div> 
      <ul class="menu-list">
       <li class="menu-item basic-link on">
-      <a href="login/gerenxinxixiugai" >昵称</a></li>
+      <a href="personal_center/gerenxinxixiugai" >昵称</a></li>
        <li class="menu-split"> </li>
        <li class="menu-item details-link">
-       <a href="login/gerenxinxixiugai_qianming" >个性签名</a> </li>
+       <a href="personal_center/gerenxinxixiugai_qianming" >个性签名</a> </li>
        <li class="menu-split">  </li>
       
        <li class="menu-item portrait-link">
-       <a href="login/gerenxinxixiugai_touxiang">头像</a> </li>
+       <a href="personal_center/gerenxinxixiugai_touxiang">头像</a> </li>
        </ul> 
        <div class="menu-title menu-privacy" id="settingPrivacy"> 
        <h3>资料修改</h3> </div> 
        <ul class="menu-list"> 
        <li class="menu-item tieba-link" id="settingPrivacyTieba">
-       <a href="login/nichengxiugai">昵称修改</a> </li>
+       <a href="personal_center/nichengxiugai">昵称修改</a> </li>
        <li class="menu-split"> </li>
        <li class="menu-item zhidao-link" id="settingPrivacyZhidao">
-       <a href="login/mimaxiugai">密码修改</a> </li>
+       <a href="personal_center/mimaxiugai">密码修改</a> </li>
        <li class="menu-split"> </li>
        <li class="menu-item wenku-link" id="settingPrivacyWenku">
-       <a href="login/qianmingxiugai">签名修改</a>  </li>
+       <a href="personal_center/qianmingxiugai">签名修改</a>  </li>
        <li class="menu-split"> </li>
        <li class="menu-item baike-link" id="settingPrivacyBaike">
-       <a href="login/touxiangxiugai">头像修改</a> </li>
+       <a href="personal_center/touxiangxiugai">头像修改</a> </li>
        <li class="menu-split"> </li>
        </ul> </div>
         <div class="setting-detail" id="stthld" style="display: block;">
@@ -72,8 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <td class="personal-detail-td">
                <textarea name="passport_userdetail" class="mod-cus-input mod-cus-input-4" id="passport_userdetail"></textarea>  
               <span class="mod-cus-input-tip"></span></td></tr></tbody></table> 
-              <input class="setting-submit-btn setting-submit-ml100" type="submit" value="保存">
-              <span class="save-ok" id="tiebaSaveOkMsg"> 你的设置保存成功！ <a class="check-effect" href="https://www.baidu.com/p/soul丶搁浅ii/detail" target="reviewPage">查看效果</a> </span> </form> 
+              
               <iframe width="0" height="0" class="setting-proxy" id="proxy" src="login/gerenxinxixiugai_qianming"></iframe></div></div> </div> </div> </div> </div>
 
       
