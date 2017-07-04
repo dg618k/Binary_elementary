@@ -24,14 +24,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <h3>个人资料</h3>  </div> 
      <ul class="menu-list"> 
      <li class="menu-item basic-link">
-     <a href="gerenxinxixiugai">昵称</a> </li>
+     <a href="gerenxinxixiugaiview">昵称</a> </li>
      <li class="menu-split"> </li>
      <li class="menu-item details-link">
-     <a href="gerenxinxixiugai_qianming">个性签名</a> </li>
+     <a href="gerenxinxixiugai_qianmingview">个性签名</a> </li>
      <li class="menu-split">  </li>
     
      <li class="menu-item portrait-link">
-     <a href="gerenxinxixiugai_touxiang">头像</a> </li>
+     <a href="gerenxinxixiugai_touxiangview">头像</a> </li>
      </ul> 
     
     
@@ -39,16 +39,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <h3>资料修改</h3> </div>
       <ul class="menu-list">
        <li class="menu-item tieba-link" id="settingPrivacyTieba">
-       <a href="nichengxiugai">昵称修改</a> </li>
+       <a href="nichengxiugaiview">昵称修改</a> </li>
        <li class="menu-split"> </li>
        <li class="menu-item zhidao-link on" id="settingPrivacyZhidao">
-       <a href="mimaxiugai">密码修改</a> </li>
+       <a href="mimaxiugaiview">密码修改</a> </li>
        <li class="menu-split"> </li>
        <li class="menu-item wenku-link" id="settingPrivacyWenku">
-       <a href="qianmingxiugai">签名修改</a>  </li>
+       <a href="qianmingxiugaiview">签名修改</a>  </li>
        <li class="menu-split"> </li>
        <li class="menu-item baike-link" id="settingPrivacyBaike">
-       <a href="touxiangxiugai">头像修改</a> </li>
+       <a href="touxiangxiugaiview">头像修改</a> </li>
        <li class="menu-split"> </li></ul> </div> 
        <div class="setting-detail" id="stthld" style="display: block;"> 
        <div class="detail-bg"></div> 

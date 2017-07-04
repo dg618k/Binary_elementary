@@ -3,83 +3,51 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
-  
    <html lang="zh-CN"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="../css/gerenxiaoxi.css" rel="stylesheet" type="text/css">
    
-   
-   
-   
-
 <body id="message_center">
-    		
-
-
     <div id="message_center_box"><div id="message_left">
     <div id="message_head">
         <i class="icon_plane"></i>
         消息中心
     </div>
     <ul id="message_pagination_lists">
-     
         <li class="message_pagination_list active ">
-            <a href="#reply">
-                
-                <span class="message-type">●&nbsp;&nbsp;回复我的</span>
-                
-                
+            <a href="#reply">         
+                <span class="message-type">●&nbsp;&nbsp;回复我的</span>           
             </a>
         </li>
-     
         <li class="message_pagination_list  ">
-            <a href="#at">
-                
-                <span class="message-type">●&nbsp;&nbsp;@&nbsp;我的&nbsp;&nbsp;</span>
-                
-                
+            <a href="#at">        
+                <span class="message-type">●&nbsp;&nbsp;@&nbsp;我的&nbsp;&nbsp;</span>       
             </a>
         </li>
-     
         <li class="message_pagination_list  ">
-            <a href="#love">
-                
+            <a href="#love">          
                 <span class="message-type">●&nbsp;&nbsp;收到的赞</span>
-                
-                
             </a>
         </li>
      
         <li class="message_pagination_list  ">
-            <a href="#system">
-                
-                <span class="message-type">●&nbsp;&nbsp;系统通知</span>
-                
-                
+            <a href="#system">                
+                <span class="message-type">●&nbsp;&nbsp;系统通知</span>          
             </a>
         </li>
      
-        <li class="message_pagination_list  ">
-            <a href="#whisper">
-                
-                <span class="message-type">●&nbsp;&nbsp;我的私信</span>
-                
-                
+        <li class="message_pagination_list">
+            <a href="#whisper">             
+                <span class="message-type">●&nbsp;&nbsp;我的私信</span>             
             </a>
-        </li>
-     
+        </li> 
         <li class="message_pagination_list  config-me">
-            <a href="#config">
-                
+            <a href="#config">       
                 <span class="message-type"><span class="new-flag"></span><i class="icon-config"></i>消息设置</span>
-                
-                
             </a>
         </li>
-    
     </ul>
 </div>
 <div id="message_right" style="min-height: 314px;">
@@ -99,7 +67,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript">
         loadLoginStatus();
     </script>
-
 <ul class="bilibili-suggest" style="left: 937px; top: 42px; display: none; min-width: 188px; max-width: 360px;"></ul></body></html>
   </body>
   </head>

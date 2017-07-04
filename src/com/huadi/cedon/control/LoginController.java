@@ -51,19 +51,21 @@ public class LoginController extends BaseController implements Serializable {
 	@ResponseBody
 	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException{
-		String userinput = request.getParameter("userCode");
-		System.out.println("userCode="+userinput);
-		String clientCheckcode = userinput;
-		generate_pic gen = new generate_pic();
-		gen.doPost(request, response);
-		String serverCheckcode = (String)request.getSession().getAttribute("checkcode");
-		System.out.println("serverCode="+serverCheckcode);
-		return clientCheckcode.equals(serverCheckcode);
+//		String userinput = request.getParameter("userCode");
+//		System.out.println("userCode="+userinput);
+//		String clientCheckcode = userinput;
+//		generate_pic gen = new generate_pic();
+//		gen.doPost(request, response);
+//		String serverCheckcode = (String)request.getSession().getAttribute("checkcode");
+//		System.out.println("serverCode="+serverCheckcode);
+//		if(clientCheckcode.equals(serverCheckcode))
+//			return true;
+		return false;
 	}
 	
 	@RequestMapping("registerInsert")//http://localhost:8080/scdx/login/registerveiw
 	public String registerInsert(user user,ModelMap map,HttpServletRequest request){
-			return "redirect:../index.jsp";
+			return "redirect:../index";
 	}
 
 
@@ -93,31 +95,44 @@ public class LoginController extends BaseController implements Serializable {
 			newUser.setPassword(MD5Util.MD5(password+user.getSalt()));
 			userMapper.insert(newUser);
 		}
-		
 		return info;
 	}
-
+	
 	@RequestMapping("login")
-	public String logindo(ModelMap map, @RequestParam(value="name", required = false) String name,
-            @RequestParam(value="password", required = false) String password,HttpServletRequest request) {
-		String sql = "select * from uesr where name = ?";
+	public String logindo(ModelMap map, HttpServletRequest request) {
+		return "login/login";
+	}
+
+	@RequestMapping("loginCheck")
+	public String loginCheck(ModelMap map, @RequestParam(value="name", required = true) String name,
+            @RequestParam(value="password", required = true) String password, HttpServletRequest request) {
+		String sql = "select * from user where email = ?";
+		System.out.println("name="+name+" password="+password);
 		Map<String, Object> map2 = BaseDao.findOne(sql, name);
 		if (map2 != null) {
 			String pass = map2.get("password") + "";
-			if (pass.equals(MD5Util.MD5(password+map2.get("salt")))) {
+			if(pass.equals(password)){
+				System.out.println("name="+name+" password="+password); 
 				HttpSession session = request.getSession();
 				session.setAttribute("id", map2.get("id"));
 				session.setAttribute("name", map2.get("name"));
 				session.setAttribute("email", map2.get("email"));
-				
-				return "redirect:/index";
-			} else {
+				return "redirect:../index";
+			}
+//			if (pass.equals(MD5Util.MD5(password+map2.get("salt")))){
+//				System.out.println("name="+name+" password="+password); 
+//				HttpSession session = request.getSession();
+//				session.setAttribute("id", map2.get("id"));
+//				session.setAttribute("name", map2.get("name"));
+//				session.setAttribute("email", map2.get("email"));
+//				return "redirect:index";
+//			} 
+			else {
 				map.put("message", "密码错误");
 			}
 		} else {
 			map.put("message", "账号不存在");
 		}
-
 		return "login/login";
 	}
 	

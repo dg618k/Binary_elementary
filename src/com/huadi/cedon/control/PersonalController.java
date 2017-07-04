@@ -50,8 +50,6 @@ public class PersonalController extends BaseController implements Serializable {
 		 
 		return "personal_center/gerenxinxi/gerenxinxixiugai";
 		}
-	
-
 	@RequestMapping("gerenxinxixiugai_qianmingview")
 	public String gerenxinxixiugai_qianming(ModelMap map,HttpServletRequest request){
 	

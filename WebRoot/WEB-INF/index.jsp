@@ -9,11 +9,6 @@
 <link rel="stylesheet"  type="text/css"  href="style/footer.css"/>
 <link rel="stylesheet"  type="text/css"  href="style/main.css"/>
 <script src="static/js/jquery-1.8.3.min.js"></script>
-
-<style type="text/css">
-
-
-</style>
 <title>主页</title>
 </head>
 <body>
@@ -22,11 +17,15 @@
   	<nav>
         <ul>
             <li><a>喵，欢迎来到史上最好的网站</a></li>
-             <li><a href="http://localhost:8080/Binary_elementary/login/login">登陆</a></li>
-              <li><a href="http://localhost:8080/Binary_elementary/login/register">注册</a></li>
+           <c:if test="${user != null }">
+    				 <li><a>${user}</a></li>
+    		</c:if>
+    		<c:if test="${user == null }">
+    				<li><a href="login/login">登陆</a></li>
+            		<li><a href="login/register">注册</a></li>
+    		</c:if>
             <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
-            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
-            
+            <li id="top_tag0" class="history"><a href="trade/cartview" target="_blank" rel="nofollow">购物车</a></li>
         </ul>
 	</nav>
 	<div class="banner"></div>
@@ -38,7 +37,7 @@
 	            <li><a href="" target="_blank">漫画</a></li>
 	            <li><a href="" target="_blank" rel="nofollow">游戏</a></li>
 	            <li><a href="" target="_blank" rel="nofollow">资讯</a></li>
-	            <li><a href="" target="_blank" rel="nofollow">周边</a></li>
+	            <li><a href="trade/tradeview" target="_blank" rel="nofollow">周边</a></li>
 	            <li id="top_tag0" class="history">
 	            </li>
 	        </ul>
@@ -57,12 +56,21 @@
     	<div class="container-lunbo">
 			<div id="slide" class="slide" >
 				<!-- 轮播图片数量可自行增减 -->
-				<div class="img"><img src="img/main/4.jpg"/></div>
-				<div class="img"><img src="img/main/4.jpg"/></div>
-				<div class="img"><img src="img/main/4.jpg"/></div>
-				<div class="img"><img src="img/main/4.jpg"/></div>
-				<div class="img"><img src="img/main/4.jpg"/></div>
-			
+				<div class="img">
+					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
+				</div>
+				<div class="img">
+					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
+				</div>
+				<div class="img">
+					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
+				</div>
+				<div class="img">
+					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
+				</div>
+				<div class="img">
+					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
+				</div>
 				<div class="slide-bt"></div>
 			</div>
 		</div>
@@ -223,7 +231,7 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li>
+                    <li  style="margin-left:30px">
                         <a href="">
                             <div class="section-body-videolist-cover">
                                 <img src="img/main/middle_box.jpg"/>
@@ -304,7 +312,7 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li>
+                    <li style="margin-left:30px">
                         <a href="">
                             <div class="section-body-videolist-cover">
                                 <img src="img/main/middle_box.jpg"/>
@@ -385,7 +393,7 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li>
+                    <li style="margin-left:30px">
                         <a href="">
                             <div class="section-body-videolist-cover">
                                 <img src="img/main/middle_box.jpg"/>
@@ -466,7 +474,7 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li>
+                    <li style="margin-left:30px">
                         <a href="">
                             <div class="section-body-videolist-cover">
                                 <img src="img/main/middle_box.jpg"/>
@@ -547,7 +555,7 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li>
+                    <li style="margin-left:30px">
                         <a href="">
                             <div class="section-body-videolist-cover">
                                 <img src="img/main/middle_box.jpg"/>

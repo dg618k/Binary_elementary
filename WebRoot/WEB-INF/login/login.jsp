@@ -23,7 +23,7 @@
     		</div>
     		<div class="login_wrap">
     			<div class="content">
-			        <form action="" method="post" class="login_box c_fr">
+			        <form action="loginCheck" method="post" class="login_box c_fr">
 			            <ul id="comm_login">
 			                <li><p>用户登录</p></li>
 			                <li>
@@ -45,7 +45,7 @@
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li>
-			                    <a href="###" class="btn login_btn c_fl fake_a" id="login-btn">登录</a>
+			                    <input type="submit" class="btn login_btn c_fl fake_a" id="login-btn" value="登录" >
 			                    <a href="" class="btn reg_btn c_fl" id="reg-btn" href="">快速注册</a>
 			                    <div class="clear_both"></div>
 			                </li>
