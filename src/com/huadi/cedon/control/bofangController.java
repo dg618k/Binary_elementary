@@ -16,7 +16,7 @@ public class bofangController extends BaseController implements Serializable  {
 	private static final long serialVersionUID = 1L;
 
 	@RequestMapping("bofangview")
-	public String historyView(ModelMap map,HttpServletRequest request){
+	public String bofangview(ModelMap map,HttpServletRequest request){
 		return "bofang/bofang";
 	}
 }
