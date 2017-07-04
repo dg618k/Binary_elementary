@@ -26,9 +26,9 @@
 		destroy-method="close">
 		<!--可以写成配置文件 -->
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://119.28.87.130:3306/ercif?characterEncoding=UTF-8" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ercif?characterEncoding=UTF-8" />
 		<property name="user" value="root" />
-		<property name="password" value="12345678" />
+		<property name="password" value="56965486" />
 		<property name="minPoolSize" value="1" />
 		<property name="maxPoolSize" value="2" />
 		
@@ -49,6 +49,11 @@
 	</bean>
 	
 	<!-- 开启事务注释扫描 -->
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource2" />
+	</bean>
+	
 	<tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
 	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 	

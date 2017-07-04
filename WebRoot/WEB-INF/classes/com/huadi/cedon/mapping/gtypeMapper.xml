@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huadi.cedon.dao.gtypeMapper">
@@ -79,4 +80,87 @@
       second_type = #{secondType,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huadi.cedon.dao.gtypeMapper">
+  <resultMap id="BaseResultMap" type="com.huadi.cedon.model.gtype">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="first_type" jdbcType="INTEGER" property="firstType" />
+    <result column="second_type" jdbcType="INTEGER" property="secondType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, goods_id, first_type, second_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from gtype
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from gtype
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.huadi.cedon.model.gtype">
+    insert into gtype (id, goods_id, first_type, 
+      second_type)
+    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{firstType,jdbcType=INTEGER}, 
+      #{secondType,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huadi.cedon.model.gtype">
+    insert into gtype
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+      <if test="firstType != null">
+        first_type,
+      </if>
+      <if test="secondType != null">
+        second_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="firstType != null">
+        #{firstType,jdbcType=INTEGER},
+      </if>
+      <if test="secondType != null">
+        #{secondType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huadi.cedon.model.gtype">
+    update gtype
+    <set>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="firstType != null">
+        first_type = #{firstType,jdbcType=INTEGER},
+      </if>
+      <if test="secondType != null">
+        second_type = #{secondType,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huadi.cedon.model.gtype">
+    update gtype
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      first_type = #{firstType,jdbcType=INTEGER},
+      second_type = #{secondType,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+>>>>>>> 15e5bb4508598a882cfb9e1a896fc7e28b8b6f4c
 </mapper>

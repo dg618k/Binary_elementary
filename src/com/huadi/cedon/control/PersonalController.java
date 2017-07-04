@@ -108,4 +108,5 @@ public class PersonalController extends BaseController implements Serializable {
 	
 	return "personal_center/gerenxinxi/touxiangxiugai";
 	}
+
 }

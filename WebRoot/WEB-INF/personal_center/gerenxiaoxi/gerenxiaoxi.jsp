@@ -3,29 +3,19 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
-  
    <html lang="zh-CN"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="../css/gerenxiaoxi.css" rel="stylesheet" type="text/css">
    
-   
-   
-   
-
 <body id="message_center">
-    		
-
-
     <div id="message_center_box"><div id="message_left">
     <div id="message_head">
         <i class="icon_plane"></i>
         消息中心
     </div>
     <ul id="message_pagination_lists">
-     
         <li class="message_pagination_list active ">
             <a href="gerenxiaoxi">
                 
@@ -34,7 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 
             </a>
         </li>
-     
         <li class="message_pagination_list  ">
             <a href="xiaoxi_aitewo">
                 
@@ -43,13 +32,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 
             </a>
         </li>
-     
         <li class="message_pagination_list  ">
             <a href="xiaoxi_dianzan">
                 
                 <span class="message-type">●&nbsp;&nbsp;收到的赞</span>
-                
-                
             </a>
         </li>
      

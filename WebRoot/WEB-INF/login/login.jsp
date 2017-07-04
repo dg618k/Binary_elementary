@@ -23,15 +23,15 @@
     		</div>
     		<div class="login_wrap">
     			<div class="content">
-			        <form action="" method="post" class="login_box c_fr">
+			        <form action="loginCheck" method="post" class="login_box c_fr">
 			            <ul id="comm_login">
 			                <li><p>用户登录</p></li>
 			                <li>
-			                    <label><span class="user_logo c_fl"></span><input type="text" class="login_input c_fl" name="" id="" placeholder="请输入邮箱" required></label>
+			                    <label><span class="user_logo c_fl"></span><input type="text" class="login_input c_fl" name="name" id="" placeholder="请输入用户名" required></label>
+			               		<div class="clear_both"></div>
 			                </li>
-			                <div class="clear_both"></div>
 			                <li>
-			                    <label><span class="pwd_logo c_fl"></span><input type="password" class="login_input c_fl" name="" id="" placeholder="密码" required></label>
+			                    <label><span class="pwd_logo c_fl"></span><input type="password" class="login_input c_fl" name="password" id="" placeholder="密码" required></label>
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li>
@@ -45,7 +45,7 @@
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li>
-			                    <a href="###" class="btn login_btn c_fl fake_a" id="login-btn">登录</a>
+			                    <input type="submit" class="btn login_btn c_fl fake_a" id="login-btn" value="登录" >
 			                    <a href="" class="btn reg_btn c_fl" id="reg-btn" href="">快速注册</a>
 			                    <div class="clear_both"></div>
 			                </li>
