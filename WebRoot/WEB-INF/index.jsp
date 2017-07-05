@@ -58,10 +58,10 @@
 			<div id="slide" class="slide" >
 				<!-- 轮播图片数量可自行增减 -->
 				<div class="img"><img src="img/main/4.jpg"/></div>
-				<div class="img"><img src="img/main/4.jpg"/></div>
-				<div class="img"><img src="img/main/4.jpg"/></div>
-				<div class="img"><img src="img/main/4.jpg"/></div>
-				<div class="img"><img src="img/main/4.jpg"/></div>
+				<div class="img"><img src="img/main/1.jpg"/></div>
+				<div class="img"><img src="img/main/2.jpg"/></div>
+				<div class="img"><img src="img/main/3.jpg"/></div>
+				<div class="img"><img src="img/main/5.jpg"/></div>
 			
 				<div class="slide-bt"></div>
 			</div>
@@ -223,72 +223,23 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li>
-                        <a href="">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/anime/swglxhdsj/">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/anime/duannao/">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+               		<c:forEach items="${cartoon}" var="c">
+                    	<li>
+	                        <a href="">
+	                            <div class="section-body-videolist-cover">
+	                                <img src="img/main/middle_box.jpg"/>
+	                                <div class="section-body-videolist-title">
+	                                    <p class="title">${c.title}</p>
+	                                    <c:forEach items="${type}" var="t">
+	                                    	<c:if test="${t.entity_id == c.id }">
+	                                    		<p class="genre">${t.second_type}</p>
+	                                    	</c:if>
+	                                    </c:forEach>
+	                                </div>
+	                            </div>
+	                        </a>
+	                    </li>
+                    </c:forEach>
                     <div class="clear"></div>
                 </ul>
             </div>

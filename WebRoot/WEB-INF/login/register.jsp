@@ -101,7 +101,7 @@
 			</li>
 			<li>
 				<input type="submit" value="注&nbsp;&nbsp;册" class="c_btn c_btn_reg c_fl" id="reg-btn">
-				<a href="i.php?c=login" class="c_btn c_btn_login c_fl" id="login-btn">返回登录</a>
+				<a href="http://localhost:8080/Binary_elementary/login/login" class="c_btn c_btn_login c_fl" id="login-btn">返回登录</a>
 				<div class="c_clear_both"></div>
 			</li>
 			<li class="c_wq_login">

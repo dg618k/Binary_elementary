@@ -28,7 +28,7 @@ public class IndexController extends BaseController implements Serializable  {
 	userMapper userMapper;
 	
 	private String search(int type){
-		return "select * from entity where entity_type = " + type + "order by score limit 0,6";
+		return "select * from entity where type = " + type + " order by score DESC limit 0,6";
 	}
 	
 	@RequestMapping("index")
@@ -38,8 +38,9 @@ public class IndexController extends BaseController implements Serializable  {
 		map.put("comic", BaseDao.findList(search(EntityType.ENTITY_COMMIC)));
 		map.put("news", BaseDao.findList(search(EntityType.ENTITY_NEWS)));
 		map.put("goods", BaseDao.findList(search(EntityType.ENTITY_GOODS)));
+		map.put("type", BaseDao.findList("select * from etype "));
 		
-		map.put("user", user.getName());
+		map.put("user", "a");
 		
 		return "index";
 	}
