@@ -23,9 +23,8 @@
   	<nav>
         <ul>
              <li class="space_header"><a>喵，欢迎来到史上最好的网站</a></li>
-             <li><a href="">主站</a></li>
-            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">注册</a></li>
-            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">登陆</a></li>
+             <li><a href="../index">主站</a></li>
+            <li id="top_tag1" class="history"><a href="../login/login" target="_blank" rel="nofollow">注销</a></li>
         </ul>
 	</nav>
 	<div class="h">
@@ -38,7 +37,10 @@
 					</div> 
 					<div class="h-info"> 
 						<div class="h-basic"> 
-							<span id="h-name">户用议</span>  
+							<c:if test="${name != null }">
+								<span id="h-name"> ${name} </span> 
+							</c:if>
+							 
 						</div> 
 						<div title="" class="h-sign" style="display: none;"></div> 
 					</div> 
@@ -90,16 +92,12 @@
 	                    </div>
 	                    <div class="c_td c_th_37 left">
 	                        <a class="c_cart_product_img" href="index.php?a=p&amp;id=7780" target="_blank">
-	                            <img width="100%" alt="商品" src="http://f.p.cycangcdn.com/1467711054083.jpg">
-	                             
-	
+	                            <img width="100%" alt="商品" src="../img/goods/goods1.jpg">
 	                        </a>
 	                        <a class="c_cart_product_name" href="index.php?a=p&amp;id=7780" target="_blank">某商品</a>
 	                    </div>
-	                    <div class="c_td c_th_10 left c_data_text c_text_c">
-	                         
+	                    <div class="c_td c_th_10 left c_data_text c_text_c">                 
 	                            <p>¥19.80</p>
-	                        
 	                    </div>
 	                    <div class="c_td c_th_20 left c_data_text">
 	                        

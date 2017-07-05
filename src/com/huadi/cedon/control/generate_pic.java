@@ -64,5 +64,4 @@ public class generate_pic extends HttpServlet {
         response.setHeader("Pragma", "no-cache");
         ImageIO.write(img, "jpeg", response.getOutputStream());
     }
- 
 }

@@ -25,7 +25,7 @@
             		<li><a href="login/register">注册</a></li>
     		</c:if>
             <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
-            <li id="top_tag0" class="history"><a href="trade/cartview" target="_blank" rel="nofollow">购物车</a></li>
+            <li id="top_tag0" class="history"><a href="toCart" target="_blank" rel="nofollow">购物车</a></li>
         </ul>
 	</nav>
 	<div class="banner"></div>

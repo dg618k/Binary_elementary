@@ -1,6 +1,7 @@
 package com.huadi.cedon.control;
 
 import java.io.Serializable;
+import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +46,10 @@ public class IndexController extends BaseController implements Serializable  {
 //		map.put("goods", BaseDao.findList(search(EntityType.ENTITY_GOODS)));
 		map.put("user", name);
 		return "index";
+	}
+	@RequestMapping("toCart")
+	public String toCart(ModelMap map, HttpServletRequest request){
+		return "redirect:trade/cartview";
 	}
 	
 	@RequestMapping("user/{userId}")
