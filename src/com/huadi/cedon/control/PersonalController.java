@@ -34,50 +34,79 @@ public class PersonalController extends BaseController implements Serializable {
 		return "personal_center/upload";
 
 	}
-	@RequestMapping("gerenxiaoxiview")
+	@RequestMapping("gerenxiaoxi")
 	public String Gerenxiaoxi(ModelMap map,HttpServletRequest request){
 		
 		return "personal_center/gerenxiaoxi/gerenxiaoxi";
 	}
 	
-	@RequestMapping("gerenshoucangview")
-	public String gerenshoucang(ModelMap map,HttpServletRequest request){
+	@RequestMapping("shipinshoucang")
+	public String shipinshoucang(ModelMap map,HttpServletRequest request){
 		
-		return "personal_center/gerenshoucang";
+		return "personal_center/gerenshoucang/shipinshoucang";
 		}
-	@RequestMapping("gerenxinxixiugaiview")
+	@RequestMapping("manhuashoucang")
+	public String manhuashoucang(ModelMap map,HttpServletRequest request){
+		
+		return "personal_center/gerenshoucang/manhuashoucang";
+		}
+	@RequestMapping("xiaoxi_aitewo")
+	public String xiaoxi_aitewo(ModelMap map,HttpServletRequest request){
+		
+		return "personal_center/gerenxiaoxi/xiaoxi_aitewo";
+	}
+	@RequestMapping("xiaoxi_dianzan")
+	public String xiaoxi_dianzan(ModelMap map,HttpServletRequest request){
+		
+		return "personal_center/gerenxiaoxi/xiaoxi_dianzan";
+	}
+	@RequestMapping("xiaoxi_sixin")
+	public String xiaoxi_sixin(ModelMap map,HttpServletRequest request){
+		
+		return "personal_center/gerenxiaoxi/xiaoxi_sixin";
+	}
+
+	@RequestMapping("xiaoxi_xitong")
+	public String xiaoxi_xitong(ModelMap map,HttpServletRequest request){
+		 
+		return "personal_center/gerenxiaoxi/xiaoxi_xitong";
+	}
+   @RequestMapping("gerenxinxixiugai")
 	public String gerenxinxixiugai(ModelMap map,HttpServletRequest request){
 		 
 		return "personal_center/gerenxinxi/gerenxinxixiugai";
 		}
-	@RequestMapping("gerenxinxixiugai_qianmingview")
+	
+
+	@RequestMapping("gerenxinxixiugai_qianming")
 	public String gerenxinxixiugai_qianming(ModelMap map,HttpServletRequest request){
 	
 	return "personal_center/gerenxinxi/gerenxinxixiugai_qianming";
 	}
-	@RequestMapping("gerenxinxixiugai_touxiangview")
+	@RequestMapping("gerenxinxixiugai_touxiang")
 	public String gerenxinxixiugai_touxiang(ModelMap map,HttpServletRequest request){
 	 
 	return "personal_center/gerenxinxi/gerenxinxixiugai_touxiang";
 	}
-	@RequestMapping("mimaxiugaiview")
+	@RequestMapping("mimaxiugai")
 	public String mimaxiugai(ModelMap map,HttpServletRequest request){
 	 
 	return "personal_center/gerenxinxi/mimaxiugai";
 	}
-	@RequestMapping("nichengxiugaiview")
+	@RequestMapping("nichengxiugai")
 	public String nichengxiugai(ModelMap map,HttpServletRequest request){
 	 
 	return "personal_center/gerenxinxi/nichengxiugai";
 	}
-	@RequestMapping("qianmingxiugaiview")
+	@RequestMapping("qianmingxiugai")
 	public String qianmingxiugai(ModelMap map,HttpServletRequest request){
 	
 	return "personal_center/gerenxinxi/qianmingxiugai";
 	}
-	@RequestMapping("touxiangxiugaiview")
+	@RequestMapping("touxiangxiugai")
 	public String touxiangxiugai(ModelMap map,HttpServletRequest request){
 	
 	return "personal_center/gerenxinxi/touxiangxiugai";
 	}
+
 }
