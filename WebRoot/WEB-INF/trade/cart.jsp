@@ -48,8 +48,8 @@
 	</div>
 	<nav class="top2">
         <ul>
-             <li class="space_header"><a>个人信息</a></li>
-             <li><a href="">消息</a></li>
+             <li class="space_header"><a href="../personal_center/gerenxinxixiugaiview">个人信息</a></li>
+             <li><a href="../personal_center/gerenxiaoxiview">消息</a></li>
              <li><a href="">收藏</a></li>
              <li><a href="">观看历史</a></li>
              <li><a href="">个人视频</a></li>

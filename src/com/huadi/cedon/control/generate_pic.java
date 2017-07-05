@@ -11,7 +11,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
+
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class generate_pic extends HttpServlet {
 	private static final long serialVersionUID = 3038623696184546092L;
     private Random random = new Random();
@@ -59,8 +62,7 @@ public class generate_pic extends HttpServlet {
         response.setDateHeader("expries", -1);
         response.setHeader("Cache-Control", "no-cache");
         response.setHeader("Pragma", "no-cache");
-        ImageIO.write(img, "jpg", response.getOutputStream());
-        System.out.println("图片输出完成"); 
+        ImageIO.write(img, "jpeg", response.getOutputStream());
     }
  
 }

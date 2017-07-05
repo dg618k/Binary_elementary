@@ -25,7 +25,6 @@
 </div>
 <!-- header end -->
 <div class="c_reg_wrap">
-<form action="registerInsert" method="get">
 	<div class="c_content">
 		<form action="registerInsert" onsubmit="return checkall();" method="post">
 		<ul class="c_reg_box">
@@ -76,7 +75,7 @@
 					<span>验证码：</span>
 					<input type="text" class="c_reg_input c_reg_input_v c_fl" onblur="check_pic()" id="check_img" name="captcha" placeholder="请输入验证码">
 				</label>
-				<img src="../img/login/ver.png" class="c_fl" onclick="changeImg()" id="verify" title="点击换一张">
+				<img src="${pageContext.request.contextPath}/generate_pic" class="c_fl" onclick="changeImg()" id="verify" title="点击换一张">
 				<div id="pic_diff" class="input_error">
 				 	<p class="glyphicon glyphicon-remove">验证失败</p>
 				 </div>
@@ -109,7 +108,7 @@
 				<span class="c_fl">合作账号登录：</span>
 				<span class="c_fl"  title="微博">
 					<a href="" target="_blank">
-						<div class="c_weibo_icon c_fl"></div>微博登录
+						<div class="c_weibo_icon c_fl"></div> 微博登录
 					</a>
 				</span>
 				<span class="c_fl" title="QQ">
@@ -130,7 +129,6 @@
         	<div class="c_wechat_back">返回注册</div>
         </div>
 	</div>
-</form>
 </div>
 <!-- footer start -->	
     	<div class="footer">
@@ -147,22 +145,12 @@
 <!-- footer end -->
 <script type="text/javascript">
 	var flag1 = flag2 = flag3 = flag4 = flag5 = false;
-	function chgUrl(url){  
-  		var timestamp = (new Date()).valueOf();  
-  		url = url.substring(0,20);  
-  		if((url.indexOf("&")>=0)){  
-    		url = url + "×tamp=" + timestamp;  
-  		}
-  		else{  
-   			url = url + "?timestamp=" + timestamp;  
-  		}  
-  		return url;  
-	}  
+	var email=$("#email").val();
 	function changeImg(){
-		document.getElementById("verify").src="${pageContext.request.contextPath}/servlet/DrawImage?"+Math.random();
+		$("#verify").src=$("#verify")+Math.random();
 	}
 	function checkemail(){
-		var email=$("#email").val();
+		email = $("#email").val();
 		if(email==""){
 			$("#emailerror1").css("display","block");
 			$("#emailerror2").css("display","none");
@@ -252,13 +240,20 @@
    				}
    			});
 	}
+	function setCookie(cname, cvalue, exdays) {  
+    	var d = new Date();  
+   		d.setTime(d.getTime() + (exdays*24*60*60*1000));  
+    	var expires = "expires="+d.toUTCString();  
+    	document.cookie = cname + "=" + cvalue + "; " + expires;  
+	}  
 	function checkall(){
 		checkemail();
 		checkpassword();
-		if(flag1&&flag2&&flag3)
+		if(flag1&&flag2&&flag3){
+			setCookie("username",email, 1);
 			return true;
-		else 
-			return false;
+		}
+		return false;
 	}
 </script>
 </body>
