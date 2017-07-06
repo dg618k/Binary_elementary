@@ -30,22 +30,19 @@ public class TradeController extends BaseController implements Serializable {
 	@RequestMapping("cartview")
 	public String CartVeiw(ModelMap map,HttpServletRequest request){
 		String user_id = request.getSession().getAttribute("id").toString();
-		Object name = request.getSession().getAttribute("name");
-		System.out.println(user_id+";"+name);
-		String sql = "select * from record where user_id = ?";
+		Object user_name = request.getSession().getAttribute("name");
+		Object user_pic = request.getSession().getAttribute("url");
+		System.out.println(user_pic);
+		map.put("user_name", user_name);
+		map.put("user_url", user_pic);
+		String sql = "select * from goods where id in (select goods_id from record where user_id = ?)";
 		List<Map<String, Object>> map1 = BaseDao.findList(sql, user_id);
-		for(Map<String, Object> attribute : map1) {
-			String goods_id = attribute.get("goods_id").toString();
-			String sql1 = "select * from goods where id = ?";
-			Map<String, Object> map2 = BaseDao.findOne(sql1, goods_id);
-			map.put("pic", map2.get("url"));
-			map.put("name", map2.get("name"));
-			map.put("price", map2.get("price"));
-			map2.put("remainder", map2.get("number"));
-			System.out.println(map2);
-			System.out.print(user_id);
-		}
+		map.put("items", map1);
 		return "trade/cart";
+	}
+	@RequestMapping("toPersonalInfo")
+	public String ToPersonalInfo(ModelMap map, HttpServletRequest request){
+		return "redirect:../personal_center/gerenxinxixiugai";
 	}
 
 }

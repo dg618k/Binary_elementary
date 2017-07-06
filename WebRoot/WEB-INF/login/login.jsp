@@ -7,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"  type="text/css"  href="../style/login.css"/>
 <link rel="stylesheet"  type="text/css"  href="../style/footer.css"/>
+<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="../static/js/jquery-3.2.1.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
 <title>登陆</title>
 </head>
 <body>
@@ -25,7 +28,15 @@
     			<div class="content">
 			        <form action="loginCheck" method="post" class="login_box c_fr">
 			            <ul id="comm_login">
-			                <li><p>用户登录</p></li>
+			                <li>
+			                	<div style="font-size:18px;float:left">用户登录</div>
+			                	<c:if test="${message!=null }">
+			                		<div style="float:left; margin-left:30px; font-size:11px; color:red; margin-top:6px;">
+			                			<span class="glyphicon glyphicon-remove"></span>${message }
+			                		</div>
+			                	</c:if>
+			                	<div class="clear_both"></div>
+			                </li>
 			                <li>
 			                    <label><span class="user_logo c_fl"></span><input type="text" class="login_input c_fl" name="name" id="" placeholder="请输入用户名" required></label>
 			               		<div class="clear_both"></div>
@@ -35,18 +46,24 @@
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li>
-			                    <label><span class="v_code_font c_fl">验证码:</span><input type="text" class="v_code_input c_fl" name="" id="" placeholder="验证码" required></label>
-			                    <img src="../img/login/ver.png" class="v_code_img c_fl" id="" title="点击换一张" align="absmiddle">
+			                    <label>
+			                    	<span class="v_code_font c_fl" style="margin-top:5px;">验证码:</span>
+			                    	<input type="text" class="v_code_input c_fl" style="margin-top:5px" name="" id="" placeholder="验证码" required>
+			                    </label>
+			                    	<img src="../img/login/ver.png" class="v_code_img c_fr" id="" title="点击换一张" align="absmiddle">
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li>
-			                    <label><input type="checkbox" class="c_fl" name="remember" id="remember"><span class="remember c_fl" >记住我</span></label>
-			                    <a href="" class="remember c_fr">忘记密码？</a>
+			                    <label>
+			                    	<input type="checkbox" class="c_fl" name="remember" id="remember">
+			                    	<span class="remember c_fl" style="margin-top:5px;">记住我</span>
+			                    </label>
+			                    <a href="" class="remember c_fr" style="margin-top:5px">忘记密码？</a>
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li>
 			                    <input type="submit" class="btn login_btn c_fl fake_a" id="login-btn" value="登录" >
-			                    <a href="" class="btn reg_btn c_fl" id="reg-btn" href="">快速注册</a>
+			                    <a href="register" class="btn reg_btn c_fl" id="reg-btn">快速注册</a>
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li class="c_wq_login">
