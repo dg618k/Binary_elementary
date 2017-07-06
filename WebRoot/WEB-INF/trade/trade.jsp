@@ -92,15 +92,15 @@
 				</div>
 
 				<div class="right c_floor_btn">
-					<a class="c_floor_change" href="javascript:;" data-start="0" data-chid="5" data-href="index.php?c=page&amp;a=page&amp;nums=8&amp;chid=">换一批</a>
-					<a class="c_floor_more" href="index.php?a=page&amp;chid=5" target="_blank">更多</a>
+					<a class="c_floor_change" href="javascript:;">换一批</a>
+					<a class="c_floor_more" href="" target="_blank">更多</a>
 				</div>
 			</div>
 			<ul class="c_product_list">
 			<li id="li1" class="animated fade">
-				<a href="index.php?a=p&amp;id=7709" target="_blank">
-					<img class="c_lazyload" alt="【SICS希丞品牌店】樱花布 卸妆神器 漫展必备 清水即可卸浓妆 日常妆 各种妆面" src="../img/trade/item.jpg">
-					<p class="c_product_name">【SICS希丞品牌店】樱花布 卸妆神器 漫展必备 清水即可卸浓妆 日常妆 各种妆面</p>
+				<a href="" target="_blank">
+					<img class="c_lazyload" alt="妆面" src="../img/trade/item.jpg">
+					<p class="c_product_name">妆面</p>
 					
 					<p class="c_prduct_price">¥19.80</p>
 					
@@ -108,9 +108,9 @@
 			</li>
 		
 			<li id="li2" class="animated fade">
-				<a href="index.php?a=p&amp;id=3317" target="_blank">
-					<img class="c_lazyload" alt="【希丞SICS品牌店】小凤凰活体鼻贴膜 无伤害去黑头缩毛孔" src="../img/trade/item.jpg">
-					<p class="c_product_name">【希丞SICS品牌店】小凤凰活体鼻贴膜 无伤害去黑头缩毛孔</p>
+				<a href="" target="_blank">
+					<img class="c_lazyload" alt="贴膜" src="../img/trade/item.jpg">
+					<p class="c_product_name">贴膜</p>
 					
 					<p class="c_prduct_price">¥15.00</p>
 					
@@ -118,9 +118,9 @@
 			</li>
 		
 			<li id="li3"class="animated fade">
-				<a href="index.php?a=p&amp;id=2573" target="_blank">
-					<img class="c_lazyload" alt="【主宰者】透气隐形 束胸 裹胸 cos汉子必备" src="../img/trade/item.jpg">
-					<p class="c_product_name">【主宰者】透气隐形 束胸 裹胸 cos汉子必备</p>
+				<a href="" target="_blank">
+					<img class="c_lazyload" alt="汉子必备" src="../img/trade/item.jpg">
+					<p class="c_product_name">汉子必备</p>
 					
 					<div class="c_price_wrap">
 						<span>折扣价</span>
@@ -132,9 +132,9 @@
 			</li>
 		
 			<li id="li4"class="animated fade">
-				<a href="index.php?a=p&amp;id=8759" target="_blank">
-					<img class="c_lazyload" alt="现货【桂】苏葉 洛丽塔空气刘海 青灰色日常软妹lolita原宿假发" src="../img/trade/item.jpg">
-					<p class="c_product_name">现货【桂】苏葉 洛丽塔空气刘海 青灰色日常软妹lolita原宿假发</p>
+				<a href="" target="_blank">
+					<img class="c_lazyload" alt="原宿假发" src="../img/trade/item.jpg">
+					<p class="c_product_name">假发</p>
 					
 					<div class="c_price_wrap">
 						<span>折扣价</span>

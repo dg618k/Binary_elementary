@@ -59,7 +59,7 @@ img {
     border-bottom: 1px solid #ed3f3f;
 }
 .c_cat_nav h1 {
-    width: 180px;
+    width: 190px;
     background-color: #d43e3e;
     color: #fff;
     font-size: 15px;
@@ -137,6 +137,7 @@ img {
 .c_floor_btn {
     margin: 28px 0;
     overflow: hidden;
+    margin-right:50px;
 }
 .right {
     float: right;
@@ -184,7 +185,7 @@ img {
 
 .c_product_list li img {
     display: block;
-    width: 226px;
+    width: 224px;
     height: 226px;
 }
 .c_prduct_price {
