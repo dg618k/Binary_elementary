@@ -48,11 +48,9 @@ public class IndexController extends BaseController implements Serializable  {
 		return "index";
 	}
 	
-	@RequestMapping("user/{userId}")
-	public String userIndex(ModelMap map, @PathVariable("userId") int userId) {	
-		String sql = "select * from user where id = " + userId;
-		map.put("user", BaseDao.findOne(sql));
-		return "userIndex";
+	@RequestMapping("userIndex")
+	public String userIndex(ModelMap map) {	
+		return "redirect:/personal_center/perSpaceview";
 	}
 	
 }

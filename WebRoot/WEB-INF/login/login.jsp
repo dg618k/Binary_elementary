@@ -46,7 +46,7 @@
 			                </li>
 			                <li>
 			                    <input type="submit" class="btn login_btn c_fl fake_a" id="login-btn" value="登录" >
-			                    <a href="" class="btn reg_btn c_fl" id="reg-btn" href="">快速注册</a>
+			                    <a href="http://localhost:8080/Binary_elementary/login/register" class="btn reg_btn c_fl" id="reg-btn" href="">快速注册</a>
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li class="c_wq_login">
