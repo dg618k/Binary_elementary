@@ -93,10 +93,13 @@ public class PersonalController extends BaseController implements Serializable {
 
 		return "personal_center/gerenxiaoxi/xiaoxi_xitong";
 	}
-
-	@RequestMapping("gerenxinxixiugai")
-	public String gerenxinxixiugai(ModelMap map, HttpServletRequest request) {
-
+	
+	//个人信息显示及修改
+   @RequestMapping("gerenxinxixiugai")
+	public String gerenxinxixiugai(ModelMap map,HttpServletRequest request){
+		Object user_name = request.getSession().getAttribute("name");
+		map.put("user_name", user_name);
+	   
 		return "personal_center/gerenxinxi/gerenxinxixiugai";
 	}
 

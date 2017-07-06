@@ -8,10 +8,11 @@
 <link rel="stylesheet"  type="text/css"  href="../style/cart.css"/>
 <link rel="stylesheet"  type="text/css"  href="../style/header(1).css"/>
 <link rel="stylesheet"  type="text/css"  href="../style/personal_space.css"/>
+<script src="../static/js/jquery-3.2.1.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
 <script src=""></script>
 
 <style type="text/css">
-
 
 </style>
 <title>主页</title>
@@ -23,22 +24,34 @@
   	<nav>
         <ul>
              <li class="space_header"><a>喵，欢迎来到史上最好的网站</a></li>
-             <li><a href="">主站</a></li>
-            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">注册</a></li>
-            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">登陆</a></li>
+             <li><a href="../index">主站</a></li>
+            <li id="top_tag1" class="history"><a href="../login/login" target="_blank" rel="nofollow">注销</a></li>
         </ul>
 	</nav>
 	<div class="h">
 		<div class="wrapper">
 			<div class="h-inner" style="background-image: url(../img/personal_space/personal_spacebg.png)">
 				<div class="h-user"> 
-					<div class="h-avatar"> 
-						<img id="h-avatar" src="../img/login/login_logo.jpg" do-not-click-me-anymore=""> 
+					<div class="h-avatar">
+						<c:if test="${user_url != null}">
+							<img id="h-avatar" src="../img/login/${url}" do-not-click-me-anymore=""> 
+						</c:if>
+						<c:if test="${user_url == null}">
+							<img id="h-avatar" src="../img/login/login_logo.jpg" do-not-click-me-anymore=""> 
+						</c:if> 
 						<span class="user-auth-subscript avatar-x"></span> 
 					</div> 
 					<div class="h-info"> 
 						<div class="h-basic"> 
-							<span id="h-name">户用议</span>  
+							<c:if test="${user_name != null }">
+								<span id="h-name"> ${user_name} </span> 
+							</c:if>
+							<c:if test="${user_name == null }">
+								<script language="JavaScript">
+   									 window.location.replace("target.aspx");
+								</script>
+							</c:if>
+							 
 						</div> 
 						<div title="" class="h-sign" style="display: none;"></div> 
 					</div> 
@@ -48,11 +61,11 @@
 	</div>
 	<nav class="top2">
         <ul>
-             <li class="space_header"><a href="../personal_center/gerenxinxixiugaiview">个人信息</a></li>
-             <li><a href="../personal_center/gerenxiaoxiview">消息</a></li>
-             <li><a href="">收藏</a></li>
-             <li><a href="">观看历史</a></li>
-             <li><a href="">个人视频</a></li>
+             <li class="space_header"><a href="toPersonalInfo">个人信息</a></li>
+             <li><a href="../personal_center/gerenxiaoxi">消息</a></li>
+             <li><a href="../personal_center/shipinshoucang">收藏</a></li>
+             <li><a href="../personal_center/historyview">观看历史</a></li>
+             <li><a href="../personal_center/ownVideoview">个人视频</a></li>
             <li id="top_tag4" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
             <li id="top_tag3" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
         </ul>
@@ -64,17 +77,10 @@
     	<div class="c_order_content">
     			<!-- cart head -->
     			<div class="c_thead">
-                    <div class="c_th_7 c_th left c_pl">
-                        <div class="c_checkbox_simulate c_get_all J_get_all" id="J_get_all">
-                            <label>
-                                <i><input type="checkbox"></i>
-                            </label>
-                        </div>
-                        	全选
-                    </div>
-                    <div class="c_th_33 c_th left c_pl_60">商品信息</div>
-                    <div class="c_th_10 c_th left c_text_c">销售价</div>
-                    <div class="c_th_20 c_th c_cart_wrap_th left">数量</div>
+                    
+                    <div class="c_th_33 c_th left c_pl_60" style="margin-left:30px;text-align:center">商品信息</div>
+                    <div class="c_th_10 c_th left c_text_c" style="margin-left:42px;text-align:center">销售价</div>
+                    <div class="c_th_20 c_th c_cart_wrap_th left" style="text-align:center">数量</div>
                     <div class="c_th_10 c_th left">库存</div>
                     <div class="c_th_10 c_th left">小计</div>
                     <div class="c_th_10 c_th left">操作</div>
@@ -83,47 +89,83 @@
                 <div class="c_order_wrap" data-order="2102001">
                 
 	                <div class="c_tr c_tr_item " data-order="2102001" data-sku-id="24449" data-product-id="7780">
+	                	<c:set value="0" var="sum" />
+	                	<c:set var="index" value="0" />
+	                	<c:forEach items="${items}" var="item">
 	                    <div class="c_td c_th_3 left c_checkbox_simulate c_item_select_box">
 	                        <label>
-	                            <i class=" c_item_checkbox"><input type="checkbox" data-product-type="0"></i>
+	                            <i class=" c_item_checkbox"><input type="checkbox" checked="checked" name="ttttt"  /></i>
 	                        </label>
 	                    </div>
 	                    <div class="c_td c_th_37 left">
 	                        <a class="c_cart_product_img" href="index.php?a=p&amp;id=7780" target="_blank">
-	                            <img width="100%" alt="商品" src="http://f.p.cycangcdn.com/1467711054083.jpg">
-	                             
-	
+	                            <img width="100%" alt="商品" src="../img/goods/${item.url}">
 	                        </a>
-	                        <a class="c_cart_product_name" href="index.php?a=p&amp;id=7780" target="_blank">某商品</a>
+	                        <a class="c_cart_product_name" href="index.php?a=p&amp;id=7780" target="_blank">${item.name}</a>
 	                    </div>
-	                    <div class="c_td c_th_10 left c_data_text c_text_c">
-	                         
-	                            <p>¥19.80</p>
-	                        
+	                    <div class="c_td c_th_10 left c_data_text c_text_c">                 
+	                            <p>¥ ${item.price}</p>
 	                    </div>
 	                    <div class="c_td c_th_20 left c_data_text">
-	                        
 	                        <div class="number-box c_number_box">
-	                            <span class="number-box-dec c_number_box_dec">-</span><input disabled="disabled" class="number-box-num c_number_box_num" value="1"><span class="number-box-inc c_number_box_inc">+</span>
-	                        </div>
-	                                           
+	                            <span class="number-box-dec c_number_box_dec" onclick="minusNum(${index},${item.price})" id="minus${index}">-</span>
+	                            <input disabled="disabled" class="number-box-num c_number_box_num" id="num${index}" value="1">
+	                            <span class="number-box-inc c_number_box_inc" onclick="plusNum(${index}, ${item.number},${item.price})" id="plus${index}">+</span>
+	                        </div>                                         
 	                    </div>
-	                    <div class="c_td c_th_10 left c_data_text">有货</div>
-	                    <div class="c_td c_th_10 left c_data_text"><span class="c_cart_subsum">¥19.80</span></div>
-	                    <div class="c_td c_th_10 left c_data_text"><span class="cart-del c_cart_del ">删除</span></div>
-	                    
+	                    <div class="c_td c_th_10 left c_data_text"> ${item.number} </div>
+	                    <div class="c_td c_th_10 left c_data_text"><span class="c_cart_subsum" id="singlePrice${index}">${item.price}</span></div>
+	                    <div class="c_td c_th_10 left c_data_text"><span class="cart-del c_cart_del">删除</span></div>
+	                    <c:set value="${sum + item.price}" var="sum" />
+	                    <c:set var="index" value="${index+1}" /> 
+	                    </c:forEach>
 	                </div>
             	</div>
             	<!-- cart bottom -->
             	<div class="c_go_chkout">
                 <div class="c_dtl_info_wrap right">
-                  	  应付总额:  <span class="c_need_pay">¥<em class="c_pay_total">59.40</em></span>
+                  	  应付总额:  <span class="c_need_pay">¥<em class="c_pay_total" id="sumPrice">${sum}</em></span>
                     <a class="c_sub_btn">结算</a>
                 </div>
             </div>
-           
     	</div>	
     </div>	
     <!-- middle end -->
+    <script type="text/javascript">
+    	function minusNum(index, price){
+    		var num = $("#num"+index).val();
+    		if(num!="0"){
+    			num = parseInt(num);
+    			num--;
+    		}
+    		$("#num"+index).attr("value", num);
+    		var price1 = $("#singlePrice"+index).text();
+    		var sumPrice = $("#sumPrice").text();
+    		sumPrice = parseFloat(sumPrice);
+    		price1 = parseFloat(price1);
+    		price = parseFloat(price);
+    		if(price1 >= price){
+    			$("#singlePrice"+index).text(price1-price);
+    			$("#sumPrice").text(sumPrice-price);
+    		}
+    	}
+    	function plusNum(index, maxnum, price){
+    		var num = $("#num"+index).val()
+    		if(num!=maxnum){
+    			num = parseInt(num);
+    			num++;
+    		}
+    		$("#num"+index).attr("value", num);
+    		var price1 = $("#singlePrice"+index).text();
+    		var sumPrice = $("#sumPrice").text();
+    		sumPrice = parseFloat(sumPrice);
+    		price1 = parseFloat(price1);
+    		price = parseFloat(price);
+    		if(num!=maxnum){
+    			$("#singlePrice"+index).text(price1+price);
+    			$("#sumPrice").text(sumPrice+price);
+    		}
+    	}
+    </script>
   </body>
 </html>

@@ -29,7 +29,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			HttpServletResponse response, Object obj) throws Exception {
 		
 			HttpSession session=request.getSession();
-			Object name=session.getAttribute("name");
+			Object name = session.getAttribute("name");
 			String DQurl = request.getRequestURI();
 
 			if(DQurl.contains("/Binary_elementary/login/")){

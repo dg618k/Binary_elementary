@@ -10,7 +10,6 @@ public class JDBCutil {
 	private static final String RUL 	= "jdbc:mysql://localhost:3306/ercif?useUnicode=true&characterEncoding=UTF-8";
 	private static final String ROOT  	= "root";
 	private static final String PASSWORD= "123456";
-	
 	public static Connection getConnection() {
 		Connection conn = null;
 		try {
