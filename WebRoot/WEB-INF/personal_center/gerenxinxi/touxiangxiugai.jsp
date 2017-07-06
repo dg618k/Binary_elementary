@@ -25,14 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <h3>个人资料</h3>  </div> 
      <ul class="menu-list"> 
      <li class="menu-item basic-link">
-     <a href="personal_center/gerenxinxixiugai">昵称</a> </li>
-     <li class="menu-split"> </li>
-     <li class="menu-item details-link">
-     <a href="personal_center/gerenxinxixiugai_qianming">个性签名</a> </li>
-     <li class="menu-split">  </li>
-    
-     <li class="menu-item portrait-link">
-     <a href="personal_center/gerenxinxixiugai_touxiang">头像</a> </li>
+     <a href="personal_center/gerenxinxixiugai">个人信息</a> </li>
      </ul> 
     
     

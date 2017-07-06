@@ -1,12 +1,15 @@
 package com.huadi.cedon.control;
 
 import java.io.Serializable;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.huadi.cedon.jdbc.dao.BaseDao;
 
 @Component
 @RequestMapping("personal_center")
@@ -75,23 +78,18 @@ public class PersonalController extends BaseController implements Serializable {
 	//个人信息显示及修改
    @RequestMapping("gerenxinxixiugai")
 	public String gerenxinxixiugai(ModelMap map,HttpServletRequest request){
-		Object user_name = request.getSession().getAttribute("name");
-		map.put("user_name", user_name);
-	   
+		String user_id = request.getSession().getAttribute("id").toString();
+		String sql = "select * from user where id = ?";
+		Map<String, Object> map1 = BaseDao.findOne(sql, user_id);
+		map.put("user_name", map1.get("name"));
+		map.put("user_signal", map1.get("signal"));
+		map.put("user_sex", map1.get("sex"));
+		map.put("user_tele", map1.get("tele"));
+		map.put("user_money", map1.get("money"));
+		map.put("user_url", map1.get("head_url"));
 		return "personal_center/gerenxinxi/gerenxinxixiugai";
 	}
 	
-
-	@RequestMapping("gerenxinxixiugai_qianming")
-	public String gerenxinxixiugai_qianming(ModelMap map,HttpServletRequest request){
-	
-	return "personal_center/gerenxinxi/gerenxinxixiugai_qianming";
-	}
-	@RequestMapping("gerenxinxixiugai_touxiang")
-	public String gerenxinxixiugai_touxiang(ModelMap map,HttpServletRequest request){
-	 
-	return "personal_center/gerenxinxi/gerenxinxixiugai_touxiang";
-	}
 	@RequestMapping("mimaxiugai")
 	public String mimaxiugai(ModelMap map,HttpServletRequest request){
 	 
