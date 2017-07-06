@@ -62,6 +62,24 @@
     <!-- middle start -->
     <div class="middle">
     	<div class="c_order_content">
+    		<div class="address">
+	    		
+	    		<div>
+	    		<span style="margin-right: 10px">配送至：</span>
+				<input type="text" id="city" />
+				</div>
+				<script src="../static/js/jquery-1.11.3.min.js"></script>
+				<script src="../static/js/Popt.js"></script>
+				<script src="../static/js/cityJson.js"></script>
+				<script src="../static/js/citySet.js"></script>
+				<script type="text/javascript">
+				$(function(){
+					$("#city").click(function (e) {
+						SelCity(this,e);
+					});
+				})
+				</script>
+			</div>
     			<!-- cart head -->
     			<div class="c_thead">
                     <div class="c_th_7 c_th left c_pl">
@@ -90,11 +108,9 @@
 	                    </div>
 	                    <div class="c_td c_th_37 left">
 	                        <a class="c_cart_product_img" href="index.php?a=p&amp;id=7780" target="_blank">
-	                            <img width="100%" alt="商品" src="http://f.p.cycangcdn.com/1467711054083.jpg">
-	                             
-	
+	                            <img width="100%" alt="商品" src="../img/trade/item.jpg">
 	                        </a>
-	                        <a class="c_cart_product_name" href="index.php?a=p&amp;id=7780" target="_blank">某商品</a>
+	                        <a class="c_cart_product_name" href="" target="_blank">某商品</a>
 	                    </div>
 	                    <div class="c_td c_th_10 left c_data_text c_text_c">
 	                         
@@ -118,12 +134,36 @@
             	<div class="c_go_chkout">
                 <div class="c_dtl_info_wrap right">
                   	  应付总额:  <span class="c_need_pay">¥<em class="c_pay_total">59.40</em></span>
-                    <a class="c_sub_btn">结算</a>
+                    <a class="c_sub_btn" onclick=clickTest()>结算</a>
                 </div>
             </div>
-           
     	</div>	
-    </div>	
+    </div>
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <div id="alipay" class="pay" style="display:none">
+  			<div class="payHead">
+  			<h2>扫码支付</h2>
+  			</div>
+  			<div class="payCodediv"style="">
+  				<div class="payCode">
+  					<img width="100%"src="../img/trade/pay.png" >
+  				</div>
+  			</div>
+  			<div class="payBottom">
+  				<div id="closediv">确定</div>
+  			</div>
+  		</div>
+    <script type="text/javascript">
+  		function clickTest(){
+      	$("#alipay").css({"display":"block"});
+  		}
+ 	 	$(function(){
+      		$("#closediv").click(function(){
+      		$("#alipay").css({"display":"none"});
+      	});
+  		});
+ 	 
+  	</script>
     <!-- middle end -->
   </body>
 </html>
