@@ -1,5 +1,7 @@
 package com.huadi.cedon.model;
 
+import java.util.Date;
+
 public class user {
     private Integer id;
 
@@ -22,8 +24,18 @@ public class user {
     private String tele;
 
     private Double money;
+    
+    private Date createdDate;
+    
+    public Date getCreatedDate() {
+		return createdDate;
+	}
 
-    public Integer getId() {
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public Integer getId() {
         return id;
     }
 
