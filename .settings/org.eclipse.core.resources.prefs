@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
 encoding//WebRoot/WEB-INF/trade/trade.jsp=UTF-8
 encoding//src/com/huadi/cedon/control/LoginController.java=UTF-8
+<<<<<<< HEAD
+encoding//src/com/huadi/cedon/jdbc/dao/BaseDao.java=UTF-8
+=======
 encoding/<project>=UTF-8
+>>>>>>> eb8a13c6da44d99f7c00dd771fdfed0a8ea260e8

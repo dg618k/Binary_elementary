@@ -29,18 +29,21 @@ public class LoginInterceptor implements HandlerInterceptor {
 			HttpServletResponse response, Object obj) throws Exception {
 		
 			HttpSession session=request.getSession();
-			Object loginname=session.getAttribute("loginname");
+			Object id = session.getAttribute("id");
 			String DQurl = request.getRequestURI();
-			System.out.println("DQurl="+DQurl);
-			if(DQurl.contains("/scdx/login/")){
+
+			if(DQurl.contains("/Binary_elementary/login/")){
 				return true;
 			}
-			if(DQurl.contains("/scdx/static/")){
+			if(DQurl.contains("/Binary_elementary/index")){
 				return true;
 			}
-			if(loginname == null) {
+			if(DQurl.contains("/Binary_elementary/static/")){
+				return true;
+			}
+			if(id == null) {
 				response.sendRedirect(
-					request.getContextPath() + "/login/loginveiw.do");
+					request.getContextPath() + "/index");
 				return false;
 			} else {
 				return true;

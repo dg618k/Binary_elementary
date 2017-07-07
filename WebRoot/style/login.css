@@ -34,7 +34,7 @@ div,input{box-sizing:border-box;-webkit-box-sizing:border-box}
 .login_box li:first-child{margin-top:24px}
 .v_code_font{font-size:16px;color:#666;line-height:42px}
 .v_code_input{display:block;height:42px;width:110px;border:1px solid #d3d3d3;border-radius:4px;-moz-border-radius:4px;padding:10px;font-size:16px}
-.v_code_input,.v_code_img{margin-left:18px}
+.v_code_input,.v_code_img{margin-left:8px}
 .remember{font-size:12px;color:#666;margin:-3px 0 0 10px}
 .login_box ul li:nth-child(2){margin-top:24px}
 .btn{width:160px;height:42px;border-radius:4px;box-sizing:border-box;cursor:pointer}

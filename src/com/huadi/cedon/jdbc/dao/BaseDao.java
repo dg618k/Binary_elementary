@@ -18,7 +18,7 @@ public class BaseDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		conn = JDBCutil.getConnection();//获取链接
+		conn = JDBCutil.getConnection();//鑾峰彇閾炬帴
 		try {
 			pstmt = conn.prepareStatement(sql);//
 			if (strings != null){//
@@ -26,9 +26,9 @@ public class BaseDao {
 					pstmt.setObject(i + 1, strings[i]);
 				}
 			}
-			rs =  pstmt.executeQuery();//运行SQL
+			rs =  pstmt.executeQuery();//杩愯SQL
 			while (rs.next()) {
-				l.add(toEntity(rs));//解析结果集
+				l.add(toEntity(rs));//瑙ｆ瀽缁撴灉闆�
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -36,7 +36,7 @@ public class BaseDao {
 		return l;
 	}
 	/**
-	 * 查询单个对象
+	 * 鏌ヨ鍗曚釜瀵硅薄
 	 * @param sql
 	 * @param strings
 	 * @return
@@ -45,7 +45,7 @@ public class BaseDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		conn = JDBCutil.getConnection();//获取链接
+		conn = JDBCutil.getConnection();//鑾峰彇閾炬帴
 		try {
 			pstmt = conn.prepareStatement(sql);//
 			if (strings != null){//
@@ -53,7 +53,7 @@ public class BaseDao {
 					pstmt.setObject(i + 1, strings[i]);
 				}
 			}
-			rs =  pstmt.executeQuery();//运行SQL
+			rs =  pstmt.executeQuery();//杩愯SQL
 			while (rs.next()) {
 				return toEntity(rs);
 			}
@@ -64,9 +64,9 @@ public class BaseDao {
 	}
 	
 	public static Map<String, Object> toEntity(ResultSet rs) {
-		 Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Object> map = new HashMap<String, Object>();
 		try {
-			ResultSetMetaData data = (ResultSetMetaData) rs.getMetaData();//获取 运行sql的查询字段
+			ResultSetMetaData data = (ResultSetMetaData) rs.getMetaData();//鑾峰彇 杩愯sql鐨勬煡璇㈠瓧娈�
 			for (int i = 1; i <= data.getColumnCount(); i++) {
 				String columnName = data.getColumnName(i);
 				map.put(columnName, rs.getObject(columnName));
@@ -78,7 +78,7 @@ public class BaseDao {
 		
 	}
 	/**
-	 * 修改--
+	 * 淇敼--
 	 * @param sql
 	 * @param strings  
 	 * @return
@@ -103,11 +103,11 @@ public class BaseDao {
 	}
 	
 	public static void main(String[] args) throws SQLException {
-		System.out.println("====>List"+findList("select *  from  login   limit 0,50"));
-		System.out.println("====>List"+findList("select *  from  login   where user_id = ? ","1"));
-		System.out.println(findOne("select *  from  login   where user_id = ? ","1"));
+	//	System.out.println("====>List"+findList("select *  from  login   limit 0,50"));
+	//	System.out.println("====>List"+findList("select *  from  login   where user_id = ? ","1"));
+		System.out.println("result" + findOne("select *  from  user  where email = ? ","dg618k@gmail.com"));
 		//UPDATE tbl_name SET col_name1=value1, col_name2=value2, … WHERE conditions
-		System.out.println("=====>update="+updateSql("update login  set  user_name = ?  where user_id = ? ", "李四","2"));
-		System.out.println("=====>update="+updateSql(" insert into login (user_name,user_password,real_name) values(?,?,?)", "张三","123456","王麻子"));
+	//	System.out.println("=====>update="+updateSql("update login  set  user_name = ?  where user_id = ? ", "李四","2"));
+	//	System.out.println("=====>update="+updateSql(" insert into login (user_name,user_password,real_name) values(?,?,?)", "张三","123456","王麻子"));
 	}
 }

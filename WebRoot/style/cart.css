@@ -91,9 +91,9 @@ h1, h2, h3, h4, h5, h6, input {
     left: 0px;
     top: 0px;
     display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
     border: 2px solid #c4bebe;
     cursor: pointer;
 }
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6, input {
     height: 104px;
 }
 .c_item_checkbox {
-    margin: 15px 0 0 16px;
+    margin: 45px 0 0 16px;
 }
 
 .c_cart_product_img {
