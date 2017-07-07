@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'nichengxiugai.jsp' starting page</title>
+    <title>个人信息修改</title>
   
 	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/gerenxinxixiugai.css">
@@ -58,15 +58,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          <div class="plzhld clearfix">
          <div class="mod-setting-profile" id="1000001" style="display: block;"> 
          <div class="setting-profile-title yahei">签名修改</div>
-          <form class="setting-profile-form" id="profile" action="https://passport.baidu.com/v2/?ucenterset" method="POST">
+          <form class="setting-profile-form" id="profile" action="personal_center/signalModifyInsert" method="POST">
            <table class="setting-profile-table"> 
            <tbody> 
               <tr> 
               <th class="personal-detail-th"></th> 
               <td class="personal-detail-td">
-               <textarea name="passport_userdetail" class="mod-cus-input mod-cus-input-3" id="passport_userdetail"></textarea>  
+               	<textarea name="user_signal" class="mod-cus-input mod-cus-input-3" id="passport_userdetail"></textarea>  
               <span class="mod-cus-input-tip"></span></td></tr></tbody></table> 
               <input type="submit" style="margin-left:100px;" value="保存">
         </form> 
- 
+ 	</body>
 </html>
