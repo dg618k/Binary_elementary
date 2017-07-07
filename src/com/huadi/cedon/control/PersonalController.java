@@ -25,17 +25,19 @@ public class PersonalController extends BaseController implements Serializable {
 
 	@RequestMapping("friendview")
 	public String friendView(ModelMap map, HttpServletRequest request) {
-//		 String name = (String) request.getSession().getAttribute("name");
-//		 String id = (String) BaseDao.findOne("select * from user where name =
-//		 ?", name).get("id");
-//		 map.put("friendlist",BaseDao.findList("select * from friend where
-//		 relection = 1 and userId = ?", id));
+		 String name = (String) request.getSession().getAttribute("name");
+		 String id = (String) BaseDao.findOne("select * from user where name = ?", name).get("id");
+		 map.put("friendlist",BaseDao.findList("select * from friend where relection = 1 and userId = ?", id));
 
 		return "personal_center/friend";
 	}
 
 	@RequestMapping("ownVideoview")
 	public String ownVideoview(ModelMap map, HttpServletRequest request) {
+		String name = (String) request.getSession().getAttribute("name");
+		String id = (String) BaseDao.findOne("select * from user where name = ?", name).get("id");
+		map.put("ownvideo",BaseDao.findList("select * from emtity where type = 4 and userId = ?", id));
+		
 		return "personal_center/ownVideo";
 	}
 

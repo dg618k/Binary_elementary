@@ -18,6 +18,16 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping> 
+	
+	<servlet>  
+    	<servlet-name>IdentityServlet</servlet-name>  
+    	<servlet-class>com.huadi.cedon.servlet.generate_pic</servlet-class>  
+	</servlet>  
+	<servlet-mapping>  
+    	<servlet-name>IdentityServlet</servlet-name>  
+   		<url-pattern>/servlet/generate_pic</url-pattern>  
+	</servlet-mapping> 
+	
 	<!-- *.do: 只配备已.do结尾的路径                  spring中过滤-->
 	<!-- /: 会匹配所有url： 会匹配到/login这样的路径型url，不会匹配到模式为*.jsp这样的后缀型url -->
 	<!-- /*: 会匹配所有url：路径型的和后缀型的url(包括/login,*.jsp,*.js和*.html等) -->
@@ -26,6 +36,7 @@
          <servlet-name>default</servlet-name>   
          <url-pattern>*.css</url-pattern>   
      </servlet-mapping>   
+     
      <servlet-mapping>   
          <servlet-name>default</servlet-name>   
          <url-pattern>*.gif</url-pattern>   
