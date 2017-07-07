@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.4;
+}
+body, html {
+    padding: 0;
+    margin: 0;
+}
+p {
+    margin: 30px 0;
+}
+img {
+    border: none;
+}
+.image{
+	width:600px;
+	height:800px;
+}
+
+.middle{
+	background:#fff;
+	margin-bottom:20px;
+}
+.content {
+    width: 900px;
+    position: relative;
+}
+.box {
+    margin: auto;
+    padding: 30px;
+    background: #eee;
+    border-radius: 5px;
+    margin-top:30px;
+    font-size:large;
+}
