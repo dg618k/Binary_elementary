@@ -20,8 +20,8 @@
            <c:if test="${user != null }">
     				 <li><a>${user}</a></li>
     				 <li id="top_tag2" class="history"><a href="login/logout" rel="nofollow">注销</a></li>
-           			 <li id="top_tag1" class="history"><a href="trade/cartview" target="_blank" rel="nofollow">购物车</a></li>
-            		<li id="top_tag0" class="history"><a href="userIndex" target="_blank" rel="nofollow">个人中心</a></li>
+           			 <li id="top_tag1" class="history"><a href="trade/cartview" rel="nofollow">购物车</a></li>
+            		<li id="top_tag0" class="history"><a href="userIndex" rel="nofollow">个人中心</a></li>
     		</c:if>
     		<c:if test="${user == null }">
     				<li><a href="login/login">登陆</a></li>

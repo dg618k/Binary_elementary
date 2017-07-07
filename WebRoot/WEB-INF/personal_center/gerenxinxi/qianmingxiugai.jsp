@@ -17,7 +17,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="static/bootstrap/js/bootstrap.min.js"></script>
   </head>
     <body id="r1"> 
-    
+    <nav style="background-color:rgba(0,0,0,.2);width:100%;height:30px;">
+        <ul>
+            <li><a style="margin-left:30px;float:left">喵，欢迎来到史上最好的网站</a></li>
+    			<li><a style="float:left">${user_name}</a></li>
+    			<li id="top_tag2" class="history"><a style="float:right;margin-right:30px;" href="login/logout" rel="nofollow">注销</a></li>
+           		<li id="top_tag1" class="history"><a style="float:right" href="trade/cartview" rel="nofollow">购物车</a></li>
+            	<li id="top_tag0" class="history"><a style="float:right" href="userIndex" rel="nofollow">个人中心</a></li>
+        </ul>
+	</nav>
           	<!-- 背景动图 -->
   	<div class="background_area">
   		<img src="img/personal_space/bj.gif" style="width:100%;height:100%;">

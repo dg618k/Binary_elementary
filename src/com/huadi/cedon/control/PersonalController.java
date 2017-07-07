@@ -123,6 +123,8 @@ public class PersonalController extends BaseController implements Serializable {
    	//密码修改页面
 	@RequestMapping("mimaxiugai")
 	public String mimaxiugai(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user_name", user_name);
 		return "personal_center/gerenxinxi/mimaxiugai";
 	}
 	
@@ -156,6 +158,8 @@ public class PersonalController extends BaseController implements Serializable {
 	//昵称修改页面
 	@RequestMapping("nichengxiugai")
 	public String nichengxiugai(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user_name", user_name);
 		return "personal_center/gerenxinxi/nichengxiugai";
 	}
 	
@@ -194,6 +198,8 @@ public class PersonalController extends BaseController implements Serializable {
 	//个性签名修改页面
 	@RequestMapping("qianmingxiugai")
 	public String qianmingxiugai(ModelMap map, HttpServletRequest request) {
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user_name", user_name);
 		return "personal_center/gerenxinxi/qianmingxiugai";
 	}
 	
@@ -209,6 +215,8 @@ public class PersonalController extends BaseController implements Serializable {
 	//头像修改页面
 	@RequestMapping("touxiangxiugai")
 	public String touxiangxiugai(ModelMap map, HttpServletRequest request) {
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user_name", user_name);
 		return "personal_center/gerenxinxi/touxiangxiugai";
 	}
 
