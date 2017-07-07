@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"  type="text/css"  href="../style/header.css"/>
 <link rel="stylesheet"  type="text/css"  href="../style/footer.css"/>
-<link rel="stylesheet"  type="text/css"  href="../style/cartoon.css"/>
+<link rel="stylesheet"  type="text/css"  href="../style/infoDetail.css"/>
 
 
 
@@ -15,7 +15,7 @@
 
 
 </style>
-<title>漫画</title>
+<title>资讯</title>
 </head>
 <body>
 <!-- header start -->
@@ -55,54 +55,48 @@
   <!-- header end -->
    <!-- middle start -->
    <div class="middle">
-		<!-- 萌系  start -->
-		<div class="c_floor" >
-			<div id="floor1" class="c_floor_title">
-				<div class="c_floor_name">
-					<img alt="萌系" src="../img/login/login_logo.jpg"><span>萌系</span>
+		<div class="content box" style="overflow: visible; position: relative; min-height: 1px; box-sizing: border-box;">
+			<div class="theiaStickySidebar" style="padding-top: 1px; padding-bottom: 1px; position: static; transform: none;">
+				<h2 align="center">Content</h2>
+				
+				<p>
+					Lorem ipsum dolor sit amet, ei vix dicit possim. Pro principes urbanitas ei, his no
+					omittam inimicus, qui apeirian honestatis philosophia ei. Augue quaerendum
+					scriptorem vix ad, duo in mucius facilisis. Audire noluisse singulis mei ne. Esse
+					aperiri facilisi pro an, fabellas cotidieque eu vis. Est in senserit accusamus
+					inciderint, consetetur voluptatibus pro et, te qui verear assentior.
+				</p>
+				<div style="width:600px; margin:auto">
+					<img class="image" src="../img/information/info.jpg">
 				</div>
-
-				<div class="right c_floor_btn">
-					<a class="c_floor_change" href="javascript:;" >换一批</a>
-					<a class="c_floor_more" href="index.php?a=page&amp;chid=5" target="_blank">更多</a>
+				<p>
+					Ne sea vitae admodum, dicant tritani definiebas id quo, ei eam possim oblique. In
+					decore salutandi tincidunt pri, sit te summo epicuri. Ea vel alterum liberavisse.
+					Vim discere interesset in, debet appellantur in sed, ne sit facilisis splendide
+					aliquando. Vix moderatius honestatis no.
+				</p>
+				<p>
+					Est te nonumes verterem urbanitas, ei quo utinam constituto. Nihil tation vis ad,
+					corrumpit incorrupte mea cu. Mei te apeirian intellegat, wisi meliore interpretaris
+					et usu. Id graece probatus contentiones nam, natum legimus an quo.
+				</p>
+				<div style="width:600px; margin:auto">
+					<img class="image" src="../img/information/info.jpg">
 				</div>
+				<p>
+					Ne sea vitae admodum, dicant tritani definiebas id quo, ei eam possim oblique. In
+					decore salutandi tincidunt pri, sit te summo epicuri. Ea vel alterum liberavisse.
+					Vim discere interesset in, debet appellantur in sed, ne sit facilisis splendide
+					aliquando. Vix moderatius honestatis no.
+				</p>
+				<p>
+					Est te nonumes verterem urbanitas, ei quo utinam constituto. Nihil tation vis ad,
+					corrumpit incorrupte mea cu. Mei te apeirian intellegat, wisi meliore interpretaris
+					et usu. Id graece probatus contentiones nam, natum legimus an quo.
+				</p>
 			</div>
-			<ul class="c_product_list">
-			<li id="li1" class="animated fade">
-				<a href="" target="_blank">
-					<img class="c_lazyload" alt="某漫画" src="../img/cartoon/cartoon.jpg">
-					<p class="c_prduct_price">某漫画</p>	
-					
-				</a>
-			</li>
-		
-			<li id="li2" class="animated fade">
-				<a href="" target="_blank">
-					<img class="c_lazyload" alt="" src="../img/cartoon/cartoon.jpg">
-					<p class="c_prduct_price">某漫画</p>	
-					
-				</a>
-			</li>
-		
-			<li id="li3"class="animated fade">
-				<a href="" target="_blank">
-					<img class="c_lazyload" alt="某漫画" src="../img/cartoon/cartoon.jpg">
-					<p class="c_prduct_price">某漫画</p>	
-					
-				</a>
-			</li>
-		
-			<li id="li4"class="animated fade">
-				<a href="" target="_blank">
-					<img class="c_lazyload" alt="某漫画" src="../img/cartoon/cartoon.jpg">
-					<p class="c_prduct_price">某漫画</p>	
-					
-				</a>
-			</li>
-		</ul>
 		</div>
-		<!-- 萌系  end -->
-		</div>
+	</div>
    <!-- middle end -->
 	<!-- footer start -->
 	<div class="footer">

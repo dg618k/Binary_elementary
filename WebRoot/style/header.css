@@ -96,6 +96,10 @@ header .top2 nav ul li a{
     transition: background 0.15s;
     display: block;
 }
+header .top2 nav ul li a:hover{
+    color: rgba(47, 158, 178, 1);
+    
+}
 header .top2 nav ul li{
 	margin-left:20px;
     float: left;

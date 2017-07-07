@@ -15,7 +15,7 @@
 
 
 </style>
-<title>漫画</title>
+<title>资讯</title>
 </head>
 <body>
 <!-- header start -->
@@ -55,11 +55,11 @@
   <!-- header end -->
    <!-- middle start -->
    <div class="middle">
-		<!-- 萌系  start -->
+		<!-- 科技  start -->
 		<div class="c_floor" >
 			<div id="floor1" class="c_floor_title">
 				<div class="c_floor_name">
-					<img alt="萌系" src="../img/login/login_logo.jpg"><span>萌系</span>
+					<img alt="原创" src="../img/login/login_logo.jpg"><span>科技</span>
 				</div>
 
 				<div class="right c_floor_btn">
@@ -70,39 +70,39 @@
 			<ul class="c_product_list">
 			<li id="li1" class="animated fade">
 				<a href="" target="_blank">
-					<img class="c_lazyload" alt="某漫画" src="../img/cartoon/cartoon.jpg">
-					<p class="c_prduct_price">某漫画</p>	
+					<img class="c_lazyload" alt="某资讯" src="../img/cartoon/cartoon.jpg">
+					<p class="c_prduct_price">某资讯</p>	
 					
 				</a>
 			</li>
 		
 			<li id="li2" class="animated fade">
 				<a href="" target="_blank">
-					<img class="c_lazyload" alt="" src="../img/cartoon/cartoon.jpg">
-					<p class="c_prduct_price">某漫画</p>	
+					<img class="c_lazyload" alt="某资讯" src="../img/cartoon/cartoon.jpg">
+					<p class="c_prduct_price">某资讯</p>	
 					
 				</a>
 			</li>
 		
 			<li id="li3"class="animated fade">
 				<a href="" target="_blank">
-					<img class="c_lazyload" alt="某漫画" src="../img/cartoon/cartoon.jpg">
-					<p class="c_prduct_price">某漫画</p>	
+					<img class="c_lazyload" alt="某资讯" src="../img/cartoon/cartoon.jpg">
+					<p class="c_prduct_price">某资讯</p>	
 					
 				</a>
 			</li>
 		
 			<li id="li4"class="animated fade">
 				<a href="" target="_blank">
-					<img class="c_lazyload" alt="某漫画" src="../img/cartoon/cartoon.jpg">
-					<p class="c_prduct_price">某漫画</p>	
+					<img class="c_lazyload" alt="某资讯" src="../img/cartoon/cartoon.jpg">
+					<p class="c_prduct_price">某资讯</p>	
 					
 				</a>
 			</li>
 		</ul>
 		</div>
-		<!-- 萌系  end -->
-		</div>
+		<!-- 科技 end -->
+	</div>
    <!-- middle end -->
 	<!-- footer start -->
 	<div class="footer">
