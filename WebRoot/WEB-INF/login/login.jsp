@@ -26,7 +26,7 @@
     		</div>
     		<div class="login_wrap">
     			<div class="content">
-			        <form action="loginCheck" method="post" class="login_box c_fr">
+			        <form action="loginCheck" onsubmit="return checkresult();" method="post" class="login_box c_fr">
 			            <ul id="comm_login">
 			                <li>
 			                	<div style="font-size:18px;float:left">用户登录</div>
@@ -35,24 +35,29 @@
 			                			<span class="glyphicon glyphicon-remove"></span>${message }
 			                		</div>
 			                	</c:if>
+			                	<div id="pic_diff" class="input_error">
+				 					<span class="glyphicon glyphicon-remove">验证码错误</span>
+				 				</div>
 			                	<div class="clear_both"></div>
 			                </li>
 			                <li>
-			                    <label><span class="user_logo c_fl"></span><input type="text" class="login_input c_fl" name="name" id="" placeholder="请输入用户名" required></label>
+			                    <label><span class="user_logo c_fl"></span>
+			                    <input type="text" class="login_input c_fl" name="name" id="" placeholder="请输入用户名" required></label>
 			               		<div class="clear_both"></div>
 			                </li>
 			                <li>
-			                    <label><span class="pwd_logo c_fl"></span><input type="password" class="login_input c_fl" name="password" id="" placeholder="密码" required></label>
+			                    <label><span class="pwd_logo c_fl"></span>
+			                    <input type="password" class="login_input c_fl" name="password" id="" placeholder="密码" required></label>
 			                    <div class="clear_both"></div>
 			                </li>
 			                <li>
-			                    <label>
-			                    	<span class="v_code_font c_fl" style="margin-top:5px;">验证码:</span>
-			                    	<input type="text" class="v_code_input c_fl" style="margin-top:5px" name="" id="" placeholder="验证码" required>
-			                    </label>
-			                    	<img src="../img/login/ver.png" class="v_code_img c_fr" id="" title="点击换一张" align="absmiddle">
-			                    <div class="clear_both"></div>
-			                </li>
+								<label>
+									<span class="v_code_font c_fl" style="margin-top:5px;">验证码：</span>
+									<input type="text" class="v_code_input c_fl" onblur="check_pic()" style="margin-top:5px" id="check_img" name="captcha" placeholder="验证码">
+								</label>
+								<img src="../servlet/generate_pic" class="v_code_img c_fr"  id="verify" onclick="changeImg()" title="点击换一张" align="absmiddle">
+								<div class="clear_both"></div>
+							</li>
 			                <li>
 			                    <label>
 			                    	<input type="checkbox" class="c_fl" name="remember" id="remember">
@@ -101,6 +106,34 @@
 		</div>
     	<!-- footer end -->
     </div>
-
+	<script type="text/javascript">
+	function changeImg(){
+		document.getElementById('verify').src="../servlet/generate_pic?"+Math.random();
+	}
+	function check_pic(){
+		var contain = $("#check_img").val();
+		$.ajax({
+ 		  		type: "POST",
+ 		 		url: "picCheck",
+   		 		data: {"userCode":contain},
+  		  		success: function(msg){
+     	  			if(msg){
+     	  				$("#pic_diff").css("display", "none");
+     	  				$("#pic_same").css("display", "block");
+     	  				flag2 = true;
+     	  			}
+     	  			else{
+     	  				$("#pic_diff").css("display", "block");
+     	  				$("#pic_same").css("display", "none");
+     	  				changeImg();
+   						flag2 = false;
+     	  			}
+   				}
+   			});
+	} 
+	function checkresult(){
+		check_pic();
+	}
+	</script>
 </body>
 </html>

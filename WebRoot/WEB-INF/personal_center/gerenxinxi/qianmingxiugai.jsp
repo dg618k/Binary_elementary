@@ -10,10 +10,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>My JSP 'nichengxiugai.jsp' starting page</title>
-    
+  
+	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/gerenxinxixiugai.css">
+	<script src="static/js/jquery-3.2.1.min.js"></script>
+	<script src="static/bootstrap/js/bootstrap.min.js"></script>
   </head>
     <body id="r1"> 
+    
+          	<!-- 背景动图 -->
+  	<div class="background_area">
+  		<img src="img/personal_space/bj.gif" style="width:100%;height:100%;">
+  	</div>
     
    <div id="content">
     <div class="mod-setting clearfix"> 
@@ -21,18 +29,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="setting-content clearfix"> 
      <div class="setting-menu"> 
      <div class="menu-title menu-profile"> 
-     <h3>个人资料</h3>  </div> 
+     <h3 style="padding:10px;text-align:center">个人资料</h3>  </div> 
      <ul class="menu-list"> 
      <li class="menu-item basic-link">
      <a href="personal_center/gerenxinxixiugai">个人信息</a> </li>
      </ul> 
      
     <div class="menu-title menu-privacy-current active" id="settingPrivacy">
-     <h3>资料修改</h3> </div>
+     <h3 style="padding:10px;text-align:center">资料修改</h3> </div>
       <ul class="menu-list">
        
      <li class="menu-item wenku-link" id="settingPrivacyWenku">
-       <a href="personal_center/nichengxiugai">昵称修改</a> </li>
+       <a href="personal_center/nichengxiugai">信息修改</a> </li>
        <li class="menu-split"> </li>
         <li class="menu-item tieba-link" id="settingPrivacyTieba">
        <a href="personal_center/mimaxiugai">密码修改</a> </li>
@@ -56,10 +64,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <tr> 
               <th class="personal-detail-th"></th> 
               <td class="personal-detail-td">
-               <textarea name="passport_userdetail" class="mod-cus-input mod-cus-input-4" id="passport_userdetail"></textarea>  
+               <textarea name="passport_userdetail" class="mod-cus-input mod-cus-input-3" id="passport_userdetail"></textarea>  
               <span class="mod-cus-input-tip"></span></td></tr></tbody></table> 
-              <input class="setting-submit-btn setting-submit-ml100" type="submit" value="保存">
-              <span class="save-ok" id="tiebaSaveOkMsg"> 你的设置保存成功！ <a class="check-effect" href="https://www.baidu.com/p/soul丶搁浅ii/detail" target="reviewPage">查看效果</a> </span> 
-          </form> 
+              <input type="submit" style="margin-left:100px;" value="保存">
+        </form> 
  
 </html>

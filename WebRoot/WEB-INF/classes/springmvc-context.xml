@@ -28,7 +28,7 @@
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ercif?characterEncoding=UTF-8" />
 		<property name="user" value="root" />
-		<property name="password" value="123456" />
+		<property name="password" value="56965486" />
 		<property name="minPoolSize" value="1" />
 		<property name="maxPoolSize" value="2" />
 		

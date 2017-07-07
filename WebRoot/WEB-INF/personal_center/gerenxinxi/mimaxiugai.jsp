@@ -7,13 +7,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   
+  	<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/gerenxinxixiugai.css">
-
+	<script src="../static/js/jquery-3.2.1.min.js"></script>
+	<script src="../static/bootstrap/js/bootstrap.min.js"></script>
  
   <head> 
    <title>密码修改</title> 
    
     <body id="r1"> 
+      	<!-- 背景动图 -->
+  	<div class="background_area">
+  		<img src="../img/personal_space/bj.gif" style="width:100%;height:100%;">
+  	</div>
     
    <div id="content">
     <div class="mod-setting clearfix"> 
@@ -21,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="setting-content clearfix"> 
      <div class="setting-menu"> 
      <div class="menu-title menu-profile"> 
-     <h3>个人资料</h3> 
+     <h3 style="padding:10px;text-align:center">个人资料</h3> 
      </div> 
      <ul class="menu-list"> 
      <li class="menu-item basic-link">
@@ -30,10 +36,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     <div class="menu-title menu-privacy-current active" id="settingPrivacy">
-     <h3>资料修改</h3> </div>
+     <h3 style="padding:10px;text-align:center">资料修改</h3> </div>
       <ul class="menu-list">
        <li class="menu-item tieba-link" id="settingPrivacyTieba">
-       <a href="nichengxiugai">昵称修改</a> </li>
+       <a href="nichengxiugai">信息修改</a> </li>
        <li class="menu-split"> </li>
        <li class="menu-item zhidao-link on" id="settingPrivacyZhidao">
        <a href="mimaxiugai">密码修改</a> </li>
@@ -49,15 +55,84 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          <div class="plzhld clearfix">
          <div class="mod-setting-profile" id="1000001" style="display: block;"> 
          <div class="setting-profile-title yahei">密码修改</div>
-          <form class="setting-profile-form" id="profile" action="https://passport.baidu.com/v2/?ucenterset" method="POST">
-           <table class="setting-profile-table"> 
-           <tbody> 
-              <tr> 
-              <th class="personal-detail-th"></th> 
-              <td class="personal-detail-td">
-               <textarea name="passport_userdetail" class="mod-cus-input mod-cus-input-4" id="passport_userdetail"></textarea>  
-              <span class="mod-cus-input-tip"></span></td></tr></tbody></table> 
-              <input class="setting-submit-btn setting-submit-ml100" type="submit" value="保存">
-              <span class="save-ok" id="tiebaSaveOkMsg"> 你的设置保存成功！ <a class="check-effect" href="https://www.baidu.com/p/soul丶搁浅ii/detail" target="reviewPage">查看效果</a> </span> </form> 
-              
+          <form class="setting-profile-form" id="profile" action="" method="POST">
+           	  <div>
+           	  	<label style="width:120px; margin-left:50px; margin-top:50px; float:left">原密码：</label>
+           	  	<input style="margin-top:50px; float:left" type="password" onblur="passCheck()" id="oldpass" name="oldpass">
+           	  	<div id="password_error1" class="input_error" style="margin-top:55px;">
+				 	<p class="glyphicon glyphicon-remove">含有非法字符或位数不在8-16之间</p>
+				 </div>
+				 <div id="password_error2" class="input_error" style="margin-top:55px;">
+				 	<p class="glyphicon glyphicon-remove">密码不正确</p>
+				 </div>
+				 <div id="password_valid" class="input_valid" style="margin-top:55px;">
+                	<p class="glyphicon glyphicon-ok">格式正确</p>
+                </div>
+                <div class="c_clear_both"></div>
+              </div>
+              <div>
+              	<label style="width:120px; margin-left:50px; margin-top:15px;float:left">新密码：</label>
+              	<input style="margin-top:15px; float:left" type="password" onblur="newPassCheck()" id="newpass" name="newpass">
+              	<div class="c_clear_both"></div>
+              </div>
+              <div>
+              	<label style="width:120px; margin-left:50px; margin-top:15px;float:left">新密码确认：</label>
+              	<input style="margin-top:15px; float:left" type="password" onblur="newPassConfirm()" id="newpassconfirm" name="newpassconfirm">
+              	<div class="c_clear_both"></div>
+              </div>
+              <input type="submit" style="margin-left:50px; margin-top:15px;" value="确认">
+          </form> 
+          <script type="text/javascript">
+          	var flag1=flag2=flag3=false;
+          	function passCheck(){
+          		var pass1 = $("#oldpass").val();
+				var pass2 = $("#newpass").val();
+				var pass3 = $("#newpassconfirm").val();
+				alert(pass1);
+				if(!pass1.match(/^[*#a-zA-Z0-9]{8,16}$/)){
+					$("#password_error1").css("display", "block");
+					$("#password_error2").css("display", "none");
+					$("#password_valid").css("display", "none");
+					flag1 = false;
+				}
+				else{
+					$.ajax({
+						type:"POST",
+						url:"passCheck",
+						data:"password="+pass1,
+						success: function(msg){
+							if(msg){
+								$("#nameerror1").css("display", "none");
+		 						$("#nameerror2").css("display", "none");
+		 						$("#namevalid").css("display", "block");
+		 						flag1 = true;
+							}
+							else{
+								$("#nameerror1").css("display", "none");
+		 						$("#nameerror2").css("display", "block");
+		 						$("#namevalid").css("display", "none");
+		 						flag1 = false;
+							}
+						}
+					});
+				}
+				if(pass1 != pass2){
+					$("#password_diff").css("display", "block");
+					$("#password_same").css("display", "none");
+					flag3 = false;
+				}
+				else{
+					$("#password_same").css("display", "block");
+					$("#password_diff").css("display", "none");
+					flag3 = true;
+				}
+          	}
+          	function newPassCheck(){
+          		;
+          	}
+          	function newPassConfirm(){
+          		;
+          	}
+          </script>
+     </body>        
 </html>
