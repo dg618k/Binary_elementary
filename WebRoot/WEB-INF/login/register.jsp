@@ -91,7 +91,8 @@
 					<span>验证码：</span>
 					<input type="text" class="c_reg_input c_reg_input_v c_fl" onblur="check_pic()" id="check_img" name="captcha" placeholder="请输入验证码">
 				</label>
-				<img src="../img/login/ver.png" class="c_fl" onclick="changeImg()" id="verify" title="点击换一张">
+				<img src="../servlet/generate_pic" class="c_fl"  id="verify" title="点击换一张" onload="btn.disabled = false; " >
+				<input type=button value=" 换个图片 " onclick="changeImg()" id="btn">
 				<div id="pic_diff" class="input_error">
 				 	<p class="glyphicon glyphicon-remove">验证失败</p>
 				 </div>
@@ -163,7 +164,8 @@
 	var flag1 = flag2 = flag3 = flag4 = flag5 = false;
 	var email=$("#email").val();
 	function changeImg(){
-		$("#verify").src=$("#verify")+Math.random();
+		document.getElementById('btn').disabled = true;
+		document.getElementById('verify').src="../servlet/generate_pic?"+Math.random();
 	}
 	function checkemail(){
 		email = $("#email").val();
@@ -290,6 +292,7 @@
 		checkemail();
 		checkpassword();
 		checkname();
+		check_pic()
 		if(flag1&&flag2&&flag3&&flag5){
 			return true;
 		}

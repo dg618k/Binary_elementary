@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,34 +24,62 @@ public class PersonalController extends BaseController implements Serializable {
 
 	//播放历史
 	@RequestMapping("historyview")
-	public String historyView(ModelMap map,HttpServletRequest request){
+	public String historyView(ModelMap map, HttpServletRequest request) {
 		return "personal_center/view_history";
 	}
+<<<<<<< HEAD
 	
 	//好友界面
+=======
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
 	@RequestMapping("friendview")
-	public String friendView(ModelMap map, HttpServletRequest request){
+	public String friendView(ModelMap map, HttpServletRequest request) {
+		 String name = (String) request.getSession().getAttribute("name");
+		 String id = (String) BaseDao.findOne("select * from user where name = ?", name).get("id");
+		 map.put("friendlist",BaseDao.findList("select * from friend where relection = 1 and userId = ?", id));
+
 		return "personal_center/friend";
 	}
+<<<<<<< HEAD
 	
 	//个人视频
+=======
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
 	@RequestMapping("ownVideoview")
-	public String ownVideoview(ModelMap map, HttpServletRequest request){
+	public String ownVideoview(ModelMap map, HttpServletRequest request) {
+		String name = (String) request.getSession().getAttribute("name");
+		String id = (String) BaseDao.findOne("select * from user where name = ?", name).get("id");
+		map.put("ownvideo",BaseDao.findList("select * from emtity where type = 4 and userId = ?", id));
+		
 		return "personal_center/ownVideo";
 	}
+<<<<<<< HEAD
 	
 	//个人中心
+=======
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
 	@RequestMapping("perSpaceview")
-	public String perSpaceview(ModelMap map, HttpServletRequest request){
+	public String perSpaceview(ModelMap map, HttpServletRequest request) {
+		String sql = "select * from user where id = " + request.getSession().getAttribute("name");
+		map.put("user", BaseDao.findOne(sql));
+		
 		return "personal_center/personal_space";
 	}
+<<<<<<< HEAD
 	
 	//上传界面
+=======
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
 	@RequestMapping("uploadview")
-	public String uploadView(ModelMap map, HttpServletRequest request){
+	public String uploadView(ModelMap map, HttpServletRequest request) {
 		return "personal_center/upload";
 
 	}
+<<<<<<< HEAD
 	
 	//消息界面
 	@RequestMapping("gerenxiaoxi")
@@ -58,25 +88,45 @@ public class PersonalController extends BaseController implements Serializable {
 	}
 	
 	//收藏视频
+=======
+
+	@RequestMapping("gerenxiaoxi")
+	public String Gerenxiaoxi(ModelMap map, HttpServletRequest request) {
+
+		return "personal_center/gerenxiaoxi/gerenxiaoxi";
+	}
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
 	@RequestMapping("shipinshoucang")
-	public String shipinshoucang(ModelMap map,HttpServletRequest request){
-		
+	public String shipinshoucang(ModelMap map, HttpServletRequest request) {
+
 		return "personal_center/gerenshoucang/shipinshoucang";
+<<<<<<< HEAD
 		}
 	
 	//收藏漫画
+=======
+	}
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
 	@RequestMapping("manhuashoucang")
-	public String manhuashoucang(ModelMap map,HttpServletRequest request){
-		
+	public String manhuashoucang(ModelMap map, HttpServletRequest request) {
+
 		return "personal_center/gerenshoucang/manhuashoucang";
+<<<<<<< HEAD
 		}
 	
 	//@消息
+=======
+	}
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
 	@RequestMapping("xiaoxi_aitewo")
-	public String xiaoxi_aitewo(ModelMap map,HttpServletRequest request){
-		
+	public String xiaoxi_aitewo(ModelMap map, HttpServletRequest request) {
+
 		return "personal_center/gerenxiaoxi/xiaoxi_aitewo";
 	}
+<<<<<<< HEAD
 	
 	//点赞消息
 	@RequestMapping("xiaoxi_dianzan")
@@ -86,16 +136,25 @@ public class PersonalController extends BaseController implements Serializable {
 	}
 	
 	//私信消息
+=======
+
+	@RequestMapping("xiaoxi_dianzan")
+	public String xiaoxi_dianzan(ModelMap map, HttpServletRequest request) {
+
+		return "personal_center/gerenxiaoxi/xiaoxi_dianzan";
+	}
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
 	@RequestMapping("xiaoxi_sixin")
-	public String xiaoxi_sixin(ModelMap map,HttpServletRequest request){
-		
+	public String xiaoxi_sixin(ModelMap map, HttpServletRequest request) {
+
 		return "personal_center/gerenxiaoxi/xiaoxi_sixin";
 	}
 
 	//系统消息
 	@RequestMapping("xiaoxi_xitong")
-	public String xiaoxi_xitong(ModelMap map,HttpServletRequest request){
-		 
+	public String xiaoxi_xitong(ModelMap map, HttpServletRequest request) {
+
 		return "personal_center/gerenxiaoxi/xiaoxi_xitong";
 	}
 	
@@ -114,6 +173,7 @@ public class PersonalController extends BaseController implements Serializable {
 		map.put("user_email", map1.get("email"));
 		return "personal_center/gerenxinxi/gerenxinxixiugai";
 	}
+<<<<<<< HEAD
 	
    	//密码修改页面
 	@RequestMapping("mimaxiugai")
@@ -161,17 +221,36 @@ public class PersonalController extends BaseController implements Serializable {
 	}
 	
 	//个性签名修改页面
-	@RequestMapping("qianmingxiugai")
-	public String qianmingxiugai(ModelMap map,HttpServletRequest request){
-	
-	return "personal_center/gerenxinxi/qianmingxiugai";
+=======
+   
+	@RequestMapping("mimaxiugai")
+	public String mimaxiugai(ModelMap map, HttpServletRequest request) {
+
+		return "personal_center/gerenxinxi/mimaxiugai";
 	}
+
+	@RequestMapping("nichengxiugai")
+	public String nichengxiugai(ModelMap map, HttpServletRequest request) {
+
+		return "personal_center/gerenxinxi/nichengxiugai";
+	}
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
+	@RequestMapping("qianmingxiugai")
+	public String qianmingxiugai(ModelMap map, HttpServletRequest request) {
+
+		return "personal_center/gerenxinxi/qianmingxiugai";
+	}
+<<<<<<< HEAD
 	
 	//头像修改页面
+=======
+
+>>>>>>> d40e1c781f7987db1258ab9504e3b87da47dd9e9
 	@RequestMapping("touxiangxiugai")
-	public String touxiangxiugai(ModelMap map,HttpServletRequest request){
-	
-	return "personal_center/gerenxinxi/touxiangxiugai";
+	public String touxiangxiugai(ModelMap map, HttpServletRequest request) {
+
+		return "personal_center/gerenxinxi/touxiangxiugai";
 	}
 
 }

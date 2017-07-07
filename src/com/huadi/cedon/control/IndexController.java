@@ -1,7 +1,6 @@
 package com.huadi.cedon.control;
 
 import java.io.Serializable;
-import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -32,32 +31,25 @@ public class IndexController extends BaseController implements Serializable  {
 	@Resource
 	userMapper userMapper;
 	
-//	private String search(int type){
-//		return "select * from entity where type = " + type + " order by score DESC limit 0,6";
-//	}
+	private String search(int type){
+		return "select * from entity where type = " + type + " order by score DESC limit 0,6";
+	}
 	
 	@RequestMapping("index")
 	public String index(ModelMap map, user user, HttpServletRequest request) {
 		Object name = request.getSession().getAttribute("name");
-		System.out.print(name);
-//		map.put("cartoon", BaseDao.findList(search(EntityType.ENTITY_CARTOON)));
-//		map.put("comic", BaseDao.findList(search(EntityType.ENTITY_COMMIC)));
-//		map.put("news", BaseDao.findList(search(EntityType.ENTITY_NEWS)));
-//		map.put("goods", BaseDao.findList(search(EntityType.ENTITY_GOODS)));
-//		map.put("type", BaseDao.findList("select * from etype "));
+		map.put("cartoon", BaseDao.findList(search(EntityType.ENTITY_CARTOON)));
+		map.put("comic", BaseDao.findList(search(EntityType.ENTITY_COMMIC)));
+		map.put("news", BaseDao.findList(search(EntityType.ENTITY_NEWS)));
+		map.put("goods", BaseDao.findList(search(EntityType.ENTITY_GOODS)));
+		map.put("type", BaseDao.findList("select * from etype "));
 		map.put("user", name);
 		return "index";
 	}
-	@RequestMapping("toCart")
-	public String toCart(ModelMap map, HttpServletRequest request){
-		return "redirect:trade/cartview";
-	}
 	
-	@RequestMapping("user/{userId}")
-	public String userIndex(ModelMap map, @PathVariable("userId") int userId) {	
-		String sql = "select * from user where id = " + userId;
-		map.put("user", BaseDao.findOne(sql));
-		return "userIndex";
+	@RequestMapping("userIndex")
+	public String userIndex(ModelMap map) {	
+		return "redirect:/personal_center/perSpaceview";
 	}
 	
 }

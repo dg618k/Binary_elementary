@@ -1,24 +1,23 @@
 package com.huadi.cedon.control;
 
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.huadi.cedon.dao.userMapper;
 import com.huadi.cedon.model.user;
 import com.huadi.cedon.util.MD5Util;
@@ -57,18 +56,21 @@ public class LoginController extends BaseController implements Serializable {
 	
 	@RequestMapping("/picCheck")
 	@ResponseBody
-	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response)
+	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet)
 		throws ServletException, IOException{
 		String userinput = request.getParameter("userCode");
 		System.out.println("userCode="+userinput);
 		String clientCheckcode = userinput;
-		generate_pic gen = new generate_pic();
-		gen.doPost(request, response);
 		String serverCheckcode = (String)request.getSession().getAttribute("checkcode");
 		System.out.println("serverCode="+serverCheckcode);
 		if(clientCheckcode.equals(serverCheckcode))
 			return true;
 		return false;
+	}
+	
+	@RequestMapping("registerInsert")//http://localhost:8080/scdx/login/registerveiw
+	public String registerInsert(user user,ModelMap map,HttpServletRequest request){
+			return "redirect:../index";
 	}
 
 	@RequestMapping("registerAjax")

@@ -9,6 +9,11 @@
 <link rel="stylesheet"  type="text/css"  href="style/footer.css"/>
 <link rel="stylesheet"  type="text/css"  href="style/main.css"/>
 <script src="static/js/jquery-1.8.3.min.js"></script>
+
+<style type="text/css">
+
+
+</style>
 <title>主页</title>
 </head>
 <body>
@@ -17,28 +22,23 @@
   	<nav>
         <ul>
             <li><a>喵，欢迎来到史上最好的网站</a></li>
-           <c:if test="${user != null }">
-    				 <li><a>${user}</a></li>
-    		</c:if>
-    		<c:if test="${user == null }">
-    				<li><a href="login/login">登陆</a></li>
-            		<li><a href="login/register">注册</a></li>
-    		</c:if>
-            <li id="top_tag2" class="history"><a href="login/login" target="_blank" rel="nofollow">注销</a></li>
-            <li id="top_tag1" class="history"><a href="trade/cartview" target="_blank" rel="nofollow">购物车</a></li>
-            <li id="top_tag0" class="history"><a href="userIndex" target="_blank" rel="nofollow">个人中心</a></li>
+             <li><a href="">登陆</a></li>
+              <li><a href="">注册</a></li>
+            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
+            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
+            
         </ul>
 	</nav>
 	<div class="banner"></div>
 	<div class="top2">
 		<nav>
 	        <ul>
-	            <li><a href="http://localhost:8080/Binary_elementary/index">主页</a></li>
+	            <li><a href="">主页</a></li>
 	            <li><a href="" target="_blank">视频</a></li>
 	            <li><a href="" target="_blank">漫画</a></li>
 	            <li><a href="" target="_blank" rel="nofollow">游戏</a></li>
 	            <li><a href="" target="_blank" rel="nofollow">资讯</a></li>
-	            <li><a href="trade/tradeview" target="_blank" rel="nofollow">周边</a></li>
+	            <li><a href="" target="_blank" rel="nofollow">周边</a></li>
 	            <li id="top_tag0" class="history">
 	            </li>
 	        </ul>
@@ -58,10 +58,11 @@
 			<div id="slide" class="slide" >
 				<!-- 轮播图片数量可自行增减 -->
 				<div class="img"><img src="img/main/4.jpg"/></div>
-				<div class="img"><img src="img/main/1.jpg"/></div>
-				<div class="img"><img src="img/main/2.jpg"/></div>
-				<div class="img"><img src="img/main/3.jpg"/></div>
-				<div class="img"><img src="img/main/5.jpg"/></div>
+				<div class="img"><img src="img/main/4.jpg"/></div>
+				<div class="img"><img src="img/main/4.jpg"/></div>
+				<div class="img"><img src="img/main/4.jpg"/></div>
+				<div class="img"><img src="img/main/4.jpg"/></div>
+			
 				<div class="slide-bt"></div>
 			</div>
 		</div>
@@ -222,23 +223,72 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-               		<c:forEach items="${cartoon}" var="c">
-                    	<li>
-	                        <a href="">
-	                            <div class="section-body-videolist-cover">
-	                                <img src="img/main/middle_box.jpg"/>
-	                                <div class="section-body-videolist-title">
-	                                    <p class="title">${c.title}</p>
-	                                    <c:forEach items="${type}" var="t">
-	                                    	<c:if test="${t.entity_id == c.id }">
-	                                    		<p class="genre">${t.second_type}</p>
-	                                    	</c:if>
-	                                    </c:forEach>
-	                                </div>
-	                            </div>
-	                        </a>
-	                    </li>
-                    </c:forEach>
+                    <li>
+                        <a href="">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/anime/swglxhdsj/">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/anime/duannao/">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="section-body-videolist-cover">
+                                <img src="img/main/middle_box.jpg"/>
+                                <div class="section-body-videolist-title">
+                                    <p class="title">某节目</p>
+                                    <p class="genre">类型1|类型2</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
                     <div class="clear"></div>
                 </ul>
             </div>
@@ -254,7 +304,7 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li style="margin-left:30px">
+                    <li>
                         <a href="">
                             <div class="section-body-videolist-cover">
                                 <img src="img/main/middle_box.jpg"/>
@@ -335,7 +385,7 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li style="margin-left:30px">
+                    <li>
                         <a href="">
                             <div class="section-body-videolist-cover">
                                 <img src="img/main/middle_box.jpg"/>
@@ -416,7 +466,7 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li style="margin-left:30px">
+                    <li>
                         <a href="">
                             <div class="section-body-videolist-cover">
                                 <img src="img/main/middle_box.jpg"/>
@@ -497,7 +547,7 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li style="margin-left:30px">
+                    <li>
                         <a href="">
                             <div class="section-body-videolist-cover">
                                 <img src="img/main/middle_box.jpg"/>

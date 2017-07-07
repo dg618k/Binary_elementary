@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"  type="text/css"  href="../style/header.css"/>
 <link rel="stylesheet"  type="text/css"  href="../style/footer.css"/>
-<link rel="stylesheet"  type="text/css"  href="../style/trade.css"/>
+<link rel="stylesheet"  type="text/css"  href="../style/cartoon.css"/>
 
 
 
@@ -55,100 +55,54 @@
   <!-- header end -->
    <!-- middle start -->
    <div class="middle">
-   <!--分类&slider start-->
-		<div class="c_slider" style=" ">
-			<div class="c_slider_inner">
-				<ul class="c_cat_nav">
-					<h1>商品分类</h1>
-					<li>
-						<p class="c_cat_item_list">
-							<a href="javascript:;">上装、下装</a>
-						</p>
-					</li>
-					<li>
-						<p class="c_cat_item_list">
-							<a href="javascript:;">小裙子、外套</a>
-						</p>
-					</li>
-					<li>
-						<p class="c_cat_item_list">
-							<a href="#floor1">装扮</a>
-						</p>
-					</li>
-					<li>
-						<p class="c_cat_item_list">
-							<a href="javascript:;">周边</a>
-						</p>
-					</li>						
-				</ul>
-			</div>
-		</div>
-		<!--分类&slider end-->
-		<!-- 装扮  start -->
+		<!-- 动作  start -->
 		<div class="c_floor" >
 			<div id="floor1" class="c_floor_title">
 				<div class="c_floor_name">
-					<img alt="装扮" src="../img/login/login_logo.jpg"><span>装扮</span>
+					<img alt="装扮" src="../img/login/login_logo.jpg"><span>动作</span>
 				</div>
 
 				<div class="right c_floor_btn">
-					<a class="c_floor_change" href="javascript:;">换一批</a>
-					<a class="c_floor_more" href="" target="_blank">更多</a>
+					<a class="c_floor_change" href="javascript:;" >换一批</a>
+					<a class="c_floor_more" href="index.php?a=page&amp;chid=5" target="_blank">更多</a>
 				</div>
 			</div>
 			<ul class="c_product_list">
 			<li id="li1" class="animated fade">
 				<a href="" target="_blank">
-					<img class="c_lazyload" alt="妆面" src="../img/trade/item.jpg">
-					<p class="c_product_name">妆面</p>
-					
-					<p class="c_prduct_price">¥19.80</p>
+					<img class="c_lazyload" alt="某漫画" src="../img/cartoon/cartoon.jpg">
+					<p class="c_prduct_price">某漫画</p>	
 					
 				</a>
 			</li>
 		
 			<li id="li2" class="animated fade">
 				<a href="" target="_blank">
-					<img class="c_lazyload" alt="贴膜" src="../img/trade/item.jpg">
-					<p class="c_product_name">贴膜</p>
-					
-					<p class="c_prduct_price">¥15.00</p>
+					<img class="c_lazyload" alt="" src="../img/cartoon/cartoon.jpg">
+					<p class="c_prduct_price">某漫画</p>	
 					
 				</a>
 			</li>
 		
 			<li id="li3"class="animated fade">
 				<a href="" target="_blank">
-					<img class="c_lazyload" alt="汉子必备" src="../img/trade/item.jpg">
-					<p class="c_product_name">汉子必备</p>
-					
-					<div class="c_price_wrap">
-						<span>折扣价</span>
-						<span class="c_price_now">¥19.00</span>
-						<del>¥ 38.00</del>
-					</div>
+					<img class="c_lazyload" alt="某漫画" src="../img/cartoon/cartoon.jpg">
+					<p class="c_prduct_price">某漫画</p>	
 					
 				</a>
 			</li>
 		
 			<li id="li4"class="animated fade">
 				<a href="" target="_blank">
-					<img class="c_lazyload" alt="原宿假发" src="../img/trade/item.jpg">
-					<p class="c_product_name">假发</p>
-					
-					<div class="c_price_wrap">
-						<span>折扣价</span>
-						<span class="c_price_now">¥109.00</span>
-						<del>¥ 150.00</del>
-					</div>
+					<img class="c_lazyload" alt="某漫画" src="../img/cartoon/cartoon.jpg">
+					<p class="c_prduct_price">某漫画</p>	
 					
 				</a>
 			</li>
 		</ul>
 		</div>
-		<!-- 装扮  end -->
-   </div>
-
+		<!-- 动作  end -->
+		</div>
    <!-- middle end -->
 	<!-- footer start -->
 	<div class="footer">

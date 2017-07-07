@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.huadi.cedon.dao.recordMapper;
 import com.huadi.cedon.jdbc.dao.BaseDao;
 
@@ -40,6 +38,11 @@ public class TradeController extends BaseController implements Serializable {
 		map.put("items", map1);
 		return "trade/cart";
 	}
+	@RequestMapping("productview")
+	public String ProductVeiw(ModelMap map,HttpServletRequest request){	
+		return "trade/product";
+	}	
+		
 	@RequestMapping("toPersonalInfo")
 	public String ToPersonalInfo(ModelMap map, HttpServletRequest request){
 		return "redirect:../personal_center/gerenxinxixiugai";
