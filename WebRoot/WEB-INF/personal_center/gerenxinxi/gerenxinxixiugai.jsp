@@ -33,6 +33,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<div class="head_area">
   		<img src="img/login/${user_url}" class="img-circle">
   	</div>
+  	      	<!-- 背景动图 -->
+  	<div class="background_area">
+  		<img src="img/personal_space/bj.gif" style="width:100%;height:100%;">
+  	</div>
   	
   <div id="content" > 
  
@@ -52,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        <h3 style="padding:10px;text-align:center">资料修改</h3> </div> 
        <ul class="menu-list"> 
        <li class="menu-item tieba-link" id="settingPrivacyTieba">
-       <a href="personal_center/nichengxiugai">昵称修改</a> </li>
+       <a href="personal_center/nichengxiugai">信息修改</a> </li>
        <li class="menu-split"> </li>
        <li class="menu-item zhidao-link" id="settingPrivacyZhidao">
        <a href="personal_center/mimaxiugai">密码修改</a> </li>
@@ -102,6 +106,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               	<td style="font-weight:bold">电话：</td>
               	<td class="personal-detail-td" style="padding-left:50px;">
                 	 ${user_tele} 
+              		<span class="mod-cus-input-tip"></span>
+              </td>
+              </tr>
+              <tr>
+              	<th class="personal-detail-th"></th> 
+              	<td style="font-weight:bold">邮箱：</td>
+              	<td class="personal-detail-td" style="padding-left:50px;">
+                	 ${user_email} 
               		<span class="mod-cus-input-tip"></span>
               </td>
               </tr>
