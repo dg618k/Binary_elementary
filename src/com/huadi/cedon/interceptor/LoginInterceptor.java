@@ -29,7 +29,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			HttpServletResponse response, Object obj) throws Exception {
 		
 			HttpSession session=request.getSession();
-			Object name=session.getAttribute("name");
+			Object id = session.getAttribute("id");
 			String DQurl = request.getRequestURI();
 
 			if(DQurl.contains("/Binary_elementary/login/")){
@@ -41,7 +41,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			if(DQurl.contains("/Binary_elementary/static/")){
 				return true;
 			}
-			if(name == null) {
+			if(id == null) {
 				response.sendRedirect(
 					request.getContextPath() + "/index");
 				return false;

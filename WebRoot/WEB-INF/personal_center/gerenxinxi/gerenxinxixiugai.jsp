@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'gerenxinxixiugai.jsp' starting page</title>
+    <title>个人信息</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -17,12 +19,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
+	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/gerenxinxixiugai.css">
+	<script src="static/js/jquery-3.2.1.min.js"></script>
+	<script src="static/bootstrap/js/bootstrap.min.js"></script>
 	
 
   </head>
    
    <body id="r1"> 
+   
+  	<!-- 头像显示区域 -->
+  	<div class="head_area">
+  		<img src="img/login/${user_url}" class="img-circle">
+  	</div>
+  	      	<!-- 背景动图 -->
+  	<div class="background_area">
+  		<img src="img/personal_space/bj.gif" style="width:100%;height:100%;">
+  	</div>
+  	
   <div id="content" > 
  
   <div class="mod-setting clearfix">
@@ -30,24 +45,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div class="setting-content clearfix"> 
    <div class="setting-menu"> 
    <div class="menu-title menu-profile-current active"> 
-   <h3>个人资料</h3>
+   <h3 style="padding:10px;text-align:center">个人资料</h3>
      </div> 
      <ul class="menu-list">
       <li class="menu-item basic-link on">
-      <a href="personal_center/gerenxinxixiugai" >昵称</a></li>
-       <li class="menu-split"> </li>
-       <li class="menu-item details-link">
-       <a href="personal_center/gerenxinxixiugai_qianming" >个性签名</a> </li>
-       <li class="menu-split">  </li>
-      
-       <li class="menu-item portrait-link">
-       <a href="personal_center/gerenxinxixiugai_touxiang">头像</a> </li>
-       </ul> 
+      	<a href="personal_center/gerenxinxixiugai" >个人信息</a>
+      </li>
+     </ul> 
        <div class="menu-title menu-privacy" id="settingPrivacy"> 
-       <h3>资料修改</h3> </div> 
+       <h3 style="padding:10px;text-align:center">资料修改</h3> </div> 
        <ul class="menu-list"> 
        <li class="menu-item tieba-link" id="settingPrivacyTieba">
-       <a href="personal_center/nichengxiugai">昵称修改</a> </li>
+       <a href="personal_center/nichengxiugai">信息修改</a> </li>
        <li class="menu-split"> </li>
        <li class="menu-item zhidao-link" id="settingPrivacyZhidao">
        <a href="personal_center/mimaxiugai">密码修改</a> </li>
@@ -62,25 +71,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="setting-detail" id="stthld" style="display: block;">
          <div class="detail-bg"></div> 
          <div class="plzhld clearfix">
-         <div class="mod-setting-profile" id="1000001" style="display: block;"> 
-         <div class="setting-profile-title yahei">昵称</div>
-          <form class="setting-profile-form" id="profile" action="https://passport.baidu.com/v2/?ucenterset" method="POST">
-           <table class="setting-profile-table"> 
+         <div class="mod-setting-profile" id="1000001" style="display: block;">
+         <div class="setting-profile-title yahei">用户信息</div>
+         
+           <table class="setting-profile-table setting-profile-form"> 
            <tbody> 
               <tr> 
               <th class="personal-detail-th"></th> 
-              <td class="personal-detail-td">
-               <textarea name="passport_userdetail" class="mod-cus-input mod-cus-input-4" id="passport_userdetail"></textarea>  
-              <span class="mod-cus-input-tip"></span></td></tr></tbody></table> 
-              
-              <iframe width="0" height="0" class="setting-proxy" id="proxy" src="login/gerenxinxixiugai_qianming"></iframe></div></div> </div> </div> </div> </div>
-
-      
-   <script src="https://ss1.bdstatic.com/5KZ1bjqh_Q23odCf/static/princess/js/setting_basic_f2b6cf89.js"></script><script>
-    App.onPageletArrive({"targetId":"stthld", "viewType": "SettingProfile", 
-        "tplContent":"<div class=mod-setting-profile> <div class=\x22setting-profile-title yahei\x22>基本资料<\/div> <form id=profile class=setting-profile-form method=POST action=\x22https:\/\/passport.baidu.com\/v2\/?ucenterset\x22> <table class=setting-profile-table> <tbody> <tr> <th>性别:<\/th> <td class=line30> <input name=passport_sex id=passport-sex-1 type=radio value=1 > <label class=profile-gender for=passport-sex-1>男<\/label> <input name=passport_sex id=passport-sex-2 type=radio value=2  checked > <label for=passport-sex-2 class=profile-gender>女<\/label>   <tr> <th>生日:<\/th> <td> <select id=passport_birthday_year name=passport_birthday_year><option value=none>请选择<\/select>   <tr> <th>血型:<\/th> <td> <select id=passport_blood name=passport_blood><option value=none>请选择<\/select>   <tr> <th>出生地:<\/th> <td> <select id=passport_hometown_province name=passport_hometown_province><option value=none>请选择<\/select>   <tr> <th>居住地:<\/th> <td> <select id=passport_reside_province name=passport_hometown_province><option value=none>请选择<\/select>   <tr> <th class=personal-detail-th>个人简介:<\/th> <td class=personal-detail-td> <textarea name=\x22passport_userdetail\x22 id=\x22passport_userdetail\x22 class=\x22mod-cus-input mod-cus-input-4\x22><\/textarea>    <\/table> <input type=submit class=\x22setting-submit-btn setting-submit-ml100\x22 value=\x22保存\x22><span class=save-ok id=tiebaSaveOkMsg> 你的设置保存成功！ <a href=\x22https:\/\/www.baidu.com\/p\/soul丶搁浅ii\/detail\x22 target=reviewPage class=check-effect>查看效果<\/a> <\/span> <\/form> <iframe id=proxy class=setting-proxy width=0 height=0 src=\/p\/setting\/profile\/proxy><\/iframe><\/div> "
-    });
-    
-</script>
+              <td style="font-weight:bold">用户昵称：</td>
+              <td class="personal-detail-td" style="padding-left:50px;">
+                	 ${user_name} 
+              <span class="mod-cus-input-tip"></span>
+              </td>
+              </tr>
+              <tr>
+              	<th class="personal-detail-th"></th> 
+              	<td style="font-weight:bold">个性签名：</td>
+              	<td class="personal-detail-td" style="padding-left:50px;">
+                	 ${user_signal} 
+              	<span class="mod-cus-input-tip"></span>
+              </td>
+              </tr>
+              <tr>
+              	<th class="personal-detail-th"></th> 
+              	<td style="font-weight:bold">性别：</td>
+              	<td class="personal-detail-td" style="padding-left:50px;">
+                	 <c:if test="${user_sex == 0 }"> 男</c:if>
+                	 <c:if test="${user_sex == 1 }"> 女</c:if>
+              		 <span class="mod-cus-input-tip"></span>
+              </td>
+              </tr>
+              <tr>
+              	<th class="personal-detail-th"></th> 
+              	<td style="font-weight:bold">电话：</td>
+              	<td class="personal-detail-td" style="padding-left:50px;">
+                	 ${user_tele} 
+              		<span class="mod-cus-input-tip"></span>
+              </td>
+              </tr>
+              <tr>
+              	<th class="personal-detail-th"></th> 
+              	<td style="font-weight:bold">邮箱：</td>
+              	<td class="personal-detail-td" style="padding-left:50px;">
+                	 ${user_email} 
+              		<span class="mod-cus-input-tip"></span>
+              </td>
+              </tr>
+              <tr>
+              	<th class="personal-detail-th"></th> 
+              	<td style="font-weight:bold">账户余额：</td>
+              	<td class="personal-detail-td" style="padding-left:50px;">
+                	 ${user_money} 
+              		<span class="mod-cus-input-tip"></span>
+              	</td>
+              </tr>
+            </tbody>
+            </table>  
 </body>
 </html>

@@ -1,25 +1,23 @@
 package com.huadi.cedon.control;
 
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.huadi.cedon.dao.userMapper;
 import com.huadi.cedon.model.user;
 import com.huadi.cedon.util.MD5Util;
@@ -47,19 +45,25 @@ public class LoginController extends BaseController implements Serializable {
 		return true;
 	}
 	
+	@RequestMapping("/nameCheck")
+	@ResponseBody
+	public Boolean nameCheck(user user, HttpServletRequest request) {
+		String name = user.getName();
+		if(BaseDao.findOne("select * from user where name = ?", name)==null)
+			return false;
+		return true;
+	}
+	
 	@RequestMapping("/picCheck")
 	@ResponseBody
-	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException{
-//		String userinput = request.getParameter("userCode");
+	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response){
+		String userinput = request.getParameter("userCode");
 //		System.out.println("userCode="+userinput);
-//		String clientCheckcode = userinput;
-//		generate_pic gen = new generate_pic();
-//		gen.doPost(request, response);
-//		String serverCheckcode = (String)request.getSession().getAttribute("checkcode");
+		String clientCheckcode = userinput;
+		String serverCheckcode = (String)request.getSession().getAttribute("checkcode");
 //		System.out.println("serverCode="+serverCheckcode);
-//		if(clientCheckcode.equals(serverCheckcode))
-//			return true;
+		if(clientCheckcode.equals(serverCheckcode))
+			return true;
 		return false;
 	}
 	
@@ -68,34 +72,23 @@ public class LoginController extends BaseController implements Serializable {
 			return "redirect:../index";
 	}
 
-
-	@RequestMapping(value = {"/regiaterAjax"}, method = {RequestMethod.GET, RequestMethod.POST})
-	@ResponseBody
-	public Map<String, Object> registerAjax(user user,
-			@RequestParam(value="name", required = false) String name,
-            @RequestParam(value="password", required = false) String password,
-            @RequestParam(value="email", required = false) String email
-            ) throws SQLException {
-		
-		Map<String, Object> info = new HashMap<String, Object>();        
-		String sql1 = "select * from login where name = ?";
-
-		if (BaseDao.findOne(sql1, user.getName()) != null) {
-			info.put("success", false);
-			info.put("message", "该用户名已被注册!");
-		} else {
-			info.put("success", true);
-			info.put("message", "该用户名可以使用");
-			
+	@RequestMapping("registerAjax")
+	public String registerAjax(user user,
+			@RequestParam(value="name", required = true) String name,
+            @RequestParam(value="password", required = true) String password,
+            @RequestParam(value="email", required = true) String email
+    ) throws SQLException {
 			user newUser = new user();
 			newUser.setName(name);
 			newUser.setEmail(email);
-			newUser.setHeadUrl("");
+			newUser.setHeadUrl("self.jpg");
 			newUser.setSalt(UUID.randomUUID().toString().substring(0, 5));
-			newUser.setPassword(MD5Util.MD5(password+user.getSalt()));
-			userMapper.insert(newUser);
-		}
-		return info;
+			newUser.setPassword(MD5Util.MD5(password+newUser.getSalt()));
+			newUser.setSex(0);
+			newUser.setAdmin(0);
+			newUser.setMoney(0.0);
+			userMapper.insertSelective(newUser);
+		return "login/login";
 	}
 	
 	@RequestMapping("login")
@@ -106,32 +99,25 @@ public class LoginController extends BaseController implements Serializable {
 	@RequestMapping("loginCheck")
 	public String loginCheck(ModelMap map, @RequestParam(value="name", required = true) String name,
             @RequestParam(value="password", required = true) String password, HttpServletRequest request) {
-		String sql = "select * from user where email = ?";
-		System.out.println("name="+name+" password="+password);
+		String sql = "select * from user where name = ?";
 		Map<String, Object> map2 = BaseDao.findOne(sql, name);
 		if (map2 != null) {
 			String pass = map2.get("password") + "";
-			if(pass.equals(password)){
-				System.out.println("name="+name+" password="+password); 
+			if (pass.equals(MD5Util.MD5(password+map2.get("salt")))){
+				System.out.println("name="+name+" password="+password+"pass="+pass); 
 				HttpSession session = request.getSession();
 				session.setAttribute("id", map2.get("id"));
 				session.setAttribute("name", map2.get("name"));
 				session.setAttribute("email", map2.get("email"));
+				session.setAttribute("url", map2.get("head_url"));
 				return "redirect:../index";
 			}
-//			if (pass.equals(MD5Util.MD5(password+map2.get("salt")))){
-//				System.out.println("name="+name+" password="+password); 
-//				HttpSession session = request.getSession();
-//				session.setAttribute("id", map2.get("id"));
-//				session.setAttribute("name", map2.get("name"));
-//				session.setAttribute("email", map2.get("email"));
-//				return "redirect:index";
-//			} 
-			else {
+			else{
 				map.put("message", "密码错误");
 			}
-		} else {
-			map.put("message", "账号不存在");
+		}
+		else{
+			map.put("message", "帐号不存在");
 		}
 		return "login/login";
 	}

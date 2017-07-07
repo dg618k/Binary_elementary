@@ -19,4 +19,8 @@ public class bofangController extends BaseController implements Serializable  {
 	public String bofangview(ModelMap map,HttpServletRequest request){
 		return "bofang/bofang";
 	}
+	@RequestMapping("videoview")
+	public String Videoview(ModelMap map,HttpServletRequest request){
+		return "bofang/video";
+	}
 }

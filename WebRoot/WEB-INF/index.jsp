@@ -24,8 +24,9 @@
     				<li><a href="login/login">登陆</a></li>
             		<li><a href="login/register">注册</a></li>
     		</c:if>
-            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
-            <li id="top_tag0" class="history"><a href="trade/cartview" target="_blank" rel="nofollow">购物车</a></li>
+            <li id="top_tag2" class="history"><a href="login/login" target="_blank" rel="nofollow">注销</a></li>
+            <li id="top_tag1" class="history"><a href="trade/cartview" target="_blank" rel="nofollow">购物车</a></li>
+            <li id="top_tag0" class="history"><a href="userIndex" target="_blank" rel="nofollow">个人中心</a></li>
         </ul>
 	</nav>
 	<div class="banner"></div>
@@ -56,21 +57,11 @@
     	<div class="container-lunbo">
 			<div id="slide" class="slide" >
 				<!-- 轮播图片数量可自行增减 -->
-				<div class="img">
-					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
-				</div>
-				<div class="img">
-					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
-				</div>
-				<div class="img">
-					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
-				</div>
-				<div class="img">
-					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
-				</div>
-				<div class="img">
-					<a href="bofang/bofangview"><img src="img/main/4.jpg"/></a>
-				</div>
+				<div class="img"><img src="img/main/4.jpg"/></div>
+				<div class="img"><img src="img/main/1.jpg"/></div>
+				<div class="img"><img src="img/main/2.jpg"/></div>
+				<div class="img"><img src="img/main/3.jpg"/></div>
+				<div class="img"><img src="img/main/5.jpg"/></div>
 				<div class="slide-bt"></div>
 			</div>
 		</div>
@@ -231,72 +222,23 @@ slideLi();
 
             <div class="section-body">
                 <ul class="section-body-videolist">
-                    <li  style="margin-left:30px">
-                        <a href="">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/anime/swglxhdsj/">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/anime/duannao/">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="section-body-videolist-cover">
-                                <img src="img/main/middle_box.jpg"/>
-                                <div class="section-body-videolist-title">
-                                    <p class="title">某节目</p>
-                                    <p class="genre">类型1|类型2</p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+               		<c:forEach items="${cartoon}" var="c">
+                    	<li>
+	                        <a href="">
+	                            <div class="section-body-videolist-cover">
+	                                <img src="img/main/middle_box.jpg"/>
+	                                <div class="section-body-videolist-title">
+	                                    <p class="title">${c.title}</p>
+	                                    <c:forEach items="${type}" var="t">
+	                                    	<c:if test="${t.entity_id == c.id }">
+	                                    		<p class="genre">${t.second_type}</p>
+	                                    	</c:if>
+	                                    </c:forEach>
+	                                </div>
+	                            </div>
+	                        </a>
+	                    </li>
+                    </c:forEach>
                     <div class="clear"></div>
                 </ul>
             </div>

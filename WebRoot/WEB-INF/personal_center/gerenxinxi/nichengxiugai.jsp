@@ -10,11 +10,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>My JSP 'nichengxiugai.jsp' starting page</title>
-   <link rel="stylesheet" type="text/css" href="css/gerenxinxixiugai.css">
-   
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+	<script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/gerenxinxixiugai.css">
   
   </head>
     <body id="r1"> 
+          	<!-- 背景动图 -->
+  	<div class="background_area">
+  		<img src="img/personal_space/bj.gif" style="width:100%;height:100%;">
+  	</div>
     
    <div id="content">
     <div class="mod-setting clearfix"> 
@@ -22,26 +28,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="setting-content clearfix"> 
      <div class="setting-menu"> 
      <div class="menu-title menu-profile"> 
-     <h3>个人资料</h3>  </div> 
+     <h3 style="padding:10px;text-align:center">个人资料</h3>  </div> 
      <ul class="menu-list"> 
      <li class="menu-item basic-link">
-     <a href="personal_center/gerenxinxixiugai">昵称</a> </li>
-     <li class="menu-split"> </li>
-     <li class="menu-item details-link">
-     <a href="personal_center/gerenxinxixiugai_qianming">个性签名</a> </li>
-     <li class="menu-split">  </li>
-    
-     <li class="menu-item portrait-link">
-     <a href="personal_center/gerenxinxixiugai_touxiang">头像</a> </li>
+     <a href="personal_center/gerenxinxixiugai">个人信息</a> </li>
      </ul> 
     
     
     <div class="menu-title menu-privacy-current active" id="settingPrivacy">
-     <h3>资料修改</h3> </div>
+     <h3 style="padding:10px;text-align:center">资料修改</h3> </div>
       <ul class="menu-list">
        <li class="menu-item zhidao-link on" id="settingPrivacyZhidao">
      
-       <a href="personal_center/nichengxiugai">昵称修改</a> </li>
+       <a href="personal_center/nichengxiugai">信息修改</a> </li>
        <li class="menu-split"> </li>
         <li class="menu-item tieba-link" id="settingPrivacyTieba">
        <a href="personal_center/mimaxiugai">密码修改</a> </li>
@@ -57,24 +56,102 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          <div class="detail-bg"></div> 
          <div class="plzhld clearfix">
          <div class="mod-setting-profile" id="1000001" style="display: block;"> 
-         <div class="setting-profile-title yahei">昵称修改</div>
-          <form class="setting-profile-form" id="profile" action="https://passport.baidu.com/v2/?ucenterset" method="POST">
-           <table class="setting-profile-table"> 
-           <tbody> 
-              <tr> 
-              <th class="personal-detail-th"></th> 
-              <td class="personal-detail-td">
-               <textarea name="passport_userdetail" class="mod-cus-input mod-cus-input-4" id="passport_userdetail"></textarea>  
-              <span class="mod-cus-input-tip"></span></td></tr></tbody></table> 
-              <input class="setting-submit-btn setting-submit-ml100" type="submit" value="保存">
-              <span class="save-ok" id="tiebaSaveOkMsg"> 你的设置保存成功！ <a class="check-effect" href="https://www.baidu.com/p/soul丶搁浅ii/detail" target="reviewPage">查看效果</a> </span> </form> 
-              <iframe width="0" height="0" class="setting-proxy" id="proxy" src="login/gerenxinxixiugai_qianming"></iframe></div></div> </div> </div> </div> </div>
-
-      
-   <script src="https://ss1.bdstatic.com/5KZ1bjqh_Q23odCf/static/princess/js/setting_basic_f2b6cf89.js"></script><script>
-    App.onPageletArrive({"targetId":"stthld", "viewType": "SettingProfile", 
-        "tplContent":"<div class=mod-setting-profile> <div class=\x22setting-profile-title yahei\x22>基本资料<\/div> <form id=profile class=setting-profile-form method=POST action=\x22https:\/\/passport.baidu.com\/v2\/?ucenterset\x22> <table class=setting-profile-table> <tbody> <tr> <th>性别:<\/th> <td class=line30> <input name=passport_sex id=passport-sex-1 type=radio value=1 > <label class=profile-gender for=passport-sex-1>男<\/label> <input name=passport_sex id=passport-sex-2 type=radio value=2  checked > <label for=passport-sex-2 class=profile-gender>女<\/label>   <tr> <th>生日:<\/th> <td> <select id=passport_birthday_year name=passport_birthday_year><option value=none>请选择<\/select>   <tr> <th>血型:<\/th> <td> <select id=passport_blood name=passport_blood><option value=none>请选择<\/select>   <tr> <th>出生地:<\/th> <td> <select id=passport_hometown_province name=passport_hometown_province><option value=none>请选择<\/select>   <tr> <th>居住地:<\/th> <td> <select id=passport_reside_province name=passport_hometown_province><option value=none>请选择<\/select>   <tr> <th class=personal-detail-th>个人简介:<\/th> <td class=personal-detail-td> <textarea name=\x22passport_userdetail\x22 id=\x22passport_userdetail\x22 class=\x22mod-cus-input mod-cus-input-4\x22><\/textarea>    <\/table> <input type=submit class=\x22setting-submit-btn setting-submit-ml100\x22 value=\x22保存\x22><span class=save-ok id=tiebaSaveOkMsg> 你的设置保存成功！ <a href=\x22https:\/\/www.baidu.com\/p\/soul丶搁浅ii\/detail\x22 target=reviewPage class=check-effect>查看效果<\/a> <\/span> <\/form> <iframe id=proxy class=setting-proxy width=0 height=0 src=\/p\/setting\/profile\/proxy><\/iframe><\/div> "
-    });
-    
-</script>
+         <div class="setting-profile-title yahei">信息修改</div>
+          <form class="setting-profile-form" onsubmit="return checkall();" id="profile" action="personal_center/nameModifyInsert" method="POST">
+          	<div style="margin-left:50px;margin-top:50px">
+          		<label style="font-size:14px; float:left; margin-top:5px;">昵称：</label>
+          		<input style="float:left" type="text" id="user_name" name="user_name" onblur="checkname()" required>
+          		<label id="nameerror1" class="input_error">
+                	<p class="glyphicon glyphicon-remove"> 用户名不能为空</p>
+                </label>
+                <label id="nameerror2" class="input_error">
+                	<p class="glyphicon glyphicon-remove">该用户名已被注册</p>
+                </label>
+                <label id="namevalid" class="input_valid">
+                	<p class="glyphicon glyphicon-ok">用户名有效</p>
+                </label>
+                <div class="c_clear_both"></div>
+          	</div>
+          	<div>
+          		<label class="dropdown" style="margin-left:50px;margin-top:15px">
+					<span class="dropdown-toggle" data-toggle="dropdown" style="font-size:14px;">
+						性别</span> <span class="caret"></span>
+						<ul class="dropdown-menu">
+							<li><a onclick="getSex(this)" id="man">男</a></li>
+							<li><a onclick="getSex(this)" id="woman">女</a></li>
+						</ul>
+          		</label>
+          		<input style="font-size:14px; margin-left:12px;border:none;background-color:white; readonly:expression(this.readOnly=true);" id="sex" name="sex" value="男">
+          	</div>
+          	<div style="margin-left:50px;margin-top:15px">
+          		<label style="font-size:14px;float:left;margin-top:5px;">电话：</label>
+          		<input style="float:left;" type="text" onblur="teleCheck()" id="tele" name="tele" required>
+          		<label id="teleerror" class="input_error">
+                	<p class="glyphicon glyphicon-remove">电话格式错误</p>
+                </label>
+                <label id="televalid" class="input_valid">
+                	<p class="glyphicon glyphicon-ok">有效</p>
+                </label>
+                <div class="c_clear_both"></div>
+          	</div>
+            <input type="submit" style="margin-top:15px;margin-left:50px;" value="保存">
+           </form> 
+      <script type="text/javascript">
+      		var flag1 = flag2 = false;
+      		function getSex(obj){
+      			var sex = $(obj).text();
+      			$("#sex").val(sex);
+      		}
+      		function teleCheck(){
+				var tele = $("#tele").val();
+				if(!(/^1[34578]\d{9}$/.test(tele))){ 
+					$("#teleerror").css("display", "block");
+					$("#televalid").css("display", "none");
+					flag2 = false;
+				}
+				else{
+					$("#teleerror").css("display", "none");
+					$("#televalid").css("display", "block");
+					flag2 = true;
+				}
+			}
+      		function checkname(){
+				var user_name = $("#user_name").val();
+				if(user_name==""){
+		 			$("#nameerror1").css("display", "block");
+		 			$("#nameerror2").css("display", "none");
+		 			$("#namevalid").css("display", "none");
+		 			flag1 = false;
+				}
+				else{
+					$.ajax({
+						type:"POST",
+						url:"personal_center/nameModifyCheck",
+						data:"name="+user_name,
+						success: function(msg){
+							if(msg){
+								$("#nameerror1").css("display", "none");
+		 						$("#nameerror2").css("display", "block");
+		 						$("#namevalid").css("display", "none");
+		 						flag1 = false;
+							}
+							else{
+								$("#nameerror1").css("display", "none");
+		 						$("#nameerror2").css("display", "none");
+		 						$("#namevalid").css("display", "block");
+		 						flag1 = true;
+							}
+						}
+					});
+				}
+			}
+			function checkall(){
+				checkname();
+				teleCheck();
+				if(flag1&&flag2)
+					return true;
+				return false;
+			}
+      </script>
+      </body>
 </html>

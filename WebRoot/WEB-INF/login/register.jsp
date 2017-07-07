@@ -24,9 +24,9 @@
         <div class="c_clear_both"></div>
 </div>
 <!-- header end -->
-<div class="c_reg_wrap">
+<div class="c_reg_wrap" style="background:url()">
 	<div class="c_content">
-		<form action="registerInsert" onsubmit="return checkall();" method="post">
+		<form action="registerAjax" onsubmit="return checkall();" method="post">
 		<ul class="c_reg_box">
 			<li>
 				<label class="c_fl"><span>邮箱：</span><input type="text" class="c_reg_input c_fl c_reg_ph" id="email" name="email" onBlur="checkemail()" placeholder="请输入您的邮箱"></label>	
@@ -46,8 +46,24 @@
 			</li>
 			<li>
 				<label class="c_fl">
+					<span>昵称：</span>
+					<input type="text" onblur="checkname()" class="c_reg_input c_fl" name="name" id="user_name" placeholder="请输入用户名">
+				</label>
+				<div id="nameerror1" class="input_error">
+                	<p class="glyphicon glyphicon-remove">用户名不能为空</p>
+                </div>
+                <div id="nameerror2" class="input_error">
+                	<p class="glyphicon glyphicon-remove">该用户名已被使用</p>
+                </div>
+                <div id="namevalid" class="input_valid">
+                	<p class="glyphicon glyphicon-ok">有效的用户名</p>
+                </div>
+				<div class="c_clear_both"></div>	
+			</li>
+			<li>
+				<label class="c_fl">
 					<span>密码：</span>
-					<input type="password" class="c_reg_input c_fl c_reg_lock" onblur="checkpassword()" name="pwd" id="password1" placeholder="请输入您的密码">
+					<input type="password" class="c_reg_input c_fl c_reg_lock" onblur="checkpassword()" name="password" id="password1" placeholder="请输入您的密码">
 				</label>
 				 <div id="password_error1" class="input_error">
 				 	<p class="glyphicon glyphicon-remove">含有非法字符或位数不在8-16之间</p>
@@ -75,7 +91,7 @@
 					<span>验证码：</span>
 					<input type="text" class="c_reg_input c_reg_input_v c_fl" onblur="check_pic()" id="check_img" name="captcha" placeholder="请输入验证码">
 				</label>
-				<img src="${pageContext.request.contextPath}/generate_pic" class="c_fl" onclick="changeImg()" id="verify" title="点击换一张">
+				<img src="../servlet/generate_pic" class="c_fl"  id="verify" onclick="changeImg()" title="点击换一张" >
 				<div id="pic_diff" class="input_error">
 				 	<p class="glyphicon glyphicon-remove">验证失败</p>
 				 </div>
@@ -92,15 +108,16 @@
 				<input type="button" value="获取验证码" class="c_btn c_btn_ph c_fl" id="msgcode-btn">
 				<div class="c_clear_both"></div>
 			</li>
-			<li class="c_reg_check">
+			<li class="c_reg_check"  style="margin-left:130px;">
 				<label class="c_fl">
-					<input type="checkbox" name="if_agree" value="1" id="if_agree" checked>阅读
-				</label>
-					<a href="i.php?c=login&a=accord" target="_blank">[用户协议]</a>
+					<input type="checkbox" name="if_agree" value="1" id="if_agree" checked>
+				</label>阅读
+					<a href="i.php?c=login&a=accord" target="_blank" style="padding-top:5px;">[用户协议]</a>
+				<div class="c_clear_both"></div>
 			</li>
-			<li>
+			<li style="margin-left:50px;">
 				<input type="submit" value="注&nbsp;&nbsp;册" class="c_btn c_btn_reg c_fl" id="reg-btn">
-				<a href="i.php?c=login" class="c_btn c_btn_login c_fl" id="login-btn">返回登录</a>
+				<a href="login" class="c_btn c_btn_login c_fl" id="login-btn">直接登录</a>
 				<div class="c_clear_both"></div>
 			</li>
 			<li class="c_wq_login">
@@ -147,7 +164,7 @@
 	var flag1 = flag2 = flag3 = flag4 = flag5 = false;
 	var email=$("#email").val();
 	function changeImg(){
-		$("#verify").src=$("#verify")+Math.random();
+		document.getElementById('verify').src="../servlet/generate_pic?"+Math.random();
 	}
 	function checkemail(){
 		email = $("#email").val();
@@ -194,6 +211,36 @@
   			
   		}
 	}
+	function checkname(){
+		var user_name = $("#user_name").val();
+		if(user_name==""){
+		 $("#nameerror1").css("display", "block");
+		 $("#nameerror2").css("display", "none");
+		 $("#namevalid").css("display", "none");
+		 flag5 = false;
+		}
+		else{
+			$.ajax({
+				type:"POST",
+				url:"nameCheck",
+				data:"name="+user_name,
+				success: function(msg){
+					if(msg){
+						$("#nameerror1").css("display", "none");
+						$("#nameerror2").css("display", "block");
+		 				$("#namevalid").css("display", "none");
+		 				flag5 = false;
+					}
+					else{
+						$("#nameerror1").css("display", "none");
+		 				$("#nameerror2").css("display", "none");
+		 				$("#namevalid").css("display", "block");
+		 				flag5 = true;
+					}
+				}
+			});
+		}
+	}
 	function checkpassword(){
 		var pass1 = $("#password1").val();
 		var pass2 = $("#password2").val();
@@ -228,7 +275,6 @@
      	  			if(msg){
      	  				$("#pic_diff").css("display", "none");
      	  				$("#pic_same").css("display", "block");
-     	  				changeImg();
      	  				flag4 = true;
      	  			}
      	  			else{
@@ -239,18 +285,13 @@
      	  			}
    				}
    			});
-	}
-	function setCookie(cname, cvalue, exdays) {  
-    	var d = new Date();  
-   		d.setTime(d.getTime() + (exdays*24*60*60*1000));  
-    	var expires = "expires="+d.toUTCString();  
-    	document.cookie = cname + "=" + cvalue + "; " + expires;  
-	}  
+	} 
 	function checkall(){
 		checkemail();
 		checkpassword();
-		if(flag1&&flag2&&flag3){
-			setCookie("username",email, 1);
+		checkname();
+		check_pic()
+		if(flag1&&flag2&&flag3&&flag4&&flag5){
 			return true;
 		}
 		return false;
