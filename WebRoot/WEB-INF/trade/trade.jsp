@@ -20,26 +20,25 @@
 <body>
 <!-- header start -->
 <header>
-  	<nav>
+	<nav>
         <ul>
             <li><a>喵，欢迎来到史上最好的网站</a></li>
-             <li><a href="">登陆</a></li>
-              <li><a href="">注册</a></li>
-            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
-            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
-            
+    			<li><a>${user}</a></li>
+    			<li id="top_tag2" class="history"><a href="../login/logout" rel="nofollow">注销</a></li>
+           		<li id="top_tag1" class="history"><a href="../trade/cartview" rel="nofollow">购物车</a></li>
+            	<li id="top_tag0" class="history"><a href="../userIndex" rel="nofollow">个人中心</a></li>
         </ul>
 	</nav>
 	<div class="banner"></div>
 	<div class="top2">
 		<nav>
 	        <ul>
-	            <li><a href="">主页</a></li>
-	            <li><a href="" target="_blank">视频</a></li>
-	            <li><a href="" target="_blank">漫画</a></li>
-	            <li><a href="" target="_blank" rel="nofollow">游戏</a></li>
-	            <li><a href="" target="_blank" rel="nofollow">资讯</a></li>
-	            <li><a href="" target="_blank" rel="nofollow">周边</a></li>
+	            <li><a href="../index">主页</a></li>
+	            <li><a href="../bofang/videoview">视频</a></li>
+	            <li><a href="../cartoon/cartoonview">漫画</a></li>
+	            <li><a href="../game/gameview" rel="nofollow">游戏</a></li>
+	            <li><a href="../information/informationview" rel="nofollow">资讯</a></li>
+	            <li><a href="../trade/tradeview" rel="nofollow">周边</a></li>
 	            <li id="top_tag0" class="history">
 	            </li>
 	        </ul>

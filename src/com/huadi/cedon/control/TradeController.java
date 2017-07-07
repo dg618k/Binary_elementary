@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.huadi.cedon.dao.recordMapper;
 import com.huadi.cedon.jdbc.dao.BaseDao;
 
@@ -23,6 +24,8 @@ public class TradeController extends BaseController implements Serializable {
 	
 	@RequestMapping("tradeview")
 	public String TradeVeiw(ModelMap map,HttpServletRequest request){	
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user", user_name);
 		return "trade/trade";
 	}
 	@RequestMapping("cartview")

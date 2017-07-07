@@ -48,6 +48,23 @@
 			value="com.huadi.cedon.util.MyBatisRepository" />
 	</bean>
 	
+	<!-- 上传文件 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!--/*限制上传文件大小1024为1k*/ -->
+		<property name="maxUploadSize" value="5120000"></property>
+		<!--/*将异常推迟到控制器中去处理*/ -->
+		<property name="resolveLazily" value="true" />
+	</bean>
+	<mvc:interceptors>
+		<!-- 登录检查拦截器 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/index" />
+			<bean class="com.huadi.cedon.interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 	<!-- 开启事务注释扫描 -->
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

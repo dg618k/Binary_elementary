@@ -15,6 +15,8 @@ public class GameController extends BaseController implements Serializable  {
 
 	@RequestMapping("gameview")
 	public String gameview(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user", user_name);
 		return "game/game";
 	}
 	@RequestMapping("dianziview")
