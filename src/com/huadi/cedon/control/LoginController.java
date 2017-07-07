@@ -54,18 +54,11 @@ public class LoginController extends BaseController implements Serializable {
 	@ResponseBody
 	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response){
 		String userinput = request.getParameter("userCode");
-//		System.out.println("userCode="+userinput);
 		String clientCheckcode = userinput;
 		String serverCheckcode = (String)request.getSession().getAttribute("checkcode");
-//		System.out.println("serverCode="+serverCheckcode);
 		if(clientCheckcode.equals(serverCheckcode))
 			return true;
 		return false;
-	}
-	
-	@RequestMapping("registerInsert")//http://localhost:8080/scdx/login/registerveiw
-	public String registerInsert(user user,ModelMap map,HttpServletRequest request){
-			return "redirect:../index";
 	}
 
 	@RequestMapping("registerAjax")

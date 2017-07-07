@@ -21,14 +21,20 @@ public class GameController extends BaseController implements Serializable  {
 	}
 	@RequestMapping("dianziview")
 	public String dianziview(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user", user_name);
 		return "game/dianzi";
 	}
 	@RequestMapping("shouyouview")
 	public String shouyouview(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user", user_name);
 		return "game/shouyou";
 	}
 	@RequestMapping("wangyouview")
 	public String wangyouview(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user", user_name);
 		return "game/wangyou";
 	}
 }

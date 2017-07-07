@@ -47,9 +47,8 @@ public class PersonalController extends BaseController implements Serializable {
 	//个人中心
 	@RequestMapping("perSpaceview")
 	public String perSpaceview(ModelMap map, HttpServletRequest request) {
-		String sql = "select * from user where id = " + request.getSession().getAttribute("name");
+		String sql = "select * from user where id = " + request.getSession().getAttribute("id");
 		map.put("user", BaseDao.findOne(sql));
-		
 		return "personal_center/personal_space";
 	}
 	//上传界面
