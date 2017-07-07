@@ -1,21 +1,21 @@
 package com.huadi.cedon.control;
 
 import java.io.Serializable;
+import java.security.PublicKey;
 import java.sql.SQLException;
 import java.util.Map;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.huadi.cedon.jdbc.dao.BaseDao;
 import com.huadi.cedon.model.user;
+import com.huadi.cedon.util.MD5Util;
 
 @Component
 @RequestMapping("personal_center")
@@ -97,14 +97,12 @@ public class PersonalController extends BaseController implements Serializable {
 	//私信消息
 	@RequestMapping("xiaoxi_sixin")
 	public String xiaoxi_sixin(ModelMap map, HttpServletRequest request) {
-
 		return "personal_center/gerenxiaoxi/xiaoxi_sixin";
 	}
 
 	//系统消息
 	@RequestMapping("xiaoxi_xitong")
 	public String xiaoxi_xitong(ModelMap map, HttpServletRequest request) {
-
 		return "personal_center/gerenxiaoxi/xiaoxi_xitong";
 	}
 	
@@ -127,8 +125,21 @@ public class PersonalController extends BaseController implements Serializable {
    	//密码修改页面
 	@RequestMapping("mimaxiugai")
 	public String mimaxiugai(ModelMap map,HttpServletRequest request){
-	 
 		return "personal_center/gerenxinxi/mimaxiugai";
+	}
+	
+	//原密码检测
+	@RequestMapping("/passCheck")
+	@ResponseBody
+	public Boolean passCheck(user user, HttpServletRequest request){
+		String user_id = request.getSession().getAttribute("id").toString();
+		String sql1 = "select * from user where id = ?";
+		Map<String, Object> map1 = BaseDao.findOne(sql1, user_id);
+		String oldPass = map1.get("password").toString();
+		String pass = user.getPassword();
+		if(oldPass.equals(MD5Util.MD5(pass+map1.get("salt"))))
+			return true;
+		return false;
 	}
 	
 	//昵称修改页面
@@ -172,14 +183,12 @@ public class PersonalController extends BaseController implements Serializable {
 	//个性签名修改页面
 	@RequestMapping("qianmingxiugai")
 	public String qianmingxiugai(ModelMap map, HttpServletRequest request) {
-
 		return "personal_center/gerenxinxi/qianmingxiugai";
 	}
 
 	//头像修改页面
 	@RequestMapping("touxiangxiugai")
 	public String touxiangxiugai(ModelMap map, HttpServletRequest request) {
-
 		return "personal_center/gerenxinxi/touxiangxiugai";
 	}
 

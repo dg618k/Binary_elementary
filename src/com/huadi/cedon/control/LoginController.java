@@ -56,13 +56,12 @@ public class LoginController extends BaseController implements Serializable {
 	
 	@RequestMapping("/picCheck")
 	@ResponseBody
-	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet)
-		throws ServletException, IOException{
+	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response){
 		String userinput = request.getParameter("userCode");
-		System.out.println("userCode="+userinput);
+//		System.out.println("userCode="+userinput);
 		String clientCheckcode = userinput;
 		String serverCheckcode = (String)request.getSession().getAttribute("checkcode");
-		System.out.println("serverCode="+serverCheckcode);
+//		System.out.println("serverCode="+serverCheckcode);
 		if(clientCheckcode.equals(serverCheckcode))
 			return true;
 		return false;

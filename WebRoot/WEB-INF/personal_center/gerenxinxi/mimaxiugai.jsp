@@ -57,16 +57,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          <div class="setting-profile-title yahei">密码修改</div>
           <form class="setting-profile-form" id="profile" action="" method="POST">
            	  <div>
-           	  	<label style="width:100px; margin-left:50px; margin-top:50px;">原密码：</label>
-           	  	<input type="password" onblur="passCheck()" id="oldpass" name="oldpass">
+           	  	<label style="width:120px; margin-left:50px; margin-top:50px; float:left">原密码：</label>
+           	  	<input style="margin-top:50px; float:left" type="password" onblur="passCheck()" id="oldpass" name="oldpass">
+           	  	<div id="password_error1" class="input_error" style="margin-top:55px;">
+				 	<p class="glyphicon glyphicon-remove">含有非法字符或位数不在8-16之间</p>
+				 </div>
+				 <div id="password_error2" class="input_error" style="margin-top:55px;">
+				 	<p class="glyphicon glyphicon-remove">密码不正确</p>
+				 </div>
+				 <div id="password_valid" class="input_valid" style="margin-top:55px;">
+                	<p class="glyphicon glyphicon-ok">格式正确</p>
+                </div>
+                <div class="c_clear_both"></div>
               </div>
               <div>
-              	<label style="width:100px; margin-left:50px; margin-top:15px;">新密码：</label>
-              	<input type="password" onblur="newPassCheck()" id="newpass" name="newpass">
+              	<label style="width:120px; margin-left:50px; margin-top:15px;float:left">新密码：</label>
+              	<input style="margin-top:15px; float:left" type="password" onblur="newPassCheck()" id="newpass" name="newpass">
+              	<div class="c_clear_both"></div>
               </div>
               <div>
-              	<label style="width:100px; margin-left:50px; margin-top:15px;">新密码确认：</label>
-              	<input type="password" onblur="newPassConfirm()" id="newpassconfirm" name="newpassconfirm">
+              	<label style="width:120px; margin-left:50px; margin-top:15px;float:left">新密码确认：</label>
+              	<input style="margin-top:15px; float:left" type="password" onblur="newPassConfirm()" id="newpassconfirm" name="newpassconfirm">
+              	<div class="c_clear_both"></div>
               </div>
               <input type="submit" style="margin-left:50px; margin-top:15px;" value="确认">
           </form> 
@@ -76,6 +88,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           		var pass1 = $("#oldpass").val();
 				var pass2 = $("#newpass").val();
 				var pass3 = $("#newpassconfirm").val();
+				alert(pass1);
 				if(!pass1.match(/^[*#a-zA-Z0-9]{8,16}$/)){
 					$("#password_error1").css("display", "block");
 					$("#password_error2").css("display", "none");
@@ -83,23 +96,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					flag1 = false;
 				}
 				else{
-					
 					$.ajax({
 						type:"POST",
-						url:"personal_center/nameModifyCheck",
-						data:"name="+user_name,
+						url:"passCheck",
+						data:"password="+pass1,
 						success: function(msg){
 							if(msg){
-								$("#nameerror1").css("display", "none");
-		 						$("#nameerror2").css("display", "block");
-		 						$("#namevalid").css("display", "none");
-		 						flag1 = false;
-							}
-							else{
 								$("#nameerror1").css("display", "none");
 		 						$("#nameerror2").css("display", "none");
 		 						$("#namevalid").css("display", "block");
 		 						flag1 = true;
+							}
+							else{
+								$("#nameerror1").css("display", "none");
+		 						$("#nameerror2").css("display", "block");
+		 						$("#namevalid").css("display", "none");
+		 						flag1 = false;
 							}
 						}
 					});

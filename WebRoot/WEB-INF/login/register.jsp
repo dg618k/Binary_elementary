@@ -91,8 +91,7 @@
 					<span>验证码：</span>
 					<input type="text" class="c_reg_input c_reg_input_v c_fl" onblur="check_pic()" id="check_img" name="captcha" placeholder="请输入验证码">
 				</label>
-				<img src="../servlet/generate_pic" class="c_fl"  id="verify" title="点击换一张" onload="btn.disabled = false; " >
-				<input type=button value=" 换个图片 " onclick="changeImg()" id="btn">
+				<img src="../servlet/generate_pic" class="c_fl"  id="verify" onclick="changeImg()" title="点击换一张" >
 				<div id="pic_diff" class="input_error">
 				 	<p class="glyphicon glyphicon-remove">验证失败</p>
 				 </div>
@@ -109,15 +108,16 @@
 				<input type="button" value="获取验证码" class="c_btn c_btn_ph c_fl" id="msgcode-btn">
 				<div class="c_clear_both"></div>
 			</li>
-			<li class="c_reg_check">
+			<li class="c_reg_check"  style="margin-left:130px;">
 				<label class="c_fl">
-					<input type="checkbox" name="if_agree" value="1" id="if_agree" checked>阅读
-				</label>
-					<a href="i.php?c=login&a=accord" target="_blank">[用户协议]</a>
+					<input type="checkbox" name="if_agree" value="1" id="if_agree" checked>
+				</label>阅读
+					<a href="i.php?c=login&a=accord" target="_blank" style="padding-top:5px;">[用户协议]</a>
+				<div class="c_clear_both"></div>
 			</li>
-			<li>
+			<li style="margin-left:50px;">
 				<input type="submit" value="注&nbsp;&nbsp;册" class="c_btn c_btn_reg c_fl" id="reg-btn">
-				<a href="login" class="c_btn c_btn_login c_fl" id="login-btn">返回登录</a>
+				<a href="login" class="c_btn c_btn_login c_fl" id="login-btn">直接登录</a>
 				<div class="c_clear_both"></div>
 			</li>
 			<li class="c_wq_login">
@@ -164,7 +164,6 @@
 	var flag1 = flag2 = flag3 = flag4 = flag5 = false;
 	var email=$("#email").val();
 	function changeImg(){
-		document.getElementById('btn').disabled = true;
 		document.getElementById('verify').src="../servlet/generate_pic?"+Math.random();
 	}
 	function checkemail(){
@@ -276,7 +275,6 @@
      	  			if(msg){
      	  				$("#pic_diff").css("display", "none");
      	  				$("#pic_same").css("display", "block");
-     	  				changeImg();
      	  				flag4 = true;
      	  			}
      	  			else{
@@ -293,7 +291,7 @@
 		checkpassword();
 		checkname();
 		check_pic()
-		if(flag1&&flag2&&flag3&&flag5){
+		if(flag1&&flag2&&flag3&&flag4&&flag5){
 			return true;
 		}
 		return false;

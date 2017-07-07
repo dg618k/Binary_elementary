@@ -9,6 +9,22 @@ em,strong{font-style:normal}
 li{list-style:none}a{color:#333;text-decoration:none}
 .c_fl{float:left!important}
 .c_fr{float:right!important}
+.input_error{
+	float:left; 
+	margin-left:30px; 
+	font-size:11px; 
+	color:red; 
+	margin-top:6px;
+	display:none;
+}
+.input_valid{
+	margin-top:10px;
+	display:none;
+	float:left;
+	margin-left:20px;
+	color:green;
+	font-size:16px;
+}
 .clear_both{clear:both;height:0}
 div,input{box-sizing:border-box;-webkit-box-sizing:border-box}
 .text_c{text-align:center}
@@ -34,7 +50,7 @@ div,input{box-sizing:border-box;-webkit-box-sizing:border-box}
 .login_box li:first-child{margin-top:24px}
 .v_code_font{font-size:16px;color:#666;line-height:42px}
 .v_code_input{display:block;height:42px;width:110px;border:1px solid #d3d3d3;border-radius:4px;-moz-border-radius:4px;padding:10px;font-size:16px}
-.v_code_input,.v_code_img{margin-left:8px}
+.v_code_input,.v_code_img{margin-left:0px}
 .remember{font-size:12px;color:#666;margin:-3px 0 0 10px}
 .login_box ul li:nth-child(2){margin-top:24px}
 .btn{width:160px;height:42px;border-radius:4px;box-sizing:border-box;cursor:pointer}
