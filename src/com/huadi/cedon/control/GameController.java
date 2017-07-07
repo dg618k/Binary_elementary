@@ -14,7 +14,19 @@ public class GameController extends BaseController implements Serializable  {
 	private static final long serialVersionUID = 1L;
 
 	@RequestMapping("gameview")
-	public String bofangview(ModelMap map,HttpServletRequest request){
+	public String gameview(ModelMap map,HttpServletRequest request){
 		return "game/game";
+	}
+	@RequestMapping("dianziview")
+	public String dianziview(ModelMap map,HttpServletRequest request){
+		return "game/dianzi";
+	}
+	@RequestMapping("shouyouview")
+	public String shouyouview(ModelMap map,HttpServletRequest request){
+		return "game/shouyou";
+	}
+	@RequestMapping("wangyouview")
+	public String wangyouview(ModelMap map,HttpServletRequest request){
+		return "game/wangyou";
 	}
 }

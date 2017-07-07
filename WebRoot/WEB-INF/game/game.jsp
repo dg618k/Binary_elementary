@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>游戏</title>
+    <title>单机游戏</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,7 +21,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
   
   <head>
+  <link rel="stylesheet"  type="text/css"  href="style/header.css"/>
   <link rel="stylesheet" type="text/css" href="css/game.css">
+  <header>
+  	<nav>
+        <ul>
+            <li><a>喵，欢迎来到史上最好的网站</a></li>
+           <c:if test="${user != null }">
+    				 <li><a>${user}</a></li>
+    		</c:if>
+    		<c:if test="${user == null }">
+    				<li><a href="login/login">登陆</a></li>
+            		<li><a href="login/register">注册</a></li>
+    		</c:if>
+            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
+            <li id="top_tag0" class="history"><a href="trade/cartview" target="_blank" rel="nofollow">购物车</a></li>
+        </ul>
+	</nav>
+	<div class="banner"></div>
+	<div class="top2">
+		<nav>
+	        <ul>
+	            <li ><a href="http://localhost:8080/Binary_elementary/index">主页</a></li>
+	            <li><a href="game/gameview" >单机游戏</a></li>
+	            <li><a href="game/dianziview" >电子竞技</a></li>
+	            <li><a href="game/shouyouview"  rel="nofollow">手游</a></li>
+	            <li><a href="game/wangyouview"  rel="nofollow">网游</a></li>
+	           
+	            <li id="top_tag0" class="history">
+	            </li>
+	        </ul>
+		</nav>
+		<div class="search">
+			<form id="searchform" action="" target="_blank">
+				<input name="keyword" class="search-keyword" id="search-keyword" 	accesskey="s" type="text" placeholder="今天是个好日子" x-webkit-	grammar="builtin:translate" x-webkit-speech="" autocomplete="off" data-	recommend="av11595857">
+				<button class="search-submit" type="submit"></button>
+			</form>
+		</div>
+	</div>
+</header>
   </head>
 <body class="" data-cover-preview="true" >
    <!-- 2017-07-05 09:36:19 -->    <script type="text/javascript">biliAdjust();
@@ -36,18 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="b-page-body">
                                 <script>$('.header .num .m-i[data-tid=4]').addClass('on');</script>
         <div class="main-inner">
-                <div class="fcname">
-                <ul class="n_num">
-                    <!-- Layer 1 -->
-                      <li desc="" tid="4"><a href="/video/game.html">全部</a></li>
-                       <li desc="以所有平台（PC、主机、移动端）的单机或联机游戏为主的视频内容，包括游戏预告、CG、实况解说及相关的评测、杂谈与视频剪辑等" tid="17" class="on"><a href="/video/videogame-1.html">单机游戏</a></li>
-                       <li desc="具有高对抗性的电子竞技游戏项目，其相关的赛事、实况、攻略、解说、短剧等视频。" tid="171"><a href="/video/esports-1.html">电子竞技</a></li>
-                       <li desc="以手机及平板设备为主要平台的游戏，其相关的实况、攻略、解说、短剧、演示等视频。" tid="172"><a href="/video/mobilegame-1.html">手机游戏</a></li>
-                       <li desc="由网络运营商运营的多人在线游戏，以及电子竞技的相关游戏内容。包括赛事、攻略、实况、解说等相关视频" tid="65"><a href="/video/onlinegame-1.html">网络游戏</a></li>
-                                                   
-                     <!-- Layer 1 end -->
-                <div class="type-desc" style="transform-origin: 48.9796% 0% 0px; left: 248px; display: none;"><div class="type-arrow" style="left: 228px;"></div><div class="txt">桌游、棋牌、卡牌对战等及其相关电子版游戏的实况、攻略、解说、演示等视频。</div></div></ul>
-            </div>
+                
         <div class="container-body">
         <div class="list-custom-wrp ">
                                      
@@ -86,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             </ul>
                                         </div>
                                     </div>
-                                                        <div class="selector-block">
+                               <div class="selector-block">
                                 <div id="date_select" class="date-select" style="display: none;"> <span>2017-06-28 ~ 2017-07-05</span></div>
                                 <div id="selet_datebox_none" style="display:none;">
                                     <div class="selet-datebox">
