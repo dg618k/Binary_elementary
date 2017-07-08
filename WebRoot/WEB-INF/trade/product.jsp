@@ -24,9 +24,16 @@
   	<nav>
         <ul>
             <li><a>喵，欢迎来到史上最好的网站</a></li>
-            <li id="top_tag1" class="history"><a href="" target="_blank" rel="nofollow">登陆</a></li>
-            <li id="top_tag0" class="history"><a href="" target="_blank" rel="nofollow">注册</a></li>
-            
+           <c:if test="${user != null }">
+    				 <li><a>${user}</a></li>
+    				 <li id="top_tag2" class="history"><a href="../login/logout" rel="nofollow">注销</a></li>
+           			 <li id="top_tag1" class="history"><a href="../trade/cartview" rel="nofollow">购物车</a></li>
+            		<li id="top_tag0" class="history"><a href="../userIndex" rel="nofollow">个人中心</a></li>
+    		</c:if>
+    		<c:if test="${user == null }">
+    				<li><a href="login/login">登陆</a></li>
+            		<li><a href="login/register">注册</a></li>
+    		</c:if>
         </ul>
 	</nav>
 	<div class="banner"></div>

@@ -34,7 +34,7 @@
 				<div class="h-user"> 
 					<div class="h-avatar">
 						<c:if test="${user_url != null}">
-							<img id="h-avatar" src="../img/login/${url}" do-not-click-me-anymore=""> 
+							<img id="h-avatar" src="${user_url}" do-not-click-me-anymore=""> 
 						</c:if>
 						<c:if test="${user_url == null}">
 							<img id="h-avatar" src="../img/login/login_logo.jpg" do-not-click-me-anymore=""> 
@@ -110,6 +110,7 @@
 	                	<c:set value="0" var="sum" />
 	                	<c:set var="index" value="0" />
 	                	<c:forEach items="${items}" var="item">
+	                	<span style="display:none" id="goods_id${index}"> ${item.id}</span>
 	                    <div class="c_td c_th_3 left c_checkbox_simulate c_item_select_box">
 	                        <label>
 	                            <i class=" c_item_checkbox"><input type="checkbox" checked="checked" name="ttttt"  /></i>
@@ -120,7 +121,7 @@
 
 	                            <img width="100%" alt="商品" src="../img/goods/${item.url}">
 	                        </a>
-	                        <a class="c_cart_product_name" href="index.php?a=p&amp;id=7780" target="_blank">${item.name}</a>
+	                        <a class="c_cart_product_name" onclick="toItem(${item.id})" href="">${item.name}</a>
 	                    </div>
 	                    <div class="c_td c_th_10 left c_data_text c_text_c">                 
 	                            <p>¥ ${item.price}</p>
@@ -134,7 +135,7 @@
 	                    </div>
 	                    <div class="c_td c_th_10 left c_data_text"> ${item.number} </div>
 	                    <div class="c_td c_th_10 left c_data_text"><span class="c_cart_subsum" id="singlePrice${index}">${item.price}</span></div>
-	                    <div class="c_td c_th_10 left c_data_text"><span class="cart-del c_cart_del">删除</span></div>
+	                    <div class="c_td c_th_10 left c_data_text"><span onclick="deleteItem(${index})" class="cart-del c_cart_del">删除</span></div>
 	                    <c:set value="${sum + item.price}" var="sum" />
 	                    <c:set var="index" value="${index+1}" /> 
 	                    </c:forEach>
@@ -210,6 +211,20 @@
     			$("#singlePrice"+index).text(price1+price);
     			$("#sumPrice").text(sumPrice+price);
     		}
+    	}
+    	function deleteItem(index){
+    		var obj = $("#goods_id"+index).text();
+    		$.ajax({
+ 		  		type: "POST",
+ 		 		url: "deleteRecord",
+   		 		data: {"goods_id":obj},
+  		  		success: function(msg){
+  		  			window.location.reload();
+   				}
+   			});
+    	}
+    	function toItem(goods_id){
+    		
     	}
     </script>
   </body>
