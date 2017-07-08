@@ -8,6 +8,7 @@
 <link rel="stylesheet"  type="text/css"  href="../style/cart.css"/>
 <link rel="stylesheet"  type="text/css"  href="../style/header(1).css"/>
 <link rel="stylesheet"  type="text/css"  href="../style/personal_space.css"/>
+<link rel="stylesheet"  type="text/css"  href="../style/footer.css"/>
 <script src="../static/js/jquery-3.2.1.min.js"></script>
 <script src="../static/bootstrap/js/bootstrap.min.js"></script>
 <script src=""></script>
@@ -36,9 +37,6 @@
 						<c:if test="${user_url != null}">
 							<img id="h-avatar" src="${user_url}" do-not-click-me-anymore=""> 
 						</c:if>
-						<c:if test="${user_url == null}">
-							<img id="h-avatar" src="../img/login/login_logo.jpg" do-not-click-me-anymore=""> 
-						</c:if> 
 						<span class="user-auth-subscript avatar-x"></span> 
 					</div> 
 					<div class="h-info"> 
@@ -46,12 +44,6 @@
 							<c:if test="${user_name != null }">
 								<span id="h-name"> ${user_name} </span> 
 							</c:if>
-							<c:if test="${user_name == null }">
-								<script language="JavaScript">
-   									 window.location.replace("target.aspx");
-								</script>
-							</c:if>
-							 
 						</div> 
 						<div title="" class="h-sign" style="display: none;"></div> 
 					</div> 
@@ -66,9 +58,8 @@
              <li><a href="../personal_center/shipinshoucang">收藏</a></li>
              <li><a href="../personal_center/historyview">观看历史</a></li>
              <li><a href="../personal_center/ownVideoview">个人视频</a></li>
-            <li id="top_tag4" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
-            <li id="top_tag3" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
-        </ul>
+            <li id="top_tag3" class="history"><a href="" rel="nofollow">购物车</a></li>
+        </ul> 
 	</nav>
 </header>
     <!-- header end -->
@@ -144,13 +135,27 @@
             	<!-- cart bottom -->
             	<div class="c_go_chkout">
                 <div class="c_dtl_info_wrap right">
-
                   	  应付总额:  <span class="c_need_pay">¥<em class="c_pay_total" id="sumPrice">${sum}</em></span>
-                    <a class="c_sub_btn">结算</a>
+                    <a class="c_sub_btn" onclick="clickTest()">结算</a>
                 </div>
             </div>
     	</div>	
     </div>
+    
+    <!-- footer start -->
+	<div class="footer" style="float:left">
+		<div class="webinfo">
+ 			<ul>
+ 				<li>关于我们</li>
+ 				<li>联系我们</li>
+ 				<li>加入我们</li>
+ 				<li>友情链接</li>
+ 			</ul>
+ 		</div>
+      	<div class="copy_right">CopyRight @第四小组</div>
+	</div>
+	
+	<!-- footer end -->
     <script src="../static/js/jquery-3.2.1.min.js"></script>
     <div id="alipay" class="pay" style="display:none">
   			<div class="payHead">
@@ -158,7 +163,7 @@
   			</div>
   			<div class="payCodediv"style="">
   				<div class="payCode">
-  					<img width="100%"src="../img/trade/pay.png" >
+  					<img width="100%"src="../img/trade/mypay.jpg" >
   				</div>
   			</div>
   			<div class="payBottom">
@@ -232,6 +237,11 @@
    				}
    			});
     	}
+    	window.onload=function(){
+  			if (location.href.indexOf("?xyz=")<0){
+ 				location.href=location.href+"?xyz="+Math.random();
+ 			}
+		}
     </script>
   </body>
 </html>

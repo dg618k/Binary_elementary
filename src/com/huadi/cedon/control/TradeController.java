@@ -29,6 +29,19 @@ public class TradeController extends BaseController implements Serializable {
 	public String TradeVeiw(ModelMap map,HttpServletRequest request){	
 		String user_name = request.getSession().getAttribute("name").toString();
 		map.put("user", user_name);
+		String sql1 = "select * from goods where type = ?";
+		List<Map<String, Object>> map1 = BaseDao.findList(sql1, "1");
+		List<Map<String, Object>> map2 = BaseDao.findList(sql1, "2");
+		List<Map<String, Object>> map3 = BaseDao.findList(sql1, "3");
+		List<Map<String, Object>> map4 = BaseDao.findList(sql1, "4");
+		List<Map<String, Object>> map5 = BaseDao.findList(sql1, "5");
+		List<Map<String, Object>> map6 = BaseDao.findList(sql1, "11");
+		map.put("map1", map1);
+		map.put("map2", map2);
+		map.put("map3", map3);
+		map.put("map4", map4);
+		map.put("map5", map5);
+		map.put("map6", map6);
 		return "trade/trade";
 	}
 	
@@ -40,11 +53,9 @@ public class TradeController extends BaseController implements Serializable {
 		String user_pic = request.getSession().getAttribute("url").toString();
 		map.put("user_name", user_name);
 		map.put("user_url", "../img/login/"+user_pic);
-//		String sql1 = "select * from record where user_id = ?";
-//		Map<String, Object> map2 = BaseDao.findOne(sql1, user_id);
-//		map.put("cur_num", map2.get("consume_number"));
-		String sql = "select * from goods,record where goods.id in (select goods_id from record where user_id = ?)";
+		String sql = "select * from goods,record where goods.id = record.goods_id and record.user_id = ?";
 		List<Map<String, Object>> map1 = BaseDao.findList(sql, user_id);
+		System.out.println(map1);
 		map.put("items", map1);
 		return "trade/cart";
 	}
@@ -102,24 +113,22 @@ public class TradeController extends BaseController implements Serializable {
 	//加入购物车
 	@RequestMapping("/insertToCart")
 	@ResponseBody
-	public Boolean insertToCart(ModelMap map, HttpServletRequest request){
+	public Boolean insertToCart(ModelMap map, HttpServletRequest request) throws SQLException{
 		String goods_num = request.getParameter("goods_num");
 		String goods_id = request.getParameter("goods_id");
-		System.out.println(goods_id);
+		String user_id = request.getSession().getAttribute("id").toString();
 		String sql1 = "select * from record where goods_id = ?";
 		Map<String, Object> map1 = BaseDao.findOne(sql1, goods_id);
 		String cur_num;
-		if(map1 != null)
+		if(map1 != null){
 			cur_num = map1.get("consume_number").toString();
-		else 
-			cur_num = "0";
-		int sumNum = Integer.parseInt(goods_num) + Integer.parseInt(cur_num);
-//		System.out.println("cur_num:"+ cur_num + " goods_num:"+ goods_num + " sumNum:"+sumNum);
-		String sql = "update record set consume_number = ? where goods_id = ?";
-		try {
+			int sumNum = Integer.parseInt(goods_num) + Integer.parseInt(cur_num);
+			String sql = "update record set consume_number = ? where goods_id = ?";
 			BaseDao.updateSql(sql, sumNum+"", goods_id);
-		} catch (Exception e) {
-			// TODO: handle exception
+		}
+		else{ 
+			String sql = "insert into record values(null, ?, ?, ?, now())";
+			BaseDao.updateSql(sql, user_id, goods_id, goods_num);
 		}
 		return true;
 	}
