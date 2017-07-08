@@ -1,267 +1,125 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'view_history.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<script src="static/js/jquery-3.2.1.min.js"></script>
-	<script src="static/bootstrap/js/bootstrap.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="static/css/view_history.css">
-	<style>
-		
-	</style>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet"  type="text/css"  href="../style/header(1).css"/>
+	<link rel="stylesheet"  type="text/css"  href="../style/personal_space.css"/>
+	<link rel="stylesheet"  type="text/css"  href="../style/view_history.css"/>
+<script src=""></script>
 
-  </head>
+<style type="text/css">
+
+
+</style>
+<title>观看历史</title>
+</head>
   
   <body>
-  	<!-- 顶部内容 -->
-	<div class="cd_history_banner">
-		<p>banner here</p>
-	</div>
-	<!-- 中部内容 -->
-	<div class="cd_history_main_container">
-		<!-- 首部 -->
-		<div class="cd_main_head">
-			<div style="float:left">
-				《图标》
-				播放历史
-			</div>
-			<div class="cd_clear_history">
-				清空历史
-			</div>
-		</div >
-
-		<!-- 视频内容容器 -->
-		<div style="border:2px solid red; float:left; width:100%">
-			<!-- 时间导航 -->
-			<div style="width:60%; margin-left:300px:; border:1px dashed black; margin-top:10px; float:left">
-				<div style="float:left; width:25%">今天</div>
-				<div style="float:left; width:25%">本周内</div>
-				<div style="float:left; width:25%">本月内</div>
-				<div style="float:left; width:25%">全部</div>
-			</div>
-			<div style="width:40%; border:1px dashed black; float:left; margin-left:60px">
-				<ul>
-					<li>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
-							</a>
-						</div>
-						<div class="cd_history_item">
-							<p>
-								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
-							</p>
-						</div>
-						<!-- 删除记录 -->
-						<div style="float:right;width:5%;padding-top:60px">
-							<p style="background-color:red">删除</p>
-						</div>
-						<div style="width:40%;height:13%;border:1px solid black;float:left;">
-							<span style="float:left; width:20%; font-size:10px">tab1</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-						</div>
-					</li>
-					<li>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
-							</a>
-						</div>
-						<div class="cd_history_item">
-							<p>
-								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
-							</p>
-						</div>
-						<!-- 删除记录 -->
-						<div style="float:right;width:5%;padding-top:60px">
-							<p style="background-color:red">删除</p>
-						</div>
-						<div style="width:40%;height:13%;border:1px solid black;float:left;">
-							<span style="float:left; width:20%; font-size:10px">tab1</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-						</div>
-					</li>
-					<li>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
-							</a>
-						</div>
-						<div class="cd_history_item">
-							<p>
-								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
-							</p>
-						</div>
-						<!-- 删除记录 -->
-						<div style="float:right;width:5%;padding-top:60px">
-							<p style="background-color:red">删除</p>
-						</div>
-						<div style="width:40%;height:13%;border:1px solid black;float:left;">
-							<span style="float:left; width:20%; font-size:10px">tab1</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-						</div>
-					</li>
-					<li>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
-							</a>
-						</div>
-						<div class="cd_history_item">
-							<p>
-								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
-							</p>
-						</div>
-						<!-- 删除记录 -->
-						<div style="float:right;width:5%;padding-top:60px">
-							<p style="background-color:red">删除</p>
-						</div>
-						<div style="width:40%;height:13%;border:1px solid black;float:left;">
-							<span style="float:left; width:20%; font-size:10px">tab1</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<!-- 时间线 -->
-			<div style="width:10%; border:1px dashed black; height:140%; float:left;margin-left:4px">
-				时间线
-			</div>
-			<div style="width:40%; border:1px dashed black; float:right; margin-right:60px">
-				<ul>
-					<li>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
-							</a>
-						</div>
-						<div class="cd_history_item">
-							<p>
-								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
-							</p>
-						</div>
-						<!-- 删除记录 -->
-						<div style="float:right;width:5%;padding-top:60px">
-							<p style="background-color:red">删除</p>
-						</div>
-						<div style="width:40%;height:13%;border:1px solid black;float:left;">
-							<span style="float:left; width:20%; font-size:10px">tab1</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-						</div>
-					</li>
-					<li>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
-							</a>
-						</div>
-						<div class="cd_history_item">
-							<p>
-								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
-							</p>
-						</div>
-						<!-- 删除记录 -->
-						<div style="float:right;width:5%;padding-top:60px">
-							<p style="background-color:red">删除</p>
-						</div>
-						<div style="width:40%;height:13%;border:1px solid black;float:left;">
-							<span style="float:left; width:20%; font-size:10px">tab1</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-						</div>
-					</li>
-					<li>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
-							</a>
-						</div>
-						<div class="cd_history_item">
-							<p>
-								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
-							</p>
-						</div>
-						<!-- 删除记录 -->
-						<div style="float:right;width:5%;padding-top:60px">
-							<p style="background-color:red">删除</p>
-						</div>
-						<div style="width:40%;height:13%;border:1px solid black;float:left;">
-							<span style="float:left; width:20%; font-size:10px">tab1</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-						</div>
-					</li>
-					<li>
-						<div style="width:40%; height:80%; float:left">
-							<a href="#">
-							<img src="img/history_pic1.png" style="width:100%; height: 100%" />
-							</a>
-						</div>
-						<div class="cd_history_item">
-							<p>
-								<a href="#">【催泪向】总有一天会再次相遇，在此之前只是短暂的离别</a>
-							</p>
-						</div>
-						<!-- 删除记录 -->
-						<div style="float:right;width:5%;padding-top:60px">
-							<p style="background-color:red">删除</p>
-						</div>
-						<div style="width:40%;height:13%;border:1px solid black;float:left;">
-							<span style="float:left; width:20%; font-size:10px">tab1</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-							<span style="float:left; width:20%; font-size:10px">tab2</span>
-						</div>
-					</li>
-				</ul>
+  <!-- header start -->
+  
+<header>
+  	<nav>
+        <ul>
+             <li class="space_header"><a>喵，欢迎来到史上最好的网站</a></li>
+             <li><a href="http://localhost:8080/Binary_elementary/index">主站</a></li>
+            <li id="top_tag1" class="history"><a href="http://localhost:8080/Binary_elementary/login/register" target="_blank" rel="nofollow">注册</a></li>
+            <li id="top_tag0" class="history"><a href="http://localhost:8080/Binary_elementary/login/login" target="_blank" rel="nofollow">登陆</a></li>
+        </ul>
+	</nav>
+	<div class="h">
+		<div class="wrapper">
+			<div class="h-inner" style="background-image: url(../img/personal_space/personal_spacebg.png)">
+				<div class="h-user"> 
+					<div class="h-avatar"> 
+						<img id="h-avatar" src="../img/login/login_logo.jpg" do-not-click-me-anymore=""> 
+						<span class="user-auth-subscript avatar-x"></span> 
+					</div> 
+					<div class="h-info"> 
+						<div class="h-basic"> 
+							<span id="h-name">户用议</span>  
+						</div> 
+						<div title="" class="h-sign" style="display: none;"></div> 
+					</div> 
+				</div>
 			</div>
 		</div>
 	</div>
-	<!-- 底部内容 -->
-	<div style="width: 100%; border:5px dashed black; float:left;
-		margin-top:30px; text-align:center">
-		<div style="width:60%; border:1px dashed black; float:left; margin-left:100px">
-			left
-		</div>
-		<div style="width:25%; border:1px dashed black; float:left">
-			right
-		</div>
+	<nav class="top2">
+        <ul>
+             <li class="space_header"><a>个人信息</a></li>
+             <li><a href="gerenxiaoxi">消息</a></li>
+             <li><a href="shipinshoucang">收藏</a></li>
+             <li><a href="historyview">观看历史</a></li>
+             <li><a href="ownVideoview">个人视频</a></li>
+            <li id="top_tag4" class="history"><a href="../trade/tradeview" target="_blank" rel="nofollow">订单</a></li>
+            <li id="top_tag3" class="history"><a href="../trade/cartview" target="_blank" rel="nofollow">购物车</a></li>
+        </ul>
+	</nav>
+</header>
+ <!-- header end -->
+ <!-- middle start -->
+ <div class="middle">
+ <div class="history">
+  	<div class="newlist_info">
+  		<div class="b-head">
+    		<div class="b-head-c">
+      			<i class="b-icon b-icon-history"></i>
+      				<span class="b-head-t">播放历史</span>
+    		</div>
+    		<div class="history-btn">
+  				<a class="btn cleanhsbtn" href="#">清空历史</a>
+			</div>
+  		</div>
 	</div>
+  	<div class="list-contain" style="position:relative">
+    	<ul class="history-list" id="history_list">
+    	<!-- 历史列表 -->
+  			<li class="history-record todayfirst">
+    			<div class="l-info">
+        			<div class="lastplay-time">
+          				<i class="history-red-round"></i>
+          				<span class="lastplay-t">11:03</span>
+        			</div>
+    			</div>
+    			<div class="r-info clearfix">
+        			<div class="cover-contain">
+          
+          				<a class="preview"><img src="../img/personal_space/video.jpg"></a>
+          				<div class="info"></div>
+          
+       				</div>       
+        			<div class="r-txt">
+         			 	<a class="title">标题</a>         
+          				<p class="subtitle">
+           				<span>集数</span>           
+         				</p>        				
+	          			<div class="w-info">
+	              			<div class="time-wrap">
+	                  			<i class="device-i pc"></i>
+	                  			<span class="pro-txt">看到&nbsp;&nbsp;00:00</span>                        
+	                	</div>
+			            <a>
+			              <i class="userpic" style='background-image: url("../img/login/login_logo.jpg");'></i>
+			              <span class="username">作者名</span>
+			            </a>
+            			<span class="name">类型</span>
+          			</div>                    
+          			<i class="history-delete"></i>
+        			</div>
+    			</div>
+			</li>
+		</ul>
+    	<div class="nodata-contain" style="display: none;">
+  			<img class="nodata" alt="" src="//static.hdslb.com/history/img/Unknown.png">
+		</div>
+  	</div>
+</div>
+ 
+ </div>
+ <!-- middle start -->
 	
   </body>
 </html>

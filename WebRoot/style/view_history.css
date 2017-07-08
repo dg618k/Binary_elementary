@@ -1,0 +1,256 @@
+@CHARSET "UTF-8";
+address, caption, cite, code, dfn, em, i, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+a {
+    outline: 0;
+    color: #00a1d6;
+    text-decoration: none;
+    cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.middle {
+    padding: 20px 0 0;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.history {
+    position: relative;
+}
+.history .b-head-c {
+    float: left;
+    margin-left: 60px;
+}
+
+.b-icon.b-icon-history {
+    background: url(../img/personal_space/history.png) no-repeat;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    *display:inline: ;
+    *zoom:1: ;
+    margin-right: 8px;
+}
+.b-icon {
+    display: inline-block;
+    *display:inline: ;
+    *zoom:1: ;
+    vertical-align: middle;
+    *vertical-align:middle!important: ;
+    width: 12px;
+    height: 12px;
+    background: url(/images/base/icons.png) no-repeat;
+}
+.b-head {
+    position: relative;
+    *zoom:1: ;
+    *z-index:1: ;
+}
+
+.b-head .b-head-t {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 24px;
+    color: #222;
+    *display:inline: ;
+    *zoom:1: ;
+}
+.history .history-btn {
+    float: right;
+    width: auto;
+}
+.history .history-btn .btn:hover {
+    background-color: #00b5e5;
+    color: #fff;
+}
+
+.history .history-btn .btn {
+    border: 1px solid;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.history .history-btn .cleanhsbtn {
+    margin-right: 0px;
+}
+.history-list {
+    display: block;
+    position: relative;
+    padding: 8px 0 10px 0;
+    margin-top: 17px;
+}
+.history-list .history-record {
+    position: relative;
+    display: block;
+    margin-bottom: 130px;
+}
+
+.history-list .l-info {
+    width: 66px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    border-right: 1px solid #e5e9ef;
+    overflow: visible;
+    height: 143px;
+}
+.history-list .l-info .lastplay-time {
+    overflow: visible;
+    height: 120px;
+    font-size: 14px;
+}
+.history-list .l-info .lastplay-time .history-red-round {
+    position: absolute;
+    right: -5px;
+    top: 48px;
+    border-width: 5px;
+    border-color: #e5e9ef;
+    border-right-width: 0px;
+    border-style: dashed;
+    border-left-style: solid;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+.history-list .l-info .lastplay-time .lastplay-t {
+    color: #99a2aa;
+    position: absolute;
+    top: 43px;
+    left: 87px;
+    width: 80px;
+    font-size: 14px;
+}
+.history-list .r-info {
+    border: 1px solid transparent;
+    margin-left: 197px;
+    background: #fff;
+    padding: 10px 0;
+    margin-right: 5px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.history-list .cover-contain {
+    float: left;
+    position: relative;
+    margin: 0 30px 0 0;
+}
+.history-list .r-info .preview {
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    float: left;
+    width: 160px;
+    height: 100px;
+    position: relative;
+    border-radius: 5px;
+}
+.history-list .r-info .preview img {
+    margin: 0 auto;
+    display: block;
+    height: 100px;
+    max-width: 160px;
+}
+/*@media screen and (max-width:1414px)*/
+.history-list .r-info .r-txt {
+    width: 585px;
+}
+.history-list .r-info .r-txt {
+    height: 100px;
+    border-bottom: 1px solid #e5e9ef;
+    float: left;
+}
+/*@media screen and (max-width:1414px)*/
+.history-list .r-info .title {
+    width: 400px;
+}
+.history-list .r-info .title {
+    padding-top: 5.5px;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.history-list .r-info .subtitle {
+    font-size: 12px;
+    color: #6d757a;
+    margin-bottom: 18px;
+    height: 16px;
+    padding-left: 3px;
+}
+.history-list .r-info .w-info {
+    font-family: "microsoft yahei",simhei;
+    float: left;
+    line-height: 20px;
+}
+.history-list .r-info .w-info .time-wrap {
+    float: left;
+    width: 232px;
+}
+.history-list .r-info .device-i.pc {
+    background-position: -1367px -406px;
+}
+.history-list .r-info .w-info .device-i {
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url('../img/personal_space/show.png') no-repeat;
+}
+.history-list .r-info .w-info .pro-txt {
+    color: #99a2aa;
+    font-size: 12px;
+    float: left;
+    margin-left: 10px;
+}
+.history-list .r-info .w-info .userpic {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    float: left;
+    margin-right: 10px;
+    background-size: 100% 100%;
+}
+.history-list .r-info .w-info .username {
+    float: left;
+    color: #6d757a;
+    padding-right: 10px;
+    border-right: 1px solid #e5e9ef;
+    height: 12px;
+    margin-top: 5px;
+    line-height: 11px;
+}
+.history-list .r-info .w-info .name {
+    color: #99a2aa;
+    font-size: 12px;
+    float: left;
+    margin-left: 10px;
+}
+.history-list .r-info .history-delete {
+    color: #99a2aa;
+    position: absolute;
+    padding-left: 16px;
+    right: 1px;
+    top: 44px;
+    cursor: pointer;
+}
+.history-list .r-info .preview .lasting-time, .history-list .r-info .history-delete {
+    width: 12px;
+    height: 16px;
+    vertical-align: top;
+    margin-top: 7px;
+    background: url('../img/personal_space/del.png') no-repeat;
+}
+

@@ -1,33 +1,62 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <base href="<%=basePath%>">
+    <title>个人视频</title>
     
-    <title>My JSP 'ownVideo.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<script src="static/js/jquery-3.2.1.min.js"></script>
-	<script src="static/bootstrap/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="static/css/ownVideo.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="../static/css/ownVideo.css">
+	<link rel="stylesheet"  type="text/css"  href="../style/header(1).css"/>
+	<link rel="stylesheet"  type="text/css"  href="../style/footer.css"/>
+	<link rel="stylesheet"  type="text/css"  href="../style/personal_space.css"/>
 
   </head>
   
   <body>
-  	<!-- 顶部内容 -->
-	<div class="cd_ownvideo_banner">
-		<p>banner here</p>
+  	<!-- header start -->
+<header>
+  	<nav>
+        <ul>
+             <li class="space_header"><a>喵，欢迎来到史上最好的网站</a></li>
+             <li><a href="http://localhost:8080/Binary_elementary/index">主站</a></li>
+            <li id="top_tag1" class="history"><a href="http://localhost:8080/Binary_elementary/login/register" target="_blank" rel="nofollow">注册</a></li>
+            <li id="top_tag0" class="history"><a href="http://localhost:8080/Binary_elementary/login/login" target="_blank" rel="nofollow">登陆</a></li>
+        </ul>
+	</nav>
+	<div class="h">
+		<div class="wrapper">
+			<div class="h-inner" style="background-image: url(../img/personal_space/personal_spacebg.png)">
+				<div class="h-user"> 
+					<div class="h-avatar"> 
+						<img id="h-avatar" src="../img/login/login_logo.jpg" do-not-click-me-anymore=""> 
+						<span class="user-auth-subscript avatar-x"></span> 
+					</div> 
+					<div class="h-info"> 
+						<div class="h-basic"> 
+							<span id="h-name">户用议</span>  
+						</div> 
+						<div title="" class="h-sign" style="display: none;"></div> 
+					</div> 
+				</div>
+			</div>
+		</div>
 	</div>
+	<nav class="top2">
+        <ul>
+             <li class="space_header"><a>个人信息</a></li>
+             <li><a href="gerenxiaoxi">消息</a></li>
+             <li><a href="shipinshoucang">收藏</a></li>
+             <li><a href="historyview">观看历史</a></li>
+             <li><a href="ownVideoview">个人视频</a></li>
+            <li id="top_tag4" class="history"><a href="../trade/tradeview" target="_blank" rel="nofollow">订单</a></li>
+            <li id="top_tag3" class="history"><a href="../trade/cartview" target="_blank" rel="nofollow">购物车</a></li>
+        </ul>
+	</nav>
+</header>
+  	<!-- header end -->
 	
 	<!-- 右侧固定栏 -->
 	<div class="cd_view_method">
@@ -57,18 +86,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<!-- 中部内容 -->
 	<div class="cd_video_main">
-		<div class="cd_video_head">
-			<div class="cd_video_head_title">用户昵称</div>
-			<div class="cd_video_head_sort">
-				<a href="#">最多播放</a> 
-				<a href="#">最近时间</a>
-			</div>
+		<div class="c_sort_wrap">
+			<ul class="sortul">
+				<li class="cyc_item first on">
+					<a class="c_fake_a cyc_link  c_list_oper_sort_down" href="###" >
+						<span>最近播放</span>
+					</a>
+				</li>
+				<li class="cyc_item ">
+					<a class="c_fake_a cyc_link  " href="###" >
+						<span>最多播放</span>
+					</a>
+				</li>
+				<li class="cyc_item ">
+					<a class="" >
+						<span>最多收藏</span>
+						<span class="cyc_sort_icon"></span>
+					</a>
+				</li>
+			</ul>
 		</div>
 		<div class="cd_video_item">
 			<ul>
 				<li>
 					<div class="cd_item_img">
-						<img src="img/history_pic1.png" class="img-rounded"> 
+						<img src="../img/history_pic1.png" class="img-rounded"> 
 					</div>
 					<div class="cd_item_container">
 						<div class="cd_item_title">资源名称</div>
@@ -95,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 				<li>
 					<div class="cd_item_img">
-						<img src="img/history_pic1.png" class="img-rounded"> 
+						<img src="../img/history_pic1.png" class="img-rounded"> 
 					</div>
 					<div class="cd_item_container">
 						<div class="cd_item_title">资源名称</div>
@@ -122,7 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 				<li>
 					<div class="cd_item_img">
-						<img src="img/history_pic1.png" class="img-rounded"> 
+						<img src="../img/history_pic1.png" class="img-rounded"> 
 					</div>
 					<div class="cd_item_container">
 						<div class="cd_item_title">资源名称</div>
@@ -149,7 +191,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 				<li>
 					<div class="cd_item_img">
-						<img src="img/history_pic1.png" class="img-rounded"> 
+						<img src="../img/history_pic1.png" class="img-rounded"> 
 					</div>
 					<div class="cd_item_container">
 						<div class="cd_item_title">资源名称</div>
@@ -176,18 +218,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 			</ul>
 		</div>
-		
+	<div class="clear"></div>  	
 	</div>
 	
-	<!-- 底部内容 -->
-	<div style="width: 100%; border:5px dashed black; float:left;
-		margin-top:30px; text-align:center">
-		<div style="width:60%; border:1px dashed black; float:left; margin-left:100px">
-			left
-		</div>
-		<div style="width:25%; border:1px dashed black; float:left">
-			right
-		</div>
+	<!-- footer start -->
+	<div class="footer">
+		<div class="webinfo">
+ 			<ul>
+ 				<li>关于我们</li>
+ 				<li>联系我们</li>
+ 				<li>加入我们</li>
+ 				<li>友情链接</li>
+ 			</ul>
+ 		</div>
+      	<div class="copy_right">CopyRight @第四小组</div>
 	</div>
+	<!-- footer end -->
   </body>
 </html>
