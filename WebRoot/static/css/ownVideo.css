@@ -136,7 +136,7 @@ body{
 	float:left;
 }
 .sortul{
-	margin-left:20px;
+	*margin-left:20px;
 }
 
 .c_sort_wrap {
@@ -144,22 +144,22 @@ body{
     margin: 0 auto;
     padding: 5px 0;
     border-bottom: 1px solid #eee4e4;
-    height: 36px;
+    height: 40px;
     border-top: 1px solid #eee4e4;
     margin-top: 10px;
 }
 
 .c_sort_wrap .cyc_item.first {
-    border-left: 1px solid #d8d8d8;
+    *border-left: 1px solid #d8d8d8;
 }
 .c_sort_wrap .cyc_item {
     float: left;
     margin: 0;
     padding: 4px 0;
     text-align: center;
-    border: 1px solid #d8d8d8;
     border-left: none;
     height: 25px;
+    font-size: 15px;
 }
 
 .cyc_item {
@@ -178,7 +178,7 @@ body{
     display: inline-block;
     padding: 0 5px;
     height: 18px;
-    line-height: 18px;
+    line-height: 20px;
     width: 82px;
     overflow: hidden;
     text-overflow: ellipsis;

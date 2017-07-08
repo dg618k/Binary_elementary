@@ -90,18 +90,22 @@
 			<ul class="sortul">
 				<li class="cyc_item first on">
 					<a class="c_fake_a cyc_link  c_list_oper_sort_down" href="###" >
-						<span>最近播放</span>
+						<span>全部</span>
 					</a>
 				</li>
 				<li class="cyc_item ">
 					<a class="c_fake_a cyc_link  " href="###" >
-						<span>最多播放</span>
+						<span>游戏</span>
 					</a>
 				</li>
 				<li class="cyc_item ">
 					<a class="" >
-						<span>最多收藏</span>
-						<span class="cyc_sort_icon"></span>
+						<span class="cyc_sort_icon">漫评</span>
+					</a>
+				</li>
+				<li class="cyc_item ">
+					<a class="" >
+						<span class="cyc_sort_icon">资讯</span>
 					</a>
 				</li>
 			</ul>
