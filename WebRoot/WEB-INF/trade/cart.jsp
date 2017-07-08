@@ -8,6 +8,7 @@
 <link rel="stylesheet"  type="text/css"  href="../style/cart.css"/>
 <link rel="stylesheet"  type="text/css"  href="../style/header(1).css"/>
 <link rel="stylesheet"  type="text/css"  href="../style/personal_space.css"/>
+<link rel="stylesheet"  type="text/css"  href="../style/footer.css"/>
 <script src="../static/js/jquery-3.2.1.min.js"></script>
 <script src="../static/bootstrap/js/bootstrap.min.js"></script>
 <script src=""></script>
@@ -34,11 +35,8 @@
 				<div class="h-user"> 
 					<div class="h-avatar">
 						<c:if test="${user_url != null}">
-							<img id="h-avatar" src="../img/login/${url}" do-not-click-me-anymore=""> 
+							<img id="h-avatar" src="${user_url}" do-not-click-me-anymore=""> 
 						</c:if>
-						<c:if test="${user_url == null}">
-							<img id="h-avatar" src="../img/login/login_logo.jpg" do-not-click-me-anymore=""> 
-						</c:if> 
 						<span class="user-auth-subscript avatar-x"></span> 
 					</div> 
 					<div class="h-info"> 
@@ -46,12 +44,6 @@
 							<c:if test="${user_name != null }">
 								<span id="h-name"> ${user_name} </span> 
 							</c:if>
-							<c:if test="${user_name == null }">
-								<script language="JavaScript">
-   									 window.location.replace("target.aspx");
-								</script>
-							</c:if>
-							 
 						</div> 
 						<div title="" class="h-sign" style="display: none;"></div> 
 					</div> 
@@ -66,9 +58,8 @@
              <li><a href="../personal_center/shipinshoucang">收藏</a></li>
              <li><a href="../personal_center/historyview">观看历史</a></li>
              <li><a href="../personal_center/ownVideoview">个人视频</a></li>
-            <li id="top_tag4" class="history"><a href="" target="_blank" rel="nofollow">订单</a></li>
-            <li id="top_tag3" class="history"><a href="" target="_blank" rel="nofollow">购物车</a></li>
-        </ul>
+            <li id="top_tag3" class="history"><a href="" rel="nofollow">购物车</a></li>
+        </ul> 
 	</nav>
 </header>
     <!-- header end -->
@@ -110,6 +101,7 @@
 	                	<c:set value="0" var="sum" />
 	                	<c:set var="index" value="0" />
 	                	<c:forEach items="${items}" var="item">
+	                	<span style="display:none" id="goods_id${index}"> ${item.id}</span>
 	                    <div class="c_td c_th_3 left c_checkbox_simulate c_item_select_box">
 	                        <label>
 	                            <i class=" c_item_checkbox"><input type="checkbox" checked="checked" name="ttttt"  /></i>
@@ -120,7 +112,7 @@
 
 	                            <img width="100%" alt="商品" src="../img/goods/${item.url}">
 	                        </a>
-	                        <a class="c_cart_product_name" href="index.php?a=p&amp;id=7780" target="_blank">${item.name}</a>
+	                        <a class="c_cart_product_name" onclick="toItem(${item.id})" href="productview">${item.name}</a>
 	                    </div>
 	                    <div class="c_td c_th_10 left c_data_text c_text_c">                 
 	                            <p>¥ ${item.price}</p>
@@ -128,14 +120,14 @@
 	                    <div class="c_td c_th_20 left c_data_text">
 	                        <div class="number-box c_number_box">
 	                            <span class="number-box-dec c_number_box_dec" onclick="minusNum(${index},${item.price})" id="minus${index}">-</span>
-	                            <input disabled="disabled" class="number-box-num c_number_box_num" id="num${index}" value="1">
+	                            <input disabled="disabled" class="number-box-num c_number_box_num" id="num${index}" value="${item.consume_number }">
 	                            <span class="number-box-inc c_number_box_inc" onclick="plusNum(${index}, ${item.number},${item.price})" id="plus${index}">+</span>
 	                        </div>                                         
 	                    </div>
 	                    <div class="c_td c_th_10 left c_data_text"> ${item.number} </div>
-	                    <div class="c_td c_th_10 left c_data_text"><span class="c_cart_subsum" id="singlePrice${index}">${item.price}</span></div>
-	                    <div class="c_td c_th_10 left c_data_text"><span class="cart-del c_cart_del">删除</span></div>
-	                    <c:set value="${sum + item.price}" var="sum" />
+	                    <div class="c_td c_th_10 left c_data_text"><span class="c_cart_subsum" id="singlePrice${index}">${item.price * item.consume_number}</span></div>
+	                    <div class="c_td c_th_10 left c_data_text"><span onclick="deleteItem(${index})" class="cart-del c_cart_del">删除</span></div>
+	                    <c:set value="${sum + item.price * item.consume_number}" var="sum" />
 	                    <c:set var="index" value="${index+1}" /> 
 	                    </c:forEach>
 	                </div>
@@ -143,13 +135,27 @@
             	<!-- cart bottom -->
             	<div class="c_go_chkout">
                 <div class="c_dtl_info_wrap right">
-
                   	  应付总额:  <span class="c_need_pay">¥<em class="c_pay_total" id="sumPrice">${sum}</em></span>
-                    <a class="c_sub_btn">结算</a>
+                    <a class="c_sub_btn" onclick="clickTest()">结算</a>
                 </div>
             </div>
     	</div>	
     </div>
+    
+    <!-- footer start -->
+	<div class="footer" style="float:left">
+		<div class="webinfo">
+ 			<ul>
+ 				<li>关于我们</li>
+ 				<li>联系我们</li>
+ 				<li>加入我们</li>
+ 				<li>友情链接</li>
+ 			</ul>
+ 		</div>
+      	<div class="copy_right">CopyRight @第四小组</div>
+	</div>
+	
+	<!-- footer end -->
     <script src="../static/js/jquery-3.2.1.min.js"></script>
     <div id="alipay" class="pay" style="display:none">
   			<div class="payHead">
@@ -157,7 +163,7 @@
   			</div>
   			<div class="payCodediv"style="">
   				<div class="payCode">
-  					<img width="100%"src="../img/trade/pay.png" >
+  					<img width="100%"src="../img/trade/mypay.jpg" >
   				</div>
   			</div>
   			<div class="payBottom">
@@ -211,6 +217,31 @@
     			$("#sumPrice").text(sumPrice+price);
     		}
     	}
+    	function deleteItem(index){
+    		var obj = $("#goods_id"+index).text();
+    		$.ajax({
+ 		  		type: "POST",
+ 		 		url: "deleteRecord",
+   		 		data: {"goods_id":obj},
+  		  		success: function(msg){
+  		  			window.location.reload();
+   				}
+   			});
+    	}
+    	function toItem(goods_id){
+    		$.ajax({
+ 		  		type: "POST",
+ 		 		url: "selectItem",
+   		 		data: {"goods_id":goods_id},
+  		  		success: function(msg){
+   				}
+   			});
+    	}
+    	window.onload=function(){
+  			if (location.href.indexOf("?xyz=")<0){
+ 				location.href=location.href+"?xyz="+Math.random();
+ 			}
+		}
     </script>
   </body>
 </html>

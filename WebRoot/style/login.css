@@ -33,7 +33,7 @@ div,input{box-sizing:border-box;-webkit-box-sizing:border-box}
 .top_txt{font-size:20px;color:#333;margin-right:20px;line-height:90px}
 .top_logo{margin:15px 0 0 20px}
 .logo_img{width:72px}
-.login_wrap{width:100%;height:670px;background:url("../img/login/login_bg.jpg") no-repeat top center}
+.login_wrap{width:100%;height:670px;}
 .login_box{margin:70px 20px 0 0;width:390px;height:525px;background:#fff;filter:alpha(opacity=87);-moz-opacity:.87;opacity:.87;box-shadow:0 0 15px rgba(0,0,0,.3);-moz-box-shadow:0 0 15px rgba(0,0,0,.3)}
 .login_box ul{padding:0 45px}
 .login_box ul p{margin-top:24px;font-size:20px;color:#333}

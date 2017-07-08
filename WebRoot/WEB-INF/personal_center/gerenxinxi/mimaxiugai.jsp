@@ -16,6 +16,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <title>密码修改</title> 
    
     <body id="r1"> 
+    <nav style="background-color:rgba(0,0,0,.2);width:100%;height:30px;">
+        <ul>
+            <li><a style="margin-left:30px;float:left">喵，欢迎来到史上最好的网站</a></li>
+    			<li><a style="float:left">${user_name}</a></li>
+    			<li id="top_tag2" class="history"><a style="float:right;margin-right:30px;" href="login/logout" rel="nofollow">注销</a></li>
+           		<li id="top_tag1" class="history"><a style="float:right" href="trade/cartview" rel="nofollow">购物车</a></li>
+            	<li id="top_tag0" class="history"><a style="float:right" href="userIndex" rel="nofollow">个人中心</a></li>
+        </ul>
+	</nav>
+    
       	<!-- 背景动图 -->
   	<div class="background_area">
   		<img src="../img/personal_space/bj.gif" style="width:100%;height:100%;">
@@ -55,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          <div class="plzhld clearfix">
          <div class="mod-setting-profile" id="1000001" style="display: block;"> 
          <div class="setting-profile-title yahei">密码修改</div>
-          <form class="setting-profile-form" id="profile" action="" method="POST">
+          <form class="setting-profile-form" id="profile" action="passModifyInsert" onsubmit="return checkall();" method="POST">
            	  <div>
            	  	<label style="width:120px; margin-left:50px; margin-top:50px; float:left">原密码：</label>
            	  	<input style="margin-top:50px; float:left" type="password" onblur="passCheck()" id="oldpass" name="oldpass">
@@ -66,29 +76,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				 	<p class="glyphicon glyphicon-remove">密码不正确</p>
 				 </div>
 				 <div id="password_valid" class="input_valid" style="margin-top:55px;">
-                	<p class="glyphicon glyphicon-ok">格式正确</p>
+                	<p class="glyphicon glyphicon-ok">正确</p>
                 </div>
                 <div class="c_clear_both"></div>
               </div>
               <div>
               	<label style="width:120px; margin-left:50px; margin-top:15px;float:left">新密码：</label>
               	<input style="margin-top:15px; float:left" type="password" onblur="newPassCheck()" id="newpass" name="newpass">
+              	<div id="newpass_error" class="input_error" style="margin-top:22px;">
+				 	<p class="glyphicon glyphicon-remove">含有非法字符或位数不在8-16之间</p>
+				 </div>
+				 <div id="newpass_valid" class="input_valid" style="margin-top:22px;">
+                	<p class="glyphicon glyphicon-ok">正确</p>
+                </div>
               	<div class="c_clear_both"></div>
               </div>
               <div>
               	<label style="width:120px; margin-left:50px; margin-top:15px;float:left">新密码确认：</label>
               	<input style="margin-top:15px; float:left" type="password" onblur="newPassConfirm()" id="newpassconfirm" name="newpassconfirm">
-              	<div class="c_clear_both"></div>
+              	<div id="newpassconfirm_error" class="input_error" style="margin-top:22px;">
+				 	<p class="glyphicon glyphicon-remove">密码不一致</p>
+				 </div>
+				 <div id="newpassconfirm_valid" class="input_valid" style="margin-top:22px;">
+                	<p class="glyphicon glyphicon-ok">一致</p>
+                </div>
+                <div class="c_clear_both"></div>
               </div>
               <input type="submit" style="margin-left:50px; margin-top:15px;" value="确认">
           </form> 
           <script type="text/javascript">
           	var flag1=flag2=flag3=false;
+          	var pass2,pass3;
           	function passCheck(){
           		var pass1 = $("#oldpass").val();
-				var pass2 = $("#newpass").val();
-				var pass3 = $("#newpassconfirm").val();
-				alert(pass1);
 				if(!pass1.match(/^[*#a-zA-Z0-9]{8,16}$/)){
 					$("#password_error1").css("display", "block");
 					$("#password_error2").css("display", "none");
@@ -102,36 +122,49 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						data:"password="+pass1,
 						success: function(msg){
 							if(msg){
-								$("#nameerror1").css("display", "none");
-		 						$("#nameerror2").css("display", "none");
-		 						$("#namevalid").css("display", "block");
+								$("#password_error1").css("display", "none");
+		 						$("#password_error2").css("display", "none");
+		 						$("#password_valid").css("display", "block");
 		 						flag1 = true;
 							}
 							else{
-								$("#nameerror1").css("display", "none");
-		 						$("#nameerror2").css("display", "block");
-		 						$("#namevalid").css("display", "none");
+								$("#password_error1").css("display", "none");
+		 						$("#password_error2").css("display", "block");
+		 						$("#password_valid").css("display", "none");
 		 						flag1 = false;
 							}
 						}
 					});
 				}
-				if(pass1 != pass2){
-					$("#password_diff").css("display", "block");
-					$("#password_same").css("display", "none");
-					flag3 = false;
-				}
-				else{
-					$("#password_same").css("display", "block");
-					$("#password_diff").css("display", "none");
-					flag3 = true;
-				}
           	}
           	function newPassCheck(){
-          		;
+          		pass2 = $("#newpass").val();
+				if(!pass2.match(/^[*#a-zA-Z0-9]{8,16}$/)){
+					$("#newpass_error").css("display", "block");
+					$("#newpass_valid").css("display", "none");
+					flag2 = false;
+				}
+				else{
+					$("#newpass_error").css("display", "none");
+					$("#newpass_valid").css("display", "block");
+					flag2 = true;
+				}
           	}
           	function newPassConfirm(){
-          		;
+          		pass3 = $("#newpassconfirm").val();
+          		if(pass2==pass3){
+          			$("#newpassconfirm_error").css("display", "none");
+					$("#newpassconfirm_valid").css("display", "block");
+					flag3 = true;
+          		}
+          		else{
+          			$("#newpassconfirm_error").css("display", "block");
+					$("#newpassconfirm_valid").css("display", "none");
+					flag3 = false;
+          		}
+          	}
+          	function checkall(){
+          		return flag1&&flag2&&flag3;
           	}
           </script>
      </body>        
