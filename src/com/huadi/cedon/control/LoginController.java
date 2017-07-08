@@ -1,14 +1,10 @@
 package com.huadi.cedon.control;
 
-
-import java.io.IOException;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.UUID;
 import javax.annotation.Resource;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -58,18 +54,11 @@ public class LoginController extends BaseController implements Serializable {
 	@ResponseBody
 	public Boolean picCheck(HttpServletRequest request, HttpServletResponse response){
 		String userinput = request.getParameter("userCode");
-//		System.out.println("userCode="+userinput);
 		String clientCheckcode = userinput;
 		String serverCheckcode = (String)request.getSession().getAttribute("checkcode");
-//		System.out.println("serverCode="+serverCheckcode);
 		if(clientCheckcode.equals(serverCheckcode))
 			return true;
 		return false;
-	}
-	
-	@RequestMapping("registerInsert")//http://localhost:8080/scdx/login/registerveiw
-	public String registerInsert(user user,ModelMap map,HttpServletRequest request){
-			return "redirect:../index";
 	}
 
 	@RequestMapping("registerAjax")

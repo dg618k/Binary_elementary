@@ -13,6 +13,8 @@ public class CartoonController extends BaseController implements Serializable {
 	
 	@RequestMapping("cartoonview")
 	public String CartoonVeiw(ModelMap map,HttpServletRequest request){	
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user", user_name);
 		return "cartoon/cartoon";
 	}
 	

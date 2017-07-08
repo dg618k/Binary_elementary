@@ -13,18 +13,21 @@
 
 <title>注册</title>
 </head>
-<body>
+<body style="background-color:#f8b551">
 <!-- header start -->
 <div class="c_content c_content_top">
-        <a href="index.php">
-			<img class="c_top_logo c_fl" src="../img/login/login_logo.jpg" alt="logo" border="0">
+        <a>
+			<img class="c_top_logo c_fl img-rounded" src="../img/logo.png" alt="logo" border="0">
 		</a>
         <div class="c_line c_fl"></div>
         <h1 class="c_top_txt c_fl">欢迎注册</h1>
         <div class="c_clear_both"></div>
 </div>
 <!-- header end -->
-<div class="c_reg_wrap" style="background:url()">
+
+<div style="position:absolute;width:100%;height:1px;background-color:white;margin-top:36px;"></div>
+
+<div class="c_reg_wrap" style="background:url(../img/001.jpg);background-size:100% 100%;">
 	<div class="c_content">
 		<form action="registerAjax" onsubmit="return checkall();" method="post">
 		<ul class="c_reg_box">
@@ -98,14 +101,6 @@
 				 <div id="pic_same" class="input_valid">
 				 	<p class="glyphicon glyphicon-ok">验证成功</p> 
 				 </div>
-				<div class="c_clear_both"></div>
-			</li>
-			<li>
-				<label class="c_fl">
-					<span>邮箱验证：</span>
-					<input type="text" class="c_reg_input c_reg_input_v c_fl" placeholder="请输入验证码"name="sms_verify" id="sms_verify">
-				</label>
-				<input type="button" value="获取验证码" class="c_btn c_btn_ph c_fl" id="msgcode-btn">
 				<div class="c_clear_both"></div>
 			</li>
 			<li class="c_reg_check"  style="margin-left:130px;">

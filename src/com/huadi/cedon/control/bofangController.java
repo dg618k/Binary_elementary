@@ -21,6 +21,8 @@ public class bofangController extends BaseController implements Serializable  {
 	}
 	@RequestMapping("videoview")
 	public String Videoview(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user", user_name);
 		return "bofang/video";
 	}
 }

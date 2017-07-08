@@ -17,8 +17,11 @@ public class InformationController extends BaseController implements Serializabl
 
 	@RequestMapping("informationview")
 	public String Informationview(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user", user_name);
 		return "information/information";
 	}
+	
 	@RequestMapping("infoDetailview")
 	public String InfoDetailview(ModelMap map,HttpServletRequest request){
 		return "information/infoDetail";

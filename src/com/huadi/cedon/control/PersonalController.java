@@ -1,7 +1,6 @@
 package com.huadi.cedon.control;
 
 import java.io.Serializable;
-import java.security.PublicKey;
 import java.sql.SQLException;
 import java.util.Map;
 
@@ -48,9 +47,8 @@ public class PersonalController extends BaseController implements Serializable {
 	//个人中心
 	@RequestMapping("perSpaceview")
 	public String perSpaceview(ModelMap map, HttpServletRequest request) {
-		String sql = "select * from user where id = " + request.getSession().getAttribute("name");
+		String sql = "select * from user where id = " + request.getSession().getAttribute("id");
 		map.put("user", BaseDao.findOne(sql));
-		
 		return "personal_center/personal_space";
 	}
 	//上传界面
@@ -113,7 +111,7 @@ public class PersonalController extends BaseController implements Serializable {
 		String sql = "select * from user where id = ?";
 		Map<String, Object> map1 = BaseDao.findOne(sql, user_id);
 		map.put("user_name", map1.get("name"));
-		map.put("user_signal", map1.get("signal"));
+		map.put("user_signal", map1.get("user_signal"));
 		map.put("user_sex", map1.get("sex"));
 		map.put("user_tele", map1.get("tele"));
 		map.put("user_money", map1.get("money"));
@@ -125,6 +123,8 @@ public class PersonalController extends BaseController implements Serializable {
    	//密码修改页面
 	@RequestMapping("mimaxiugai")
 	public String mimaxiugai(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user_name", user_name);
 		return "personal_center/gerenxinxi/mimaxiugai";
 	}
 	
@@ -137,14 +137,29 @@ public class PersonalController extends BaseController implements Serializable {
 		Map<String, Object> map1 = BaseDao.findOne(sql1, user_id);
 		String oldPass = map1.get("password").toString();
 		String pass = user.getPassword();
+//		System.out.println("old:"+oldPass+" cur:"+pass+" "+oldPass.equals(MD5Util.MD5(pass+map1.get("salt"))));
 		if(oldPass.equals(MD5Util.MD5(pass+map1.get("salt"))))
 			return true;
 		return false;
 	}
 	
+	//密码修改提交
+	@RequestMapping("passModifyInsert")
+	public String passModifyInsert(@RequestParam(value="newpass", required = true) String newpass,HttpServletRequest request)throws SQLException{
+			String user_id = request.getSession().getAttribute("id").toString();
+			String sql1 = "select * from user where id = ?";
+			Map<String, Object> map1 = BaseDao.findOne(sql1, user_id);
+			newpass = MD5Util.MD5(newpass+map1.get("salt"));
+			String sql2 = "update user set password = ? where id = ?";
+			BaseDao.updateSql(sql2, newpass, user_id);
+            return "redirect:../login/login";
+	}
+	
 	//昵称修改页面
 	@RequestMapping("nichengxiugai")
 	public String nichengxiugai(ModelMap map,HttpServletRequest request){
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user_name", user_name);
 		return "personal_center/gerenxinxi/nichengxiugai";
 	}
 	
@@ -183,12 +198,25 @@ public class PersonalController extends BaseController implements Serializable {
 	//个性签名修改页面
 	@RequestMapping("qianmingxiugai")
 	public String qianmingxiugai(ModelMap map, HttpServletRequest request) {
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user_name", user_name);
 		return "personal_center/gerenxinxi/qianmingxiugai";
 	}
+	
+	//个性签名修改提交
+		@RequestMapping("signalModifyInsert")
+		public String signalModifyInsert(@RequestParam(value="user_signal", required = true) String signal,HttpServletRequest request)throws SQLException{
+				String user_id = request.getSession().getAttribute("id").toString();
+				String sql2 = "update user set user_signal = ? where id = ?";
+				BaseDao.updateSql(sql2, signal, user_id);
+				return "redirect:../personal_center/gerenxinxixiugai";
+		}
 
 	//头像修改页面
 	@RequestMapping("touxiangxiugai")
 	public String touxiangxiugai(ModelMap map, HttpServletRequest request) {
+		String user_name = request.getSession().getAttribute("name").toString();
+		map.put("user_name", user_name);
 		return "personal_center/gerenxinxi/touxiangxiugai";
 	}
 

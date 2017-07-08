@@ -17,6 +17,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   </head>
     <body id="r1"> 
+    
+    <nav style="background-color:rgba(0,0,0,.2);width:100%;height:30px;">
+        <ul>
+            <li><a style="margin-left:30px;float:left">喵，欢迎来到史上最好的网站</a></li>
+    			<li><a style="float:left">${user_name}</a></li>
+    			<li id="top_tag2" class="history"><a style="float:right;margin-right:30px;" href="login/logout" rel="nofollow">注销</a></li>
+           		<li id="top_tag1" class="history"><a style="float:right" href="trade/cartview" rel="nofollow">购物车</a></li>
+            	<li id="top_tag0" class="history"><a style="float:right" href="userIndex" rel="nofollow">个人中心</a></li>
+        </ul>
+	</nav>
+	
           	<!-- 背景动图 -->
   	<div class="background_area">
   		<img src="img/personal_space/bj.gif" style="width:100%;height:100%;">
@@ -60,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <form class="setting-profile-form" onsubmit="return checkall();" id="profile" action="personal_center/nameModifyInsert" method="POST">
           	<div style="margin-left:50px;margin-top:50px">
           		<label style="font-size:14px; float:left; margin-top:5px;">昵称：</label>
-          		<input style="float:left" type="text" id="user_name" name="user_name" onblur="checkname()" required>
+          		<input style="float:left" type="text" id="user_name" name="user_name" value="${user_name }" onblur="checkname()" required>
           		<label id="nameerror1" class="input_error">
                 	<p class="glyphicon glyphicon-remove"> 用户名不能为空</p>
                 </label>

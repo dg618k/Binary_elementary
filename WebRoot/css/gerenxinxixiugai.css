@@ -1,4 +1,22 @@
 @CHARSET "UTF-8";
+nav ul li a:hover{
+    background: rgba(255,255,255,0.24);
+    transition: background 0.15s;
+}
+nav ul li a{
+    color: #fff;
+    line-height: 30px;
+    padding: 0 10px;
+    background: transparent;
+    transition: background 0.15s;
+    display: block;
+    font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdana,sans-serif,"WenQuanYi Micro Hei","\5B8B\4F53";
+    font-size:14px;
+}
+nav ul li a:hover{
+    background: rgba(255,255,255,0.24);
+    transition: background 0.15s;
+}
 .input_error{
 	margin-top:8px;
 	display:none;

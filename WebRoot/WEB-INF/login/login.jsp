@@ -14,28 +14,21 @@
 </head>
 <body>
 	<div>
-   		<!-- header start -->
-    	<!-- header end -->
-    	<div>
-    		<div class="content content_top">
-    			<a class="top_logo c_fl" href="index.php">
-    				<img class="logo_img" alt="logo" src="../img/login/login_logo.jpg">
-    			</a>
-    			<p class="top_txt c_fr">欢迎登陆</p>
-    			<div class="clear_both"></div>
-    		</div>
-    		<div class="login_wrap">
+    	<div >
+    		<div class="login_wrap" style="background:url(../img/login_bg.jpg);background-size:100% 100%;">
     			<div class="content">
 			        <form action="loginCheck" onsubmit="return checkresult();" method="post" class="login_box c_fr">
 			            <ul id="comm_login">
 			                <li>
-			                	<div style="font-size:18px;float:left">用户登录</div>
+			                	<div style="font-size:18px;float:left">
+			                		<img class="logo_img" alt="logo" src="../img/logo.png">
+			                	</div>
 			                	<c:if test="${message!=null }">
-			                		<div style="float:left; margin-left:30px; font-size:11px; color:red; margin-top:6px;">
+			                		<div style="float:left; margin-left:30px; font-size:11px; color:red; margin-top:22px;" id="message_error">
 			                			<span class="glyphicon glyphicon-remove"></span>${message }
 			                		</div>
 			                	</c:if>
-			                	<div id="pic_diff" class="input_error">
+			                	<div id="pic_diff" style="display:none;float:left; margin-left:30px; font-size:11px; color:red; margin-top:22px;">
 				 					<span class="glyphicon glyphicon-remove">验证码错误</span>
 				 				</div>
 			                	<div class="clear_both"></div>
@@ -107,6 +100,7 @@
     	<!-- footer end -->
     </div>
 	<script type="text/javascript">
+	var flag2 = false;
 	function changeImg(){
 		document.getElementById('verify').src="../servlet/generate_pic?"+Math.random();
 	}
@@ -119,12 +113,10 @@
   		  		success: function(msg){
      	  			if(msg){
      	  				$("#pic_diff").css("display", "none");
-     	  				$("#pic_same").css("display", "block");
      	  				flag2 = true;
      	  			}
-     	  			else{
+     	  			else {
      	  				$("#pic_diff").css("display", "block");
-     	  				$("#pic_same").css("display", "none");
      	  				changeImg();
    						flag2 = false;
      	  			}
@@ -133,6 +125,8 @@
 	} 
 	function checkresult(){
 		check_pic();
+		$("#message_error").css("display","none");
+		return flag2;
 	}
 	</script>
 </body>
