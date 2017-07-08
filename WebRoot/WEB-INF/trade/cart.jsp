@@ -121,7 +121,7 @@
 
 	                            <img width="100%" alt="商品" src="../img/goods/${item.url}">
 	                        </a>
-	                        <a class="c_cart_product_name" onclick="toItem(${item.id})" href="">${item.name}</a>
+	                        <a class="c_cart_product_name" onclick="toItem(${item.id})" href="productview">${item.name}</a>
 	                    </div>
 	                    <div class="c_td c_th_10 left c_data_text c_text_c">                 
 	                            <p>¥ ${item.price}</p>
@@ -129,14 +129,14 @@
 	                    <div class="c_td c_th_20 left c_data_text">
 	                        <div class="number-box c_number_box">
 	                            <span class="number-box-dec c_number_box_dec" onclick="minusNum(${index},${item.price})" id="minus${index}">-</span>
-	                            <input disabled="disabled" class="number-box-num c_number_box_num" id="num${index}" value="1">
+	                            <input disabled="disabled" class="number-box-num c_number_box_num" id="num${index}" value="${item.consume_number }">
 	                            <span class="number-box-inc c_number_box_inc" onclick="plusNum(${index}, ${item.number},${item.price})" id="plus${index}">+</span>
 	                        </div>                                         
 	                    </div>
 	                    <div class="c_td c_th_10 left c_data_text"> ${item.number} </div>
-	                    <div class="c_td c_th_10 left c_data_text"><span class="c_cart_subsum" id="singlePrice${index}">${item.price}</span></div>
+	                    <div class="c_td c_th_10 left c_data_text"><span class="c_cart_subsum" id="singlePrice${index}">${item.price * item.consume_number}</span></div>
 	                    <div class="c_td c_th_10 left c_data_text"><span onclick="deleteItem(${index})" class="cart-del c_cart_del">删除</span></div>
-	                    <c:set value="${sum + item.price}" var="sum" />
+	                    <c:set value="${sum + item.price * item.consume_number}" var="sum" />
 	                    <c:set var="index" value="${index+1}" /> 
 	                    </c:forEach>
 	                </div>
@@ -224,7 +224,13 @@
    			});
     	}
     	function toItem(goods_id){
-    		
+    		$.ajax({
+ 		  		type: "POST",
+ 		 		url: "selectItem",
+   		 		data: {"goods_id":goods_id},
+  		  		success: function(msg){
+   				}
+   			});
     	}
     </script>
   </body>

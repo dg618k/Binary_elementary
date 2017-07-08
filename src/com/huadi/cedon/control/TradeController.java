@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
@@ -39,8 +40,10 @@ public class TradeController extends BaseController implements Serializable {
 		String user_pic = request.getSession().getAttribute("url").toString();
 		map.put("user_name", user_name);
 		map.put("user_url", "../img/login/"+user_pic);
-	//	System.out.println(map.get("user_url"));
-		String sql = "select * from goods where id in (select goods_id from record where user_id = ?)";
+//		String sql1 = "select * from record where user_id = ?";
+//		Map<String, Object> map2 = BaseDao.findOne(sql1, user_id);
+//		map.put("cur_num", map2.get("consume_number"));
+		String sql = "select * from goods,record where goods.id in (select goods_id from record where user_id = ?)";
 		List<Map<String, Object>> map1 = BaseDao.findList(sql, user_id);
 		map.put("items", map1);
 		return "trade/cart";
@@ -63,8 +66,63 @@ public class TradeController extends BaseController implements Serializable {
 	public String ProductVeiw(ModelMap map,HttpServletRequest request){	
 		String user_name = request.getSession().getAttribute("name").toString();
 		map.put("user", user_name);
+		HttpSession session = request.getSession();
+		String goods_id = session.getAttribute("goods_id").toString();
+		String goods_name = session.getAttribute("goods_name").toString();
+		String goods_num = session.getAttribute("goods_num").toString();
+		String goods_price = session.getAttribute("goods_price").toString();
+		String goods_url = session.getAttribute("goods_url").toString();
+		String goods_type = session.getAttribute("goods_type").toString();
+		map.put("goods_id", goods_id);
+		map.put("goods_name", goods_name);
+		map.put("goods_num", goods_num);
+		map.put("goods_price", goods_price);
+		map.put("goods_url", goods_url);
+		map.put("goods_type", goods_type);
 		return "trade/product";
 	}	
+	
+	//商品信息读取
+	@RequestMapping("/selectItem")
+	@ResponseBody
+	public Boolean selectItem(ModelMap map, HttpServletRequest request){
+		String goods_id = request.getParameter("goods_id");
+		String sql = "select * from goods where id = ?";
+		Map<String, Object> map1 = BaseDao.findOne(sql, goods_id);
+		HttpSession session = request.getSession();
+		session.setAttribute("goods_id", map1.get("id"));
+		session.setAttribute("goods_name", map1.get("name"));
+		session.setAttribute("goods_num", map1.get("number"));
+		session.setAttribute("goods_price", map1.get("price"));
+		session.setAttribute("goods_url", map1.get("url"));
+		session.setAttribute("goods_type", map1.get("type"));
+		return true;
+	}
+	
+	//加入购物车
+	@RequestMapping("/insertToCart")
+	@ResponseBody
+	public Boolean insertToCart(ModelMap map, HttpServletRequest request){
+		String goods_num = request.getParameter("goods_num");
+		String goods_id = request.getParameter("goods_id");
+		System.out.println(goods_id);
+		String sql1 = "select * from record where goods_id = ?";
+		Map<String, Object> map1 = BaseDao.findOne(sql1, goods_id);
+		String cur_num;
+		if(map1 != null)
+			cur_num = map1.get("consume_number").toString();
+		else 
+			cur_num = "0";
+		int sumNum = Integer.parseInt(goods_num) + Integer.parseInt(cur_num);
+//		System.out.println("cur_num:"+ cur_num + " goods_num:"+ goods_num + " sumNum:"+sumNum);
+		String sql = "update record set consume_number = ? where goods_id = ?";
+		try {
+			BaseDao.updateSql(sql, sumNum+"", goods_id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return true;
+	}
 		
 	@RequestMapping("toPersonalInfo")
 	public String ToPersonalInfo(ModelMap map, HttpServletRequest request){
